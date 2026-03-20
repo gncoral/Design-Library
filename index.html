@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Library 🪸</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0e0e0e;
+      --surface: #1a1a1a;
+      --border: #2a2a2a;
+      --text: #e8e8e8;
+      --muted: #888;
+      --accent: #ff6b6b;
+      --like: #ff6b6b;
+      --dislike: #555;
+      --tag-bg: #222;
+      --platform-dribbble: #ea4c89;
+      --platform-behance: #1769ff;
+      --platform-pinterest: #e60023;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(14,14,14,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .logo span { color: var(--accent); }
+
+    .filters {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      flex: 1;
+    }
+    .filters::-webkit-scrollbar { display: none; }
+
+    .filter-btn {
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover { border-color: #555; color: var(--text); }
+    .filter-btn.active {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+      font-weight: 600;
+    }
+    .filter-btn.platform-dribbble.active { background: var(--platform-dribbble); border-color: var(--platform-dribbble); color: #fff; }
+    .filter-btn.platform-behance.active { background: var(--platform-behance); border-color: var(--platform-behance); color: #fff; }
+    .filter-btn.platform-pinterest.active { background: var(--platform-pinterest); border-color: var(--platform-pinterest); color: #fff; }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-left: auto;
+    }
+
+    .stats {
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .share-btn {
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .share-btn:hover { border-color: #555; color: var(--text); }
+
+    /* TABS */
+    .tabs {
+      display: flex;
+      gap: 0;
+      padding: 0 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .tab {
+      padding: 12px 20px;
+      font-size: 14px;
+      color: var(--muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .tab:hover { color: var(--text); }
+    .tab.active { color: var(--text); border-bottom-color: var(--text); font-weight: 600; }
+    .tab .count {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 1px 7px;
+      background: var(--surface);
+      border-radius: 10px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* MAIN */
+    main {
+      padding: 24px;
+    }
+
+    /* MASONRY GRID */
+    .grid {
+      columns: 5;
+      column-gap: 12px;
+    }
+    @media (max-width: 1400px) { .grid { columns: 4; } }
+    @media (max-width: 1100px) { .grid { columns: 3; } }
+    @media (max-width: 768px) { .grid { columns: 2; } }
+    @media (max-width: 480px) { .grid { columns: 1; } }
+
+    /* CARD */
+    .card {
+      break-inside: avoid;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--surface);
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .card:hover { transform: translateY(-2px); }
+    .card.hidden { display: none; }
+    .card.disliked { display: none; }
+
+    .card-img-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s;
+      background: var(--border);
+    }
+    .card:hover img { transform: scale(1.03); }
+
+    /* OVERLAY */
+    .card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 12px;
+    }
+    .card:hover .card-overlay { opacity: 1; }
+
+    .card-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .action-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+      backdrop-filter: blur(8px);
+    }
+    .btn-like {
+      background: rgba(255,107,107,0.2);
+      color: var(--like);
+      border: 1px solid rgba(255,107,107,0.3);
+    }
+    .btn-like:hover, .btn-like.active {
+      background: var(--like);
+      color: white;
+    }
+    .btn-dislike {
+      background: rgba(80,80,80,0.3);
+      color: #aaa;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .btn-dislike:hover {
+      background: rgba(80,80,80,0.8);
+      color: white;
+    }
+    .btn-open {
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.2);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .btn-open:hover { background: rgba(255,255,255,0.25); }
+
+    .card-info {
+      color: white;
+    }
+    .card-title {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.3;
+      margin-bottom: 4px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.7);
+    }
+    .platform-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+    .platform-dot.dribbble { background: var(--platform-dribbble); }
+    .platform-dot.behance { background: var(--platform-behance); }
+    .platform-dot.pinterest { background: var(--platform-pinterest); }
+
+    /* LIKED BADGE */
+    .liked-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: var(--like);
+      color: white;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      z-index: 2;
+    }
+    .card.liked .liked-badge { display: flex; }
+
+    /* EMPTY STATE */
+    .empty {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--muted);
+    }
+    .empty h3 { font-size: 20px; margin-bottom: 8px; }
+    .empty p { font-size: 14px; }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: #222;
+      color: var(--text);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      border: 1px solid var(--border);
+      opacity: 0;
+      transition: all 0.3s;
+      pointer-events: none;
+      z-index: 999;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* SHARE MODE */
+    body.share-mode .card-actions .btn-like,
+    body.share-mode .card-actions .btn-dislike { display: none; }
+    body.share-mode .card.disliked { display: none; }
+
+    /* IMG ERROR */
+    .card img.error {
+      min-height: 120px;
+      object-fit: contain;
+      padding: 20px;
+      opacity: 0.3;
+    }
+
+    /* LOADING */
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Design<span>.</span>Library 🪸</div>
+
+  <div class="filters" id="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn platform-dribbble" data-filter="dribbble">Dribbble</button>
+    <button class="filter-btn platform-behance" data-filter="behance">Behance</button>
+    <button class="filter-btn platform-pinterest" data-filter="pinterest">Pinterest</button>
+    <div style="width:1px;height:20px;background:var(--border);margin:0 4px;flex-shrink:0"></div>
+    <button class="filter-btn" data-filter="tag:branding">Branding</button>
+    <button class="filter-btn" data-filter="tag:logo">Logo</button>
+    <button class="filter-btn" data-filter="tag:packaging">Packaging</button>
+    <button class="filter-btn" data-filter="tag:typography">Typography</button>
+    <button class="filter-btn" data-filter="tag:ui">UI/UX</button>
+    <button class="filter-btn" data-filter="tag:illustration">Illustration</button>
+    <button class="filter-btn" data-filter="tag:editorial">Editorial</button>
+  </div>
+
+  <div class="header-right">
+    <span class="stats" id="stats"></span>
+    <button class="share-btn" id="shareBtn" onclick="copyShareLink()">🔗 Share</button>
+  </div>
+</header>
+
+<div class="tabs">
+  <div class="tab active" data-tab="all" onclick="switchTab('all')">
+    All <span class="count" id="tab-all-count">0</span>
+  </div>
+  <div class="tab" data-tab="liked" onclick="switchTab('liked')">
+    ❤️ Saved <span class="count" id="tab-liked-count">0</span>
+  </div>
+</div>
+
+<main>
+  <div class="loading" id="loading">Loading...</div>
+  <div class="grid" id="grid"></div>
+  <div class="empty hidden" id="empty">
+    <h3>Nothing here yet</h3>
+    <p>Try a different filter or add more images</p>
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  // ── State ──────────────────────────────────────────────────────────
+  const isShareMode = new URLSearchParams(location.search).has('share');
+  if (isShareMode) document.body.classList.add('share-mode');
+
+  let allImages = [];
+  let currentFilter = 'all';
+  let currentTab = 'all';
+  const prefs = JSON.parse(localStorage.getItem('dl_prefs') || '{"liked":[],"disliked":[]}');
+
+  // ── Load data ──────────────────────────────────────────────────────
+  async function loadData() {
+    try {
+      const res = await fetch('data/images.json?t=' + Date.now());
+      allImages = await res.json();
+      document.getElementById('loading').style.display = 'none';
+      render();
+    } catch(e) {
+      document.getElementById('loading').textContent = 'Failed to load images.';
+    }
+  }
+
+  // ── Render ─────────────────────────────────────────────────────────
+  function render() {
+    const grid = document.getElementById('grid');
+    const empty = document.getElementById('empty');
+    grid.innerHTML = '';
+
+    let items = allImages.filter(img => {
+      if (isShareMode && prefs.disliked.includes(img.id)) return false;
+      if (currentTab === 'liked' && !prefs.liked.includes(img.id)) return false;
+      if (prefs.disliked.includes(img.id) && currentTab !== 'liked') return false;
+
+      if (currentFilter === 'all') return true;
+      if (currentFilter.startsWith('tag:')) {
+        const tag = currentFilter.slice(4);
+        return (img.tags || []).some(t => t.toLowerCase().includes(tag));
+      }
+      return img.platform === currentFilter;
+    });
+
+    // update counts
+    document.getElementById('tab-all-count').textContent = allImages.filter(i => !prefs.disliked.includes(i.id)).length;
+    document.getElementById('tab-liked-count').textContent = prefs.liked.length;
+    document.getElementById('stats').textContent = items.length + ' works';
+
+    if (items.length === 0) {
+      empty.classList.remove('hidden');
+    } else {
+      empty.classList.add('hidden');
+      items.forEach(img => grid.appendChild(createCard(img)));
+    }
+  }
+
+  function createCard(img) {
+    const isLiked = prefs.liked.includes(img.id);
+    const card = document.createElement('div');
+    card.className = 'card' + (isLiked ? ' liked' : '');
+    card.dataset.id = img.id;
+
+    const platformColor = { dribbble: 'dribbble', behance: 'behance', pinterest: 'pinterest' };
+
+    card.innerHTML = `
+      <div class="liked-badge">♥</div>
+      <div class="card-img-wrap">
+        <img src="${escHtml(img.src)}" alt="${escHtml(img.title)}" loading="lazy" onerror="this.classList.add('error');this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 150%22><rect fill=%22%23222%22 width=%22200%22 height=%22150%22/><text fill=%22%23555%22 x=%22100%22 y=%2280%22 text-anchor=%22middle%22 font-size=%2212%22>Image unavailable</text></svg>'">
+        <div class="card-overlay">
+          <div class="card-actions">
+            ${!isShareMode ? `
+              <button class="action-btn btn-like ${isLiked ? 'active' : ''}" onclick="toggleLike(event,'${img.id}')" title="Save">♥</button>
+              <button class="action-btn btn-dislike" onclick="doDislike(event,'${img.id}')" title="Not for me">✕</button>
+            ` : ''}
+            <a class="action-btn btn-open" href="${escHtml(img.url)}" target="_blank" title="Open original" onclick="event.stopPropagation()">↗</a>
+          </div>
+          <div class="card-info">
+            <div class="card-title">${escHtml(img.title)}</div>
+            <div class="card-meta">
+              <span class="platform-dot ${platformColor[img.platform] || ''}"></span>
+              <span>${img.platform}</span>
+              ${img.author ? '<span>· ' + escHtml(img.author) + '</span>' : ''}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    return card;
+  }
+
+  // ── Actions ────────────────────────────────────────────────────────
+  function toggleLike(e, id) {
+    e.stopPropagation();
+    const idx = prefs.liked.indexOf(id);
+    if (idx >= 0) {
+      prefs.liked.splice(idx, 1);
+      showToast('Removed from saved');
+    } else {
+      prefs.liked.push(id);
+      showToast('❤️ Saved!');
+    }
+    savePrefs();
+    render();
+  }
+
+  function doDislike(e, id) {
+    e.stopPropagation();
+    if (!prefs.disliked.includes(id)) prefs.disliked.push(id);
+    // remove from liked too
+    const li = prefs.liked.indexOf(id);
+    if (li >= 0) prefs.liked.splice(li, 1);
+    savePrefs();
+    showToast('👋 Got it, won\'t show this type again');
+    render();
+  }
+
+  function savePrefs() {
+    localStorage.setItem('dl_prefs', JSON.stringify(prefs));
+  }
+
+  // ── Filters ────────────────────────────────────────────────────────
+  document.getElementById('filters').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    render();
+  });
+
+  function switchTab(tab) {
+    currentTab = tab;
+    document.querySelectorAll('.tab').forEach(t => {
+      t.classList.toggle('active', t.dataset.tab === tab);
+    });
+    render();
+  }
+
+  // ── Share ──────────────────────────────────────────────────────────
+  function copyShareLink() {
+    const url = location.href.split('?')[0] + '?share';
+    navigator.clipboard.writeText(url).then(() => showToast('🔗 Share link copied!'));
+  }
+
+  // ── Toast ──────────────────────────────────────────────────────────
+  let toastTimer;
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  // ── Utils ──────────────────────────────────────────────────────────
+  function escHtml(s) {
+    return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // ── Init ───────────────────────────────────────────────────────────
+  loadData();
+</script>
+</body>
+</html>
