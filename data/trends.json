@@ -1,0 +1,130 @@
+[
+  {
+    "id": "trend-2026-01",
+    "title": "Elemental Folk",
+    "slug": "elemental-folk",
+    "year": 2026,
+    "summary": "极简数字主义的反动——民间艺术与地域工艺回归，将传统花纹、动物图腾、装饰边框融入现代排版。不是复古，是带有温度的当代设计。",
+    "signals": ["手绘花草图腾", "对称装饰边框", "宝石色+大地色系", "手工质感字体", "包装&食品饮料品牌"],
+    "studios": ["Darling Clementine", "Piggz Design", "Hvass&Hannibal"],
+    "sources": ["99designs/VistaPrint 2026 Trends", "Behance Curated"],
+    "coverImages": [
+      "https://mir-s3-cdn-cf.behance.net/projects/404/226720325.jpg",
+      "https://mir-s3-cdn-cf.behance.net/projects/404/242966945.jpg"
+    ],
+    "tags": ["folk", "packaging", "branding", "craft", "heritage"],
+    "added": "2026-03-20"
+  },
+  {
+    "id": "trend-2026-02",
+    "title": "Hyper-Individualism",
+    "slug": "hyper-individualism",
+    "year": 2026,
+    "summary": "AI工具泛滥的反面——超现实拼贴、扭曲几何、梦幻叙事。追求「机器做不出来的人味」，以混乱为美，以个性对抗同质化。",
+    "signals": ["超现实并置", "扭曲字体作为主视觉", "2D+3D混合层叠", "柔和迷幻色调", "创意机构&生活方式品牌"],
+    "studios": ["Bráulio Amado", "Experimental Jetset", "Non-Format"],
+    "sources": ["99designs/VistaPrint 2026 Trends", "It's Nice That"],
+    "coverImages": [
+      "https://mir-s3-cdn-cf.behance.net/projects/404/244705499.jpg",
+      "https://cdn.dribbble.com/userupload/47086854/file/785684c71e72127e9abe1e11775dc48d.png?format=webp&resize=800x600&vertical=center"
+    ],
+    "tags": ["surreal", "experimental", "editorial", "typography", "bold"],
+    "added": "2026-03-20"
+  },
+  {
+    "id": "trend-2026-03",
+    "title": "Tactile Craft",
+    "slug": "tactile-craft",
+    "year": 2026,
+    "summary": "数字设计拥抱「可触摸感」——刺绣、布料纹理、剪纸拼贴、可见的缝线与接缝。以数字手段模拟手工温度，wabi-sabi 美学的设计语言。",
+    "signals": ["数字刺绣效果", "织物3D纹理", "剪纸拼贴分层", "真实色调而非过饱和", "生活方式&儿童品牌"],
+    "studios": ["Werklig", "Bond", "Heydays"],
+    "sources": ["99designs/VistaPrint 2026 Trends"],
+    "coverImages": [
+      "https://mir-s3-cdn-cf.behance.net/projects/404/229129047.jpg",
+      "https://i.pinimg.com/736x/82/3f/cc/823fcc75b70542afb760a13da5970bb5.jpg"
+    ],
+    "tags": ["craft", "texture", "handmade", "packaging", "warmth"],
+    "added": "2026-03-20"
+  },
+  {
+    "id": "trend-2026-04",
+    "title": "Abstract Organica",
+    "slug": "abstract-organica",
+    "year": 2026,
+    "summary": "It's Nice That 2026年观察到的新兴趋势——将有机自然形态（植物、菌类、地衣）抽象化处理，融入品牌视觉系统。色调偏向大地色、苔藓绿与锈红，形态流动而不规则。",
+    "signals": ["有机不规则形态", "大地色系+自然绿", "流动排版", "可持续&生态品牌", "澳洲新兴设计场景"],
+    "studios": ["FIELD", "Studio Dumbar", "Mucho"],
+    "sources": ["It's Nice That — Abstracted Organica 趋势报道"],
+    "coverImages": [
+      "https://mir-s3-cdn-cf.behance.net/projects/404/220489335.jpg",
+      "https://i.pinimg.com/736x/ca/09/6d/ca096db7b13c69dd8a16ff11bd67161a.jpg"
+    ],
+    "tags": ["organic", "nature", "minimal", "sustainable", "branding"],
+    "added": "2026-03-20"
+  },
+  {
+    "id": "trend-2026-05",
+    "title": "3D Dimensional Identity",
+    "slug": "3d-dimensional-identity",
+    "year": 2026,
+    "summary": "品牌视觉系统从平面走向立体——不只是Logo，而是构建可旋转、可动画的3D品牌资产。配合AI渲染工具降低制作门槛，越来越多中小品牌开始采用。",
+    "signals": ["可旋转3D Logo", "品牌动效系统", "AI辅助3D渲染", "科技&加密&游戏品牌"],
+    "studios": ["Pentagram", "ManvsMachine", "Territory Studio"],
+    "sources": ["Dribbble 2026 Design Census", "Behance 精选"],
+    "coverImages": [
+      "https://cdn.dribbble.com/userupload/47100817/file/still-2e71bb285b1f0679d930ad14695a4058.png?format=webp&resize=800x600&vertical=center",
+      "https://cdn.dribbble.com/userupload/47084473/file/c6715861b8f63be30dbd76600c5dab81.png?format=webp&resize=800x600&vertical=center"
+    ],
+    "tags": ["3d", "motion", "branding", "tech", "identity"],
+    "added": "2026-03-20"
+  },
+  {
+    "id": "trend-2026-06",
+    "title": "Neo-Brutalism in Branding",
+    "slug": "neo-brutalism-branding",
+    "year": 2026,
+    "summary": "Web设计的Brutalism浪潮蔓延到平面品牌——粗边框、高对比色块、无修饰的原始感。刻意「丑」出个性，打破精致主义。在时尚、音乐、年轻消费品牌中扩散。",
+    "signals": ["粗黑边框", "高对比撞色", "无serif或超重字体", "打破对称", "时尚&音乐&DTC品牌"],
+    "studios": ["Build", "Spin", "OK-RM"],
+    "sources": ["Awwwards Trend Report", "Dribbble Popular"],
+    "coverImages": [
+      "https://cdn.dribbble.com/userupload/47088474/file/0c222f35d78b4f2044598cc0f913b123.png?format=webp&resize=800x600&vertical=center",
+      "https://i.pinimg.com/736x/d8/76/fc/d876fcab5ad9b951e8e2620363ef7725.jpg"
+    ],
+    "tags": ["brutalism", "bold", "contrast", "branding", "fashion"],
+    "added": "2026-03-20"
+  },
+  {
+    "id": "trend-2026-07",
+    "title": "Quiet Luxury Visual Language",
+    "slug": "quiet-luxury",
+    "year": 2026,
+    "summary": "奢侈品美学的「降噪」版本——大量留白、极细字重、中性色系、克制的排版。不喊口号，靠密度感和比例感传递高端气质。受时装界影响渗透到美妆、家居、金融品牌。",
+    "signals": ["大量留白", "极细serif或无饰线字体", "米白/灰/黑中性色", "最简化的Logo", "奢侈&美妆&高端家居"],
+    "studios": ["Bibliotheque", "Spin", "A2/SW/HK"],
+    "sources": ["It's Nice That", "Dezeen Design Review 2025"],
+    "coverImages": [
+      "https://mir-s3-cdn-cf.behance.net/projects/404/225719969.jpg",
+      "https://cdn.dribbble.com/userupload/47068174/file/2233d459ba2d92233ee7b6a5fc51cb75.jpg?format=webp&resize=800x600&vertical=center"
+    ],
+    "tags": ["luxury", "minimal", "editorial", "typography", "fashion"],
+    "added": "2026-03-20"
+  },
+  {
+    "id": "trend-2026-08",
+    "title": "Typographic Maximalism",
+    "slug": "typographic-maximalism",
+    "year": 2026,
+    "summary": "字体即图像——用超大字号、混合字重、多轴可变字体构建整个版面。文字不是载体，文字就是视觉本身。海报设计、出版物封面、品牌主视觉都在往这个方向走。",
+    "signals": ["字体占据整个画面", "可变字体动效", "混合语言排版", "字体即品牌资产", "文化&出版&展览"],
+    "studios": ["Kimera Foundry", "Dinamo", "Commercial Type"],
+    "sources": ["It's Nice That — Typography 专题", "Fonts In Use"],
+    "coverImages": [
+      "https://mir-s3-cdn-cf.behance.net/projects/404/236144303.jpg",
+      "https://cdn.dribbble.com/userupload/47087910/file/1df269ea8a695514d2cd0e5237f5ccc2.jpg?format=webp&resize=800x600&vertical=center"
+    ],
+    "tags": ["typography", "editorial", "poster", "bold", "identity"],
+    "added": "2026-03-20"
+  }
+]
