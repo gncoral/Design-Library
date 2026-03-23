@@ -142,6 +142,54 @@
     }
     .trend-source-link:hover { border-color: #555; color: #aaa; background: #222; }
 
+    /* ── DIGITALING SECTION ── */
+    .trends-section-header {
+      display: flex; align-items: center; gap: 10px;
+      padding: 28px 24px 12px; border-bottom: 1px solid var(--border);
+    }
+    .trends-section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+    .trends-section-badge {
+      padding: 2px 8px; border-radius: 8px; font-size: 11px; font-weight: 600;
+      background: #ff6b2b22; color: #ff8c55; border: 1px solid #ff6b2b33;
+    }
+    .dg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; padding: 16px 24px 32px; }
+    .dg-card {
+      background: var(--surface); border-radius: 12px; padding: 18px;
+      border: 1px solid var(--border); transition: border-color 0.2s, transform 0.15s;
+      cursor: pointer; text-decoration: none; display: block;
+    }
+    .dg-card:hover { border-color: #ff6b2b55; transform: translateY(-2px); }
+    .dg-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+    .dg-card-meta { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); }
+    .dg-dot { width: 6px; height: 6px; border-radius: 50%; background: #ff8c55; flex-shrink: 0; }
+    .dg-heat { display: flex; align-items: center; gap: 10px; font-size: 11px; color: var(--muted); white-space: nowrap; }
+    .dg-heat span { display: flex; align-items: center; gap: 3px; }
+    .dg-title { font-size: 15px; font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 8px; }
+    .dg-summary { font-size: 12px; line-height: 1.65; color: #888; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .dg-insights { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+    .dg-insight { font-size: 11px; color: #777; line-height: 1.5; }
+    .dg-insight::before { content: '•'; color: #ff8c55; margin-right: 5px; }
+    .dg-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .dg-tag { padding: 2px 8px; background: var(--surface2); border-radius: 8px; font-size: 10px; color: var(--muted); border: 1px solid var(--border); }
+
+    /* Weekly Summary Card */
+    .dg-weekly-card {
+      background: linear-gradient(135deg, #1e1510 0%, #1a1a1a 100%);
+      border-color: #ff6b2b44;
+    }
+    .dg-weekly-card:hover { border-color: #ff6b2b99; }
+    .dg-weekly-badge {
+      display: inline-block; padding: 2px 8px; background: #ff6b2b33; color: #ff8c55;
+      border-radius: 8px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+      text-transform: uppercase; margin-bottom: 8px;
+    }
+    .dg-weekly-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .dg-weekly-list { list-style: none; padding: 0; }
+    .dg-weekly-list li { font-size: 12px; color: #888; padding: 4px 0; border-bottom: 1px solid #2a2a2a; line-height: 1.4; }
+    .dg-weekly-list li:last-child { border-bottom: none; }
+    .dg-weekly-list li a { color: #aaa; text-decoration: none; }
+    .dg-weekly-list li a:hover { color: var(--text); }
+
     /* ── EMPTY ── */
     .empty { text-align: center; padding: 80px 20px; color: var(--muted); display: none; }
     .empty h3 { font-size: 18px; margin-bottom: 8px; }
@@ -215,6 +263,18 @@
 
 <!-- TRENDS PANEL -->
 <div class="panel" id="panel-trends">
+  <!-- 数英热点 Section -->
+  <div class="trends-section-header">
+    <span class="trends-section-title">📰 数英热点</span>
+    <span class="trends-section-badge">Daily · Digitaling</span>
+  </div>
+  <div class="dg-grid" id="dg-grid"></div>
+
+  <!-- 设计趋势 Section -->
+  <div class="trends-section-header">
+    <span class="trends-section-title">📈 2026 设计趋势</span>
+    <span class="trends-section-badge">Global · Curated</span>
+  </div>
   <div class="trends-grid" id="trends-grid"></div>
 </div>
 
@@ -224,19 +284,22 @@
   const isShareMode = new URLSearchParams(location.search).has('share');
   if (isShareMode) document.body.classList.add('share-mode');
 
-  let allImages = [], allTrends = [];
+  let allImages = [], allTrends = [], allDigitaling = [];
   let currentFilter = 'all', currentTab = 'gallery';
   const prefs = JSON.parse(localStorage.getItem('dl_prefs') || '{"liked":[],"disliked":[]}');
 
   // ── Load ──────────────────────────────────────────────────
   async function init() {
-    const [imgRes, trendRes] = await Promise.all([
+    const [imgRes, trendRes, dgRes] = await Promise.all([
       fetch('data/images.json?t=' + Date.now()).then(r => r.json()),
-      fetch('data/trends.json?t=' + Date.now()).then(r => r.json()).catch(() => [])
+      fetch('data/trends.json?t=' + Date.now()).then(r => r.json()).catch(() => []),
+      fetch('data/digitaling.json?t=' + Date.now()).then(r => r.json()).catch(() => [])
     ]);
     allImages = imgRes;
     allTrends = trendRes;
+    allDigitaling = dgRes;
     renderGallery();
+    renderDigitaling();
     renderTrends();
     updateCounts();
   }
@@ -299,6 +362,77 @@
     return div;
   }
 
+  // ── Digitaling ────────────────────────────────────────────
+  function renderDigitaling() {
+    const grid = document.getElementById('dg-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    // Separate weekly summaries and daily entries
+    const weeklies = allDigitaling.filter(d => d.type === 'weekly');
+    const dailies = allDigitaling.filter(d => d.type === 'daily');
+
+    // Render weekly summaries first (most recent)
+    weeklies.sort((a, b) => b.date.localeCompare(a.date)).forEach(w => {
+      const card = document.createElement('a');
+      card.className = 'dg-card dg-weekly-card';
+      card.href = '#';
+      card.target = '_blank';
+      card.innerHTML = `
+        <div class="dg-weekly-badge">📅 WEEKLY</div>
+        <div class="dg-weekly-title">${esc(w.title)}</div>
+        <div class="dg-summary">${esc(w.summary)}</div>
+        <ul class="dg-weekly-list">
+          ${(w.articles || []).map(a =>
+            `<li><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.title)}</a></li>`
+          ).join('')}
+        </ul>
+        <div class="dg-card-meta" style="margin-top:12px">
+          <span class="dg-dot"></span>
+          <span>第 ${w.weekNumber || '?'} 周总结</span>
+          <span>·</span>
+          <span>${w.date}</span>
+        </div>`;
+      grid.appendChild(card);
+    });
+
+    // Render daily entries (most recent first)
+    dailies.sort((a, b) => b.date.localeCompare(a.date)).forEach(d => {
+      const card = document.createElement('a');
+      card.className = 'dg-card';
+      card.href = d.url;
+      card.target = '_blank';
+      card.rel = 'noopener';
+      const insightsHtml = (d.keyInsights || []).slice(0, 3).map(i =>
+        `<div class="dg-insight">${esc(i)}</div>`
+      ).join('');
+      const tagsHtml = (d.tags || []).map(t =>
+        `<span class="dg-tag">${esc(t)}</span>`
+      ).join('');
+      card.innerHTML = `
+        <div class="dg-card-header">
+          <div class="dg-card-meta">
+            <span class="dg-dot"></span>
+            <span>${d.date}</span>
+            ${d.author ? `<span>· ${esc(d.author)}</span>` : ''}
+          </div>
+          <div class="dg-heat">
+            <span>🔖 ${d.heat?.saves || 0}</span>
+            <span>❤️ ${d.heat?.likes || 0}</span>
+          </div>
+        </div>
+        <div class="dg-title">${esc(d.title)}</div>
+        <div class="dg-summary">${esc(d.summary)}</div>
+        ${insightsHtml ? `<div class="dg-insights">${insightsHtml}</div>` : ''}
+        <div class="dg-tags">${tagsHtml}</div>`;
+      grid.appendChild(card);
+    });
+
+    if (allDigitaling.length === 0) {
+      grid.innerHTML = '<div style="padding:24px;color:#555;font-size:13px">暂无数据，首篇将于今日更新</div>';
+    }
+  }
+
   // ── Trends ────────────────────────────────────────────────
   function renderTrends() {
     const grid = document.getElementById('trends-grid');
@@ -350,7 +484,7 @@
     const visible = allImages.filter(i => !prefs.disliked.includes(i.id)).length;
     document.getElementById('tab-all-count').textContent = visible;
     document.getElementById('tab-liked-count').textContent = prefs.liked.length;
-    document.getElementById('tab-trends-count').textContent = allTrends.length;
+    document.getElementById('tab-trends-count').textContent = allTrends.length + allDigitaling.length;
   }
 
   // ── Tabs ──────────────────────────────────────────────────
