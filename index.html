@@ -142,7 +142,7 @@
     }
     .trend-source-link:hover { border-color: #555; color: #aaa; background: #222; }
 
-    /* ── DIGITALING SECTION ── */
+    /* ── BRAND KNOWLEDGE BASE SECTION ── */
     .trends-section-header {
       display: flex; align-items: center; gap: 10px;
       padding: 28px 24px 12px; border-bottom: 1px solid var(--border);
@@ -263,10 +263,10 @@
 
 <!-- TRENDS PANEL -->
 <div class="panel" id="panel-trends">
-  <!-- 数英热点 Section -->
+  <!-- 品牌知识库 Section -->
   <div class="trends-section-header">
-    <span class="trends-section-title">📰 数英热点</span>
-    <span class="trends-section-badge">Daily · Digitaling</span>
+    <span class="trends-section-title">🧠 品牌知识库</span>
+    <span class="trends-section-badge">Daily · Brand Cases</span>
   </div>
   <div class="dg-grid" id="dg-grid"></div>
 
@@ -362,7 +362,7 @@
     return div;
   }
 
-  // ── Digitaling ────────────────────────────────────────────
+  // ── Brand Knowledge Base ─────────────────────────────────
   function renderDigitaling() {
     const grid = document.getElementById('dg-grid');
     if (!grid) return;
@@ -416,9 +416,12 @@
             <span>${d.date}</span>
             ${d.author ? `<span>· ${esc(d.author)}</span>` : ''}
           </div>
-          <div class="dg-heat">
-            <span>🔖 ${d.heat?.saves || 0}</span>
-            <span>❤️ ${d.heat?.likes || 0}</span>
+          <div style="display:flex;align-items:center;gap:8px">
+            ${d.sourceName ? `<span style="font-size:10px;padding:1px 7px;background:#ffffff0d;border:1px solid #333;border-radius:6px;color:#666">${esc(d.sourceName)}</span>` : ''}
+            <div class="dg-heat">
+              <span>🔖 ${d.heat?.saves || 0}</span>
+              <span>❤️ ${d.heat?.likes || 0}</span>
+            </div>
           </div>
         </div>
         <div class="dg-title">${esc(d.title)}</div>
