@@ -1067,7 +1067,7 @@
   {
     "id": "d066",
     "title": "Lumina — EdTech Admin Dashboard",
-    "src": "https://cdn.dribbble.com/userupload/47148386/file/617375f4500288721b3742e0521d669c.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d066.jpg",
     "url": "https://dribbble.com/shots/27208682-Lumina-EdTech-Admin-Dashboard-Design",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1080,12 +1080,13 @@
       "light",
       "admin"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47148386/file/617375f4500288721b3742e0521d669c.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d067",
     "title": "Payment Flow UI — Luxury Car Checkout",
-    "src": "https://cdn.dribbble.com/userupload/47149246/file/381e3a77b3f1f628705052b57450b698.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d067.jpg",
     "url": "https://dribbble.com/shots/27208980-Payment-Flow-UI-Design-Luxury-Car-Checkout-Experience",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1098,12 +1099,13 @@
       "mobile",
       "fintech"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47149246/file/381e3a77b3f1f628705052b57450b698.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "es001",
     "title": "Empty State — Analytics Dashboard with Character",
-    "src": "https://cdn.dribbble.com/userupload/45018571/file/cf5d7c978edc01aa10097f196242b5cd.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/es001.jpg",
     "url": "https://dribbble.com/shots/26560005-Empty-state",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1116,12 +1118,13 @@
       "light",
       "no-data"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/45018571/file/cf5d7c978edc01aa10097f196242b5cd.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "es002",
     "title": "Rayna UI — Empty States Illustration System",
-    "src": "https://cdn.dribbble.com/userupload/9649828/file/original-394bd44f321380e14d8eb613aa8a2d66.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/es002.jpg",
     "url": "https://dribbble.com/shots/22404758-Rayna-UI-Empty-states-illustration",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1134,12 +1137,13 @@
       "figma",
       "light"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/9649828/file/original-394bd44f321380e14d8eb613aa8a2d66.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "es003",
     "title": "Empty State UI — Icon Set",
-    "src": "https://cdn.dribbble.com/userupload/45726735/file/745631252286b53ecaba33af0b5bba5a.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/es003.jpg",
     "url": "https://dribbble.com/shots/26779541-Empty-State-UI",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1151,12 +1155,13 @@
       "ui",
       "light"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/45726735/file/745631252286b53ecaba33af0b5bba5a.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "es004",
     "title": "Empty State UI Design for Kids Task App",
-    "src": "https://cdn.dribbble.com/userupload/43642750/file/original-e5207644709e42201ecf72ccc54284e9.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/es004.jpg",
     "url": "https://dribbble.com/shots/26129393-Empty-State-UI-Design-for-Kids-Task-App",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1169,12 +1174,13 @@
       "mobile",
       "playful"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/43642750/file/original-e5207644709e42201ecf72ccc54284e9.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "es005",
     "title": "Empty State UI — Mobile App",
-    "src": "https://cdn.dribbble.com/userupload/46732981/file/252cee0f2221302474c7fe6bcc0bbff6.png?crop=384x0-3814x2573&format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/es005.jpg",
     "url": "https://dribbble.com/shots/27085641-empty-state-ui",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1187,12 +1193,13 @@
       "light",
       "minimal"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/46732981/file/252cee0f2221302474c7fe6bcc0bbff6.png?crop=384x0-3814x2573&format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "es006",
     "title": "Empty State UI — Dashboard Components",
-    "src": "https://cdn.dribbble.com/userupload/46602211/file/8417859ce962a0949850ad0fc1d6c1e2.jpg?crop=558x418-2643x1983&format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/es006.jpg",
     "url": "https://dribbble.com/shots/27047022-Empty-State-UI-Dashboard-Components",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1205,12 +1212,13 @@
       "no-data",
       "light"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/46602211/file/8417859ce962a0949850ad0fc1d6c1e2.jpg?crop=558x418-2643x1983&format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "es007",
     "title": "APP Empty State UI Design — Illustration Set",
-    "src": "https://cdn.dribbble.com/userupload/45963935/file/8a7311a0b95359ff188e26837ca39bf4.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/es007.jpg",
     "url": "https://dribbble.com/shots/26853348-APP-Empty-State-UI-Design",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1223,12 +1231,13 @@
       "friendly",
       "colorful"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/45963935/file/8a7311a0b95359ff188e26837ca39bf4.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "es008",
     "title": "Mobile App Modal UI System — Status & Feedback",
-    "src": "https://cdn.dribbble.com/userupload/46099164/file/d08aa428446b1434dcd428e1be1ce4a9.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/es008.jpg",
     "url": "https://dribbble.com/shots/26895871-Mobile-App-Modal-UI-System",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1241,12 +1250,13 @@
       "light",
       "feedback"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/46099164/file/d08aa428446b1434dcd428e1be1ce4a9.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "es009",
     "title": "Analytics Dashboard Empty State — Character Illustration",
-    "src": "https://cdn.dribbble.com/userupload/27378540/file/original-5ff70fbcfb422e3787ebabd594547314.jpg?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/es009.jpg",
     "url": "https://dribbble.com/shots/11604428-Analytics-dashboard-Empty-sate",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1259,12 +1269,13 @@
       "blue",
       "dashboard"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/27378540/file/original-5ff70fbcfb422e3787ebabd594547314.jpg?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "es010",
     "title": "Data Visualization Empty State Illustrations",
-    "src": "https://cdn.dribbble.com/userupload/44505283/file/9a6c2f44acc2dc04820444f43329ffbe.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/es010.jpg",
     "url": "https://dribbble.com/shots/26401540-Data-Visualization-Empty-State-Illustrations",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1277,12 +1288,13 @@
       "light",
       "no-data"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/44505283/file/9a6c2f44acc2dc04820444f43329ffbe.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "es011",
     "title": "Empty State UI — Travel App Booking",
-    "src": "https://cdn.dribbble.com/userupload/44889478/file/e7458323dea3a546d0c30c6b825d404a.jpg?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/es011.jpg",
     "url": "https://dribbble.com/shots/26519405--Empty-State-UI-Design-for-Travel-App-Booking",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1295,12 +1307,13 @@
       "light",
       "illustration"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/44889478/file/e7458323dea3a546d0c30c6b825d404a.jpg?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "es012",
     "title": "No Data to Display — 3D Illustration (缺省页)",
-    "src": "https://cdn.dribbble.com/userupload/36016321/file/original-31dfa7089bfddb34343154f7dd882e44.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/es012.jpg",
     "url": "https://dribbble.com/shots/17751098-No-data-to-display",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1313,12 +1326,13 @@
       "缺省页",
       "cute"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/36016321/file/original-31dfa7089bfddb34343154f7dd882e44.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "es013",
     "title": "Empty State Icons — 404 & No Data Set",
-    "src": "https://cdn.dribbble.com/userupload/6923813/file/original-77fd338d568d49287945a3b05bcda72b.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/es013.jpg",
     "url": "https://dribbble.com/shots/21431408-Empty-State-Icons",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1331,12 +1345,13 @@
       "isometric",
       "set"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/6923813/file/original-77fd338d568d49287945a3b05bcda72b.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "es014",
     "title": "Creative Illustration App Design — Onboarding",
-    "src": "https://cdn.dribbble.com/userupload/47145795/file/still-52d9b8b6963ea44f84fec52e1760db39.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/es014.jpg",
     "url": "https://dribbble.com/shots/27208005-Creative-Illustration-App-Design",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1349,12 +1364,13 @@
       "mobile",
       "animation"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47145795/file/still-52d9b8b6963ea44f84fec52e1760db39.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "es015",
     "title": "Real Estate Mobile App — Empty States",
-    "src": "https://cdn.dribbble.com/userupload/47110539/file/0e3315122ac52c6150e5acd49c3cc9d8.jpg?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/es015.jpg",
     "url": "https://dribbble.com/shots/27197910-Real-Estate-Mobile-App-Design",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1367,12 +1383,13 @@
       "minimal",
       "app"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47110539/file/0e3315122ac52c6150e5acd49c3cc9d8.jpg?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "es016",
     "title": "Telemedicine App — No Data Screen",
-    "src": "https://cdn.dribbble.com/userupload/47120231/file/78966c34402089567b7a11b8b4e87ce0.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/es016.jpg",
     "url": "https://dribbble.com/shots/27200786-Telemedicine-Mobile-App-UI-Design",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1385,6 +1402,7 @@
       "no-data",
       "app"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47120231/file/78966c34402089567b7a11b8b4e87ce0.png?format=webp&resize=400x300&vertical=center"
   }
 ]
