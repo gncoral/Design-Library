@@ -598,9 +598,20 @@
   </div>
 </div>
 <script>
+function lbHdSrc(src){
+  // 去掉 Dribbble resize/crop/vertical 参数，拿原始高清图
+  try {
+    var u=new URL(src);
+    ['resize','crop','vertical','format'].forEach(function(k){u.searchParams.delete(k);});
+    return u.search?u.href:u.href.replace(/\?$/,'');
+  } catch(e){ return src; }
+}
 function lbOpen(src,title,pageUrl){
   var lb=document.getElementById('lb'),img=document.getElementById('lb-img'),t=document.getElementById('lb-title'),a=document.getElementById('lb-link');
-  img.src=src;img.onerror=null;
+  var hdSrc=lbHdSrc(src);
+  // 先加载高清，失败了回退缩略图
+  img.onerror=function(){img.src=src;img.onerror=null;};
+  img.src=hdSrc;
   t.textContent=title||'';
   a.href=pageUrl||'#';a.style.display=(pageUrl&&pageUrl!=='#')?'inline':'none';
   lb.classList.add('on');document.body.style.overflow='hidden';
