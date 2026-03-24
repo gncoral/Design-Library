@@ -2,7 +2,7 @@
   {
     "id": "d001",
     "title": "Iconography brand identity",
-    "src": "https://cdn.dribbble.com/userupload/47078168/file/7f408fd58d8a88cd2473b86bb6cc00ab.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d001.jpg",
     "url": "https://dribbble.com/shots/27188303-Iconography",
     "author": "Sava Stoic",
     "platform": "dribbble",
@@ -14,12 +14,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "branding"
+    "category": "branding",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47078168/file/7f408fd58d8a88cd2473b86bb6cc00ab.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d002",
     "title": "Rybbit abstract logo brand identity",
-    "src": "https://cdn.dribbble.com/userupload/47088474/file/0c222f35d78b4f2044598cc0f913b123.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d002.jpg",
     "url": "https://dribbble.com/shots/27191531-Rybbit",
     "author": "Daniel Bodea / Kreatank",
     "platform": "dribbble",
@@ -31,12 +32,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "branding"
+    "category": "branding",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47088474/file/0c222f35d78b4f2044598cc0f913b123.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d003",
     "title": "HTBESE Logo & Book Cover",
-    "src": "https://cdn.dribbble.com/userupload/47087910/file/1df269ea8a695514d2cd0e5237f5ccc2.jpg?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d003.jpg",
     "url": "https://dribbble.com/shots/27191338-HTBESE-Logo-Book-Cover",
     "author": "Type08",
     "platform": "dribbble",
@@ -48,12 +50,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "branding"
+    "category": "branding",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47087910/file/1df269ea8a695514d2cd0e5237f5ccc2.jpg?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d004",
     "title": "California Design Labs — Logo",
-    "src": "https://cdn.dribbble.com/userupload/47081113/file/29bd072094636b8bed9d2599e8cb2434.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d004.jpg",
     "url": "https://dribbble.com/shots/27189138-California-Design-Labs-Logo-Design",
     "author": "Lepisov Branding",
     "platform": "dribbble",
@@ -65,12 +68,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "branding"
+    "category": "branding",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47081113/file/29bd072094636b8bed9d2599e8cb2434.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d005",
     "title": "Ruimte - Logo Design",
-    "src": "https://cdn.dribbble.com/userupload/47088934/file/bd64375180a896aa7ac5a77ad517dba2.webp?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d005.jpg",
     "url": "https://dribbble.com/shots/27191645-Ruimte-Logo-Design",
     "author": "Jeroen van Eerden",
     "platform": "dribbble",
@@ -82,12 +86,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "branding"
+    "category": "branding",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47088934/file/bd64375180a896aa7ac5a77ad517dba2.webp?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d006",
     "title": "caseclash branding",
-    "src": "https://cdn.dribbble.com/userupload/47084473/file/c6715861b8f63be30dbd76600c5dab81.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d006.jpg",
     "url": "https://dribbble.com/shots/27190234-caseclash",
     "author": "Deividas Bielskis",
     "platform": "dribbble",
@@ -99,12 +104,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "branding"
+    "category": "branding",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47084473/file/c6715861b8f63be30dbd76600c5dab81.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d007",
     "title": "Previ Wordmark Logo",
-    "src": "https://cdn.dribbble.com/userupload/47068174/file/2233d459ba2d92233ee7b6a5fc51cb75.jpg?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d007.jpg",
     "url": "https://dribbble.com/shots/27185355-Previ-Wordmark-Logo",
     "author": "",
     "platform": "dribbble",
@@ -116,12 +122,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "ui"
+    "category": "ui",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47068174/file/2233d459ba2d92233ee7b6a5fc51cb75.jpg?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d008",
     "title": "Magnet rebrand branding design",
-    "src": "https://cdn.dribbble.com/userupload/47035621/file/b690c91a4299d00ea5a2b0ea60d44fad.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d008.jpg",
     "url": "https://dribbble.com/shots/27175677-Magnet-rebrand",
     "author": "",
     "platform": "dribbble",
@@ -133,12 +140,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "branding"
+    "category": "branding",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47035621/file/b690c91a4299d00ea5a2b0ea60d44fad.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d009",
     "title": "Neeov abstract AI logo",
-    "src": "https://cdn.dribbble.com/userupload/47099252/file/bc81fa50037ea6048505ec7cbf2dcede.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d009.jpg",
     "url": "https://dribbble.com/shots/27194607-Neeov",
     "author": "",
     "platform": "dribbble",
@@ -150,12 +158,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "branding"
+    "category": "branding",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47099252/file/bc81fa50037ea6048505ec7cbf2dcede.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d010",
     "title": "Crypto Portfolio Dashboard UI",
-    "src": "https://cdn.dribbble.com/userupload/47058012/file/e76dd806b3d88a6bd84703139055d4a3.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d010.jpg",
     "url": "https://dribbble.com/shots/27182585-Crypto-Portfolio-Dashboard-Web-App-UI",
     "author": "",
     "platform": "dribbble",
@@ -167,12 +176,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "ui"
+    "category": "ui",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47058012/file/e76dd806b3d88a6bd84703139055d4a3.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d011",
     "title": "CFX landing page",
-    "src": "https://cdn.dribbble.com/userupload/46813763/file/still-8d1c0416f6ff94ce453a421059d0e6ee.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d011.jpg",
     "url": "https://dribbble.com/shots/27109511-CFX-landing-page",
     "author": "",
     "platform": "dribbble",
@@ -184,12 +194,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "ui"
+    "category": "ui",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/46813763/file/still-8d1c0416f6ff94ce453a421059d0e6ee.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d012",
     "title": "Smart Ring Health Tracking App",
-    "src": "https://cdn.dribbble.com/userupload/47046970/file/ad8f2af3d408930437f9b04fc57d4075.jpg?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d012.jpg",
     "url": "https://dribbble.com/shots/27179211-Smart-Ring-Health-Tracking-App-Design",
     "author": "",
     "platform": "dribbble",
@@ -201,12 +212,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "ui"
+    "category": "ui",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47046970/file/ad8f2af3d408930437f9b04fc57d4075.jpg?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d013",
     "title": "From Archive Pt.19 brand",
-    "src": "https://cdn.dribbble.com/userupload/47086854/file/785684c71e72127e9abe1e11775dc48d.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d013.jpg",
     "url": "https://dribbble.com/shots/27190977--From-Archive-Pt-19",
     "author": "",
     "platform": "dribbble",
@@ -218,12 +230,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "branding"
+    "category": "branding",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47086854/file/785684c71e72127e9abe1e11775dc48d.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d014",
     "title": "DealMover Brand Identity & Logo",
-    "src": "https://cdn.dribbble.com/userupload/47088033/file/9932aec0da3e4a64b24c2dc9887614f0.jpg?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d014.jpg",
     "url": "https://dribbble.com/shots/27191388-DealMover-Brand-Identity-Logo-Design",
     "author": "",
     "platform": "dribbble",
@@ -235,12 +248,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "branding"
+    "category": "branding",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47088033/file/9932aec0da3e4a64b24c2dc9887614f0.jpg?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d015",
     "title": "Altiture adventure camping logo",
-    "src": "https://cdn.dribbble.com/userupload/47088266/file/71c58fb40411899e15eec50a0a287469.jpg?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d015.jpg",
     "url": "https://dribbble.com/shots/27191464-Altiture",
     "author": "",
     "platform": "dribbble",
@@ -252,12 +266,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "branding"
+    "category": "branding",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47088266/file/71c58fb40411899e15eec50a0a287469.jpg?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d016",
     "title": "Nova Post App Home Screen",
-    "src": "https://cdn.dribbble.com/userupload/47077939/file/c31976101d93d5c63b144396b04c9990.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d016.jpg",
     "url": "https://dribbble.com/shots/27188252-Nova-Post-App-Home-Screen-Design",
     "author": "",
     "platform": "dribbble",
@@ -269,12 +284,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "ui"
+    "category": "ui",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47077939/file/c31976101d93d5c63b144396b04c9990.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d017",
     "title": "Molecule brand identity",
-    "src": "https://cdn.dribbble.com/userupload/47091246/file/fd96e896284b711d182bbc7b34b113a4.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d017.jpg",
     "url": "https://dribbble.com/shots/27192264-Molecule",
     "author": "",
     "platform": "dribbble",
@@ -286,12 +302,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "ui"
+    "category": "ui",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47091246/file/fd96e896284b711d182bbc7b34b113a4.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d018",
     "title": "S-Orbits Logo & 3D Animation",
-    "src": "https://cdn.dribbble.com/userupload/47100817/file/still-2e71bb285b1f0679d930ad14695a4058.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d018.jpg",
     "url": "https://dribbble.com/shots/27195124-S-Orbits-Logo-3D-Animation",
     "author": "",
     "platform": "dribbble",
@@ -303,12 +320,13 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "branding"
+    "category": "branding",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47100817/file/still-2e71bb285b1f0679d930ad14695a4058.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d019",
     "title": "Supplements E-commerce Mobile App",
-    "src": "https://cdn.dribbble.com/userupload/47104208/file/429e72be3fe34793a8ced33bf500930a.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d019.jpg",
     "url": "https://dribbble.com/shots/27196019-Supplements-E-commerce-Mobile-App",
     "author": "",
     "platform": "dribbble",
@@ -320,7 +338,8 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "ui"
+    "category": "ui",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47104208/file/429e72be3fe34793a8ced33bf500930a.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d020",
@@ -888,7 +907,7 @@
   {
     "id": "d056",
     "title": "IOTA NAMES — Blockchain Brand Identity",
-    "src": "https://cdn.dribbble.com/userupload/47147194/file/6fde5f629da20fdc27a789709ace1799.jpg?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d056.jpg",
     "url": "https://dribbble.com/shots/27208346-IOTA-NAMES-logo-and-visual-identity",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -901,7 +920,8 @@
       "identity",
       "dark"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47147194/file/6fde5f629da20fdc27a789709ace1799.jpg?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d057",
@@ -925,7 +945,7 @@
   {
     "id": "d058",
     "title": "Oterion — Abstract Tech Logo",
-    "src": "https://cdn.dribbble.com/userupload/47144800/file/26c8761a6a75b2d864888cea6e442d37.jpg?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d058.jpg",
     "url": "https://dribbble.com/shots/27207795-Oterion",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -937,12 +957,13 @@
       "geometric",
       "identity"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47144800/file/26c8761a6a75b2d864888cea6e442d37.jpg?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d059",
     "title": "Logofolio Update 2026 v2 — Tech Brand Logos",
-    "src": "https://cdn.dribbble.com/userupload/47143192/file/e58745a6f7bfc94a8058190690ab2804.webp?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d059.jpg",
     "url": "https://dribbble.com/shots/27207381-Logofolio-Update-2026-v2",
     "author": "Jeroen van Eerden",
     "platform": "dribbble",
@@ -955,12 +976,13 @@
       "visual-identity",
       "2026"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47143192/file/e58745a6f7bfc94a8058190690ab2804.webp?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d060",
     "title": "Show — Music Brand Logotype",
-    "src": "https://cdn.dribbble.com/userupload/47144370/file/17f09996b9b746f2e10d71a6b557cfab.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d060.jpg",
     "url": "https://dribbble.com/shots/27207680-Show",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -973,12 +995,13 @@
       "identity",
       "events"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47144370/file/17f09996b9b746f2e10d71a6b557cfab.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d061",
     "title": "Quantal — Blockchain Tech Brand Identity",
-    "src": "https://cdn.dribbble.com/userupload/47142970/file/16e1c43a2b7ada614b071da2fce36c6d.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d061.jpg",
     "url": "https://dribbble.com/shots/27207334-Quantal",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -991,12 +1014,13 @@
       "startup",
       "geometric"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47142970/file/16e1c43a2b7ada614b071da2fce36c6d.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d062",
     "title": "Revvi — AI Sales Brand Identity",
-    "src": "https://cdn.dribbble.com/userupload/46190313/file/57e6267ebc72ef223286242d2191e4dd.jpg?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d062.jpg",
     "url": "https://dribbble.com/shots/26924663-Revvi-Brand-Identity-Design",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1009,12 +1033,13 @@
       "logo",
       "tech"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/46190313/file/57e6267ebc72ef223286242d2191e4dd.jpg?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d063",
     "title": "SpaceX App — Space Mission Control Dashboard",
-    "src": "https://cdn.dribbble.com/userupload/47150500/file/3de523168694f28264374060bed38e0c.png?crop=0x0-3200x2400&format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d063.jpg",
     "url": "https://dribbble.com/shots/27209445-SpaceX-App-Space-Mission-Control-Dashboard",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1027,12 +1052,13 @@
       "ui",
       "app"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47150500/file/3de523168694f28264374060bed38e0c.png?crop=0x0-3200x2400&format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d064",
     "title": "Finance Mobile iOS App — AI Assistant Dashboard",
-    "src": "https://cdn.dribbble.com/userupload/47148996/file/still-f4ed8d35fa8501b6e46e52fddd890022.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d064.jpg",
     "url": "https://dribbble.com/shots/27208875-Finance-Mobile-iOS-App-Design",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1046,12 +1072,13 @@
       "dashboard",
       "ios"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47148996/file/still-f4ed8d35fa8501b6e46e52fddd890022.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d065",
     "title": "Team Analytics App — SaaS Dashboard UI",
-    "src": "https://cdn.dribbble.com/userupload/47140845/file/82c277339caa90832547c86eae87a139.jpg?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d065.jpg",
     "url": "https://dribbble.com/shots/27206717-Team-Analytics-App-SaaS-Dashboard-UI",
     "author": "Dribbble",
     "platform": "dribbble",
@@ -1064,7 +1091,8 @@
       "light",
       "mobile"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47140845/file/82c277339caa90832547c86eae87a139.jpg?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d066",
