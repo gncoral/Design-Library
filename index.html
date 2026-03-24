@@ -273,8 +273,8 @@
   <div class="category-chips" id="category-chips">
     <button class="chip active" data-cat="all" onclick="setCategoryFilter('all')">全部</button>
     <button class="chip" data-cat="branding" onclick="setCategoryFilter('branding')">🎨 品牌</button>
-    <button class="chip" data-cat="ui" onclick="setCategoryFilter('ui')">📱 UI</button>
-    <button class="chip" data-cat="empty-state" onclick="setCategoryFilter('empty-state')">🕳️ 空状态</button>
+    <button class="chip" data-cat="ui" onclick="setCategoryFilter('ui')">📱 UI & 空状态</button>
+    
   </div>
   <div class="grid" id="grid"></div>
     <div class="empty" id="empty"><h3>Nothing here</h3><p>Try a different filter</p></div>
@@ -353,7 +353,6 @@
       if (currentCategoryFilter !== 'all' && img.category !== currentCategoryFilter) return false;
       if (currentFilter === 'all') return true;
       if (currentFilter.startsWith('tag:')) return (img.tags || []).some(t => t.toLowerCase().includes(currentFilter.slice(4)));
-      if (currentFilter.startsWith('cat:')) return img.category === currentFilter.slice(4);
       return img.platform === currentFilter;
     });
 
@@ -527,7 +526,7 @@
     document.getElementById('tab-trends-count').textContent = allTrends.length + allDigitaling.length;
   }
 
-  // ── Tabs ──────────────────────────────────────────────────
+  // ── Tabs ─────────────────────────────────��────────────────
   function switchTab(tab) {
     currentTab = tab;
     document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
@@ -550,7 +549,7 @@
     renderGallery();
   });
 
-  // ── Share ─────────────────────────────────────────────────
+  // ── Share ───────────────────────────────────────��─────────
   function copyShareLink() {
     const url = location.href.split('?')[0] + '?share';
     navigator.clipboard.writeText(url).then(() => showToast('🔗 Share link copied!'));
