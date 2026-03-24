@@ -325,7 +325,7 @@
   {
     "id": "d020",
     "title": "W + Dog Logo Concept",
-    "src": "https://cdn.dribbble.com/userupload/47101062/file/3f0e3ac143fc0244ad6af55d8edca9af.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d020.jpg",
     "url": "https://dribbble.com/shots/27195188-W-Dog-Logo-Concept",
     "author": "",
     "platform": "dribbble",
@@ -337,7 +337,8 @@
     ],
     "source": "popular-week",
     "added": "2026-03-20",
-    "category": "branding"
+    "category": "branding",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47101062/file/3f0e3ac143fc0244ad6af55d8edca9af.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "b001",
@@ -905,7 +906,7 @@
   {
     "id": "d057",
     "title": "Logotype for OS of Dental Practice",
-    "src": "https://cdn.dribbble.com/userupload/47150181/file/5b0c443c5bb9f2be5d6aa0aa5aba8e0a.png?format=webp&resize=400x300&vertical=center",
+    "src": "assets/images/d057.jpg",
     "url": "https://dribbble.com/shots/27209330-Logotype-for-OS-of-Dental-Practice-3",
     "author": "Mihai Dolganiuc",
     "platform": "dribbble",
@@ -918,7 +919,8 @@
       "minimal",
       "identity"
     ],
-    "added": "2026-03-24"
+    "added": "2026-03-24",
+    "srcOriginal": "https://cdn.dribbble.com/userupload/47150181/file/5b0c443c5bb9f2be5d6aa0aa5aba8e0a.png?format=webp&resize=400x300&vertical=center"
   },
   {
     "id": "d058",
