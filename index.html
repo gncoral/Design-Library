@@ -228,6 +228,9 @@
     .chip:hover { border-color: var(--accent); color: var(--text); }
     .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
   
+  /* ── Zoom btn ── */
+  .btn-zoom { font-size:16px; line-height:1; padding:5px 7px; background:rgba(0,0,0,.55); border-radius:6px; }
+  .btn-zoom:hover { background:rgba(255,255,255,.15); transform:scale(1.1); }
   /* ── Lightbox ── */
   #lb{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;flex-direction:column;gap:14px;}
   #lb.on{display:flex;}
@@ -387,10 +390,11 @@
     div.innerHTML = `
       <div class="liked-badge">♥</div>
       <div style="position:relative;overflow:hidden">
-        <img src="${esc(img.src)}" alt="${esc(img.title)}" loading="lazy"
+        <img src="${esc(img.src)}" alt="${esc(img.title)}" loading="lazy" style="cursor:zoom-in" onclick="event.stopPropagation();lbOpen(this.src,this.alt,'');"
           onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 120%22><rect fill=%22%23222%22 width=%22200%22 height=%22120%22/><text fill=%22%23444%22 x=%22100%22 y=%2265%22 text-anchor=%22middle%22 font-size=%2212%22>unavailable</text></svg>'">
         <div class="card-overlay">
           <div class="card-actions">
+            <button class="action-btn btn-zoom" title="放大查看" onclick="event.stopPropagation();var i=this.closest('[data-id]').querySelector('img');lbOpen(i.src,i.alt,'');">&#128269;</button>
             ${!isShareMode ? `
             <button class="action-btn btn-like ${liked?'active':''}" onclick="toggleLike(event,'${img.id}')" title="Save">♥</button>
             <button class="action-btn btn-dislike" onclick="doDislike(event,'${img.id}')" title="Not for me">✕</button>
