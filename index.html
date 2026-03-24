@@ -226,6 +226,17 @@
     }
     .chip:hover { border-color: var(--accent); color: var(--text); }
     .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  
+  /* ── Lightbox ── */
+  #lb{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;flex-direction:column;gap:14px;}
+  #lb.on{display:flex;}
+  #lb-img{max-width:90vw;max-height:82vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.6);cursor:zoom-out;}
+  #lb-footer{display:flex;gap:12px;align-items:center;}
+  #lb-title{color:rgba(255,255,255,.8);font-size:13px;max-width:400px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  #lb-link{color:#aaa;font-size:12px;text-decoration:none;border:1px solid #444;padding:4px 10px;border-radius:4px;white-space:nowrap;transition:border-color .2s;}
+  #lb-link:hover{border-color:#888;color:#fff;}
+  #lb-x{position:fixed;top:20px;right:24px;color:#fff;font-size:28px;cursor:pointer;line-height:1;opacity:.7;transition:opacity .2s;}
+  #lb-x:hover{opacity:1;}
   </style>
 </head>
 <body>
@@ -429,7 +440,8 @@
           <span>·</span>
           <span>${w.date}</span>
         </div>`;
-      grid.appendChild(card);
+      var ci=card.querySelector('.card-img');if(ci){ci.style.cursor='zoom-in';ci.addEventListener('click',function(ev){ev.stopPropagation();lbOpen(img.src,img.title,img.url||'');});}
+    grid.appendChild(card);
     });
 
     // Render daily entries (most recent first)
@@ -569,6 +581,27 @@
   }
 
   init();
+</script>
+
+<!-- Lightbox -->
+<div id="lb" onclick="lbClose(event)">
+  <span id="lb-x" onclick="lbClose()">✕</span>
+  <img id="lb-img" src="" alt=""/>
+  <div id="lb-footer">
+    <span id="lb-title"></span>
+    <a id="lb-link" href="#" target="_blank" rel="noopener">🔗 查看原页面</a>
+  </div>
+</div>
+<script>
+function lbOpen(src,title,pageUrl){
+  var lb=document.getElementById('lb'),img=document.getElementById('lb-img'),t=document.getElementById('lb-title'),a=document.getElementById('lb-link');
+  img.src=src;img.onerror=null;
+  t.textContent=title||'';
+  a.href=pageUrl||'#';a.style.display=(pageUrl&&pageUrl!=='#')?'inline':'none';
+  lb.classList.add('on');document.body.style.overflow='hidden';
+}
+function lbClose(e){if(e&&e.target===document.getElementById('lb-img'))return;document.getElementById('lb').classList.remove('on');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')lbClose();});
 </script>
 </body>
 </html>
