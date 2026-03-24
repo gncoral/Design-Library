@@ -206,6 +206,26 @@
 
     /* share mode */
     body.share-mode .btn-like, body.share-mode .btn-dislike { display: none; }
+  
+    /* Category chips */
+    .category-chips {
+      display: flex;
+      gap: 8px;
+      padding: 12px 16px 4px;
+      flex-wrap: wrap;
+    }
+    .chip {
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--muted);
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .chip:hover { border-color: var(--accent); color: var(--text); }
+    .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
   </style>
 </head>
 <body>
@@ -248,7 +268,15 @@
 <!-- GALLERY PANEL -->
 <div class="panel active" id="panel-gallery">
   <main>
-    <div class="grid" id="grid"></div>
+    
+  <!-- Category filter chips -->
+  <div class="category-chips" id="category-chips">
+    <button class="chip active" data-cat="all" onclick="setCategoryFilter('all')">全部</button>
+    <button class="chip" data-cat="branding" onclick="setCategoryFilter('branding')">🎨 品牌</button>
+    <button class="chip" data-cat="ui" onclick="setCategoryFilter('ui')">📱 UI</button>
+    <button class="chip" data-cat="empty-state" onclick="setCategoryFilter('empty-state')">🕳️ 空状态</button>
+  </div>
+  <div class="grid" id="grid"></div>
     <div class="empty" id="empty"><h3>Nothing here</h3><p>Try a different filter</p></div>
   </main>
 </div>
@@ -285,10 +313,10 @@
   if (isShareMode) document.body.classList.add('share-mode');
 
   let allImages = [], allTrends = [], allDigitaling = [];
-  let currentFilter = 'all', currentTab = 'gallery';
+  let currentFilter = 'all', currentCategoryFilter = 'all', currentTab = 'gallery';
   const prefs = JSON.parse(localStorage.getItem('dl_prefs') || '{"liked":[],"disliked":[]}');
 
-  // ── Load ──────────────────────────────────────────────────
+  // ── Load ─���────────────────────────────────────────────────
   async function init() {
     const [imgRes, trendRes, dgRes] = await Promise.all([
       fetch('data/images.json?t=' + Date.now()).then(r => r.json()),
@@ -305,6 +333,13 @@
   }
 
   // ── Gallery ───────────────────────────────────────────────
+  
+  function setCategoryFilter(cat) {
+    currentCategoryFilter = cat;
+    document.querySelectorAll('.chip').forEach(c => c.classList.toggle('active', c.dataset.cat === cat));
+    renderGallery();
+  }
+
   function renderGallery(target = 'gallery') {
     const gridId = target === 'gallery' ? 'grid' : 'grid-liked';
     const emptyId = target === 'gallery' ? 'empty' : 'empty-liked';
@@ -315,8 +350,10 @@
     let items = allImages.filter(img => {
       if (prefs.disliked.includes(img.id)) return false;
       if (target === 'liked') return prefs.liked.includes(img.id);
+      if (currentCategoryFilter !== 'all' && img.category !== currentCategoryFilter) return false;
       if (currentFilter === 'all') return true;
       if (currentFilter.startsWith('tag:')) return (img.tags || []).some(t => t.toLowerCase().includes(currentFilter.slice(4)));
+      if (currentFilter.startsWith('cat:')) return img.category === currentFilter.slice(4);
       return img.platform === currentFilter;
     });
 
