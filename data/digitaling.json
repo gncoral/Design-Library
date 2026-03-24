@@ -17,8 +17,58 @@
       "品牌要有「甲方视角陷阱」的自觉，危机中最忌自说自话"
     ],
     "brandContext": "通用品牌管理方法论，结合黄天鹅315事件等近期案例拆解",
-    "tags": ["舆情管理", "品牌危机", "PR策略", "品牌运营"],
-    "heat": { "likes": 64, "saves": 87, "comments": 4 },
+    "tags": [
+      "舆情管理",
+      "品牌危机",
+      "PR策略",
+      "品牌运营"
+    ],
+    "heat": {
+      "likes": 64,
+      "saves": 87,
+      "comments": 4
+    },
+    "weekIndex": 1
+  },
+  {
+    "id": "rb-2026-03-24",
+    "date": "2026-03-24",
+    "type": "daily",
+    "source": "rebrand",
+    "sourceName": "Rebrand Gallery",
+    "sourceUrl": "https://www.rebrand.gallery/",
+    "title": "Warp 品牌重塑：科技公司如何用视觉语言定义下一章",
+    "url": "https://www.rebrand.gallery/rebrand/warp",
+    "caseStudyUrl": "https://www.warp.co/blog/the-next-chapter",
+    "companyUrl": "https://warp.co",
+    "summary": "Warp 是一款面向开发者的 AI 终端工具，本次品牌重塑由内部团队主导。新视觉系统以 Texture（材质感）、Photography（摄影）和 Pattern（图案）为核心风格语言，搭配 Sans Serif + Monospace 双字体系统，精准传递「专业工具感 × 现代科技美学」。重塑视频发布于 2026 年 3 月，上线即获 200+ 次观看。",
+    "keyInsights": [
+      "行业：Software — 科技工具类品牌重塑的典型路径",
+      "设计由 In-house 团队主导，保证品牌基因的连贯性",
+      "视觉风格融合材质感 + 摄影 + 图案，打破纯数字工具的「冷感」",
+      "Monospace 字体的保留是对开发者身份认同的刻意呼应"
+    ],
+    "tags": [
+      "品牌重塑",
+      "VI设计",
+      "科技品牌",
+      "In-house设计",
+      "字体设计"
+    ],
+    "heat": {
+      "views": 217
+    },
+    "industry": "Software",
+    "designBy": "In-house",
+    "visualStyles": [
+      "Texture",
+      "Photography",
+      "Pattern"
+    ],
+    "typography": [
+      "Sans Serif",
+      "Monospace"
+    ],
     "weekIndex": 1
   }
 ]
