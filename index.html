@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="referrer" content="no-referrer">
+  <meta name="referrer" content="no-referrer-when-downgrade">
   <title>Design Library 🪸</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -390,7 +390,7 @@
     div.innerHTML = `
       <div class="liked-badge">♥</div>
       <div style="position:relative;overflow:hidden">
-        <img src="${esc(img.src)}" alt="${esc(img.title)}" loading="lazy" style="cursor:zoom-in" onclick="event.stopPropagation();lbOpen(this.src,this.alt,'');"
+        <img src="${esc(img.src)}" alt="${esc(img.title)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="cursor:zoom-in" onclick="event.stopPropagation();lbOpen(this.src,this.alt,'');"
           onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 120%22><rect fill=%22%23222%22 width=%22200%22 height=%22120%22/><text fill=%22%23444%22 x=%22100%22 y=%2265%22 text-anchor=%22middle%22 font-size=%2212%22>unavailable</text></svg>'">
         <div class="card-overlay">
           <div class="card-actions">
@@ -621,3 +621,4 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')lbClose();})
 </script>
 </body>
 </html>
+
