@@ -189,5 +189,102 @@
       "Monospace"
     ],
     "weekIndex": 13
+  },
+  {
+    "id": "dg-2026-03-28",
+    "date": "2026-03-28",
+    "type": "daily",
+    "source": "digitaling",
+    "sourceName": "数英",
+    "sourceUrl": "https://www.digitaling.com/",
+    "title": "安踏猛起来，谁不害怕？",
+    "url": "https://www.digitaling.com/articles/1478427.html",
+    "author": "半佛仙人",
+    "summary": "安踏以一种惊雷于无声处起的姿态完成了品牌势能跃迁。文章拆解其如何在耐克、阿迪等国际巨头包围中突围，完成从国内替代品到真正竞争者的身份转变。安踏的胜利不是偶然激进，而是长期积累的厚积薄发。",
+    "keyInsights": [
+      "安踏崛起路径：收购+分品牌运营，每个品牌独立打，整体形成矩阵",
+      "品牌势能积累不靠口号，靠实打实的产品力和赛事赞助长期渗透",
+      "中国运动品牌进入可以被敬畏的新阶段，不再是以价格换市场",
+      "品牌战略的本质：先做好品，再谈声量"
+    ],
+    "brandContext": "国货运动品牌崛起背景下，安踏集团品牌战略分析",
+    "tags": [
+      "品牌崛起",
+      "运动品牌",
+      "国货",
+      "品牌战略",
+      "安踏"
+    ],
+    "heat": {
+      "likes": 2,
+      "saves": 6,
+      "comments": 1
+    },
+    "weekIndex": 13
+  },
+  {
+    "id": "dg-2026-03-29",
+    "date": "2026-03-29",
+    "type": "daily",
+    "source": "digitaling",
+    "sourceName": "数英",
+    "sourceUrl": "https://www.digitaling.com/",
+    "title": "MUJI，在张园见",
+    "url": "https://www.digitaling.com/articles/1478665.html",
+    "author": "RQ商业观察室",
+    "summary": "上海张园的MUJI旗舰店告别，以一场在张园见的活动完成体面收场。文章拆解MUJI如何用空间叙事延续品牌美学——离场不是失败，而是一次有温度的品牌仪式。告别不是终点，张园再续MUJI生活美学。",
+    "keyInsights": [
+      "MUJI用离场仪式而非沉默撤店，体现了对消费者情感的尊重",
+      "空间是品牌的第三张名片：产品、视觉、空间三位一体才是MUJI完整表达",
+      "生活美学品牌核心竞争力在于价值观输出，不只是卖货",
+      "告别活动本身就是品牌内容，反向制造了关注度和话题"
+    ],
+    "brandContext": "MUJI上海张园旗舰店闭店活动，生活美学品牌空间叙事",
+    "tags": [
+      "MUJI",
+      "空间品牌",
+      "生活美学",
+      "品牌仪式",
+      "上海"
+    ],
+    "heat": {
+      "likes": 8,
+      "saves": 4,
+      "comments": 3
+    },
+    "weekIndex": 13
+  },
+  {
+    "id": "dg-2026-03-30",
+    "date": "2026-03-30",
+    "type": "daily",
+    "source": "digitaling",
+    "sourceName": "数英",
+    "sourceUrl": "https://www.digitaling.com/",
+    "title": "棉花工人写文案，蕉内们对抗AI的第一枪",
+    "url": "https://www.digitaling.com/articles/1478630.html",
+    "author": "李倩说品牌",
+    "summary": "蕉内邀请棉花工人写品牌文案，这一波操作很反AI、很共创、很有活人感。探讨品牌如何在AI泛滥的内容环境里找到差异化——不是更快更便宜，而是更真实更有温度。人写的内容为何比AI更有感召力？因为它携带着真实的生命经验。",
+    "keyInsights": [
+      "品牌内容下一个战场：真实感vs完美感，蕉内选择了真实",
+      "邀请一线工人共创，本质是把生产者变成品牌代言人，完成身份转换",
+      "反AI不是排斥技术，而是强调：人的经历和情感是AI无法复制的差异化资产",
+      "共创内容策略：让消费者/生产者成为内容主体，品牌退后一步，声音反而更大"
+    ],
+    "brandContext": "蕉内品牌内容营销案例，AI时代下的真实感内容策略",
+    "tags": [
+      "蕉内",
+      "品牌内容",
+      "共创",
+      "反AI",
+      "文案策略",
+      "内容营销"
+    ],
+    "heat": {
+      "likes": 7,
+      "saves": 15,
+      "comments": 6
+    },
+    "weekIndex": 13
   }
 ]
