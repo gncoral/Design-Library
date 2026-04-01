@@ -399,7 +399,7 @@
             <button class="action-btn btn-like ${liked?'active':''}" onclick="toggleLike(event,'${img.id}')" title="Save">♥</button>
             <button class="action-btn btn-dislike" onclick="doDislike(event,'${img.id}')" title="Not for me">✕</button>
             ` : ''}
-            <a class="action-btn btn-open" href="${esc(img.url)}" target="_blank" onclick="event.stopPropagation()" title="Open">↗</a>
+            <a class="action-btn btn-open" href="${getBestUrl(img)}" target="_blank" onclick="event.stopPropagation()" title="Open">↗</a>
           </div>
           <div class="card-info">
             <div class="card-title">${esc(img.title)}</div>
@@ -528,6 +528,23 @@
     else { prefs.liked.push(id); showToast('❤️ Saved!'); }
     savePrefs(); renderGallery(currentTab === 'liked' ? 'liked' : 'gallery'); updateCounts();
   }
+  function getBestUrl(img) {
+    const GENERIC = ['https://dribbble.com/', 'https://www.behance.net/', 'https://www.pinterest.com/'];
+    if (img.url && !GENERIC.includes(img.url)) return img.url;
+    // 没有精准 URL，用 title 跳搜索结果页
+    const q = encodeURIComponent(img.title || '');
+    if (img.platform === 'dribbble' || (img.src && img.src.includes('dribbble'))) {
+      return `https://dribbble.com/search/shots?q=${q}`;
+    }
+    if (img.platform === 'behance' || (img.src && img.src.includes('behance'))) {
+      return `https://www.behance.net/search/projects?search=${q}`;
+    }
+    if (img.platform === 'pinterest' || (img.src && img.src.includes('pinimg'))) {
+      return `https://www.pinterest.com/search/pins/?q=${q}`;
+    }
+    return img.url || '#';
+  }
+
   function doDislike(e, id) {
     e.stopPropagation();
     if (!prefs.disliked.includes(id)) prefs.disliked.push(id);
