@@ -59,19 +59,20 @@
     "nu012",
     "nb030",
     "b019n",
-    "d092"
+    "d092",
+    "nu011"
   ],
   "tagCounts": {
-    "ui": 17,
+    "ui": 18,
     "finance": 1,
-    "mobile": 10,
+    "mobile": 11,
     "dark": 4,
     "fintech": 3,
     "dashboard": 8,
     "ios": 1,
     "saas": 5,
     "analytics": 3,
-    "light": 7,
+    "light": 8,
     "payment": 1,
     "checkout": 1,
     "empty-state": 6,
@@ -116,10 +117,11 @@
     "fitness": 1,
     "graphic": 1,
     "automotive": 1,
-    "ev": 1
+    "ev": 1,
+    "real-estate": 1
   },
   "categoryCounts": {
-    "ui": 23,
+    "ui": 24,
     "branding": 7,
     "ui-ux": 2
   }
