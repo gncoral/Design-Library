@@ -73,12 +73,13 @@
     "d117",
     "nu005",
     "nb020",
-    "nu010"
+    "nu010",
+    "d084"
   ],
   "tagCounts": {
     "ui": 22,
     "finance": 1,
-    "mobile": 16,
+    "mobile": 17,
     "dark": 5,
     "fintech": 3,
     "dashboard": 8,
@@ -91,7 +92,7 @@
     "empty-state": 8,
     "icon": 1,
     "illustration": 10,
-    "minimal": 5,
+    "minimal": 6,
     "component": 1,
     "no-data": 1,
     "modal": 1,
@@ -122,7 +123,7 @@
     "logistics": 1,
     "enterprise": 1,
     "banking": 1,
-    "ai": 2,
+    "ai": 3,
     "productivity": 1,
     "streaming": 1,
     "marketplace": 1,
@@ -133,7 +134,7 @@
     "ev": 1,
     "real-estate": 2,
     "trading": 1,
-    "wellness": 2,
+    "wellness": 3,
     "font": 2,
     "cosmetics": 1,
     "packaging": 3,
@@ -148,11 +149,13 @@
     "bright": 1,
     "sports": 1,
     "school": 1,
-    "social": 1
+    "social": 1,
+    "meditation": 1
   },
   "categoryCounts": {
     "ui": 30,
     "branding": 14,
-    "ui-ux": 2
+    "ui-ux": 2,
+    "mobile": 1
   }
 }
