@@ -68,25 +68,26 @@
     "d078",
     "nb015",
     "nb045",
-    "es014"
+    "es014",
+    "es015"
   ],
   "tagCounts": {
     "ui": 20,
     "finance": 1,
-    "mobile": 13,
+    "mobile": 14,
     "dark": 5,
     "fintech": 3,
     "dashboard": 8,
     "ios": 1,
     "saas": 5,
     "analytics": 3,
-    "light": 8,
+    "light": 9,
     "payment": 1,
     "checkout": 1,
-    "empty-state": 7,
+    "empty-state": 8,
     "icon": 1,
     "illustration": 10,
-    "minimal": 4,
+    "minimal": 5,
     "component": 1,
     "no-data": 1,
     "modal": 1,
@@ -126,7 +127,7 @@
     "graphic": 1,
     "automotive": 1,
     "ev": 1,
-    "real-estate": 1,
+    "real-estate": 2,
     "trading": 1,
     "wellness": 2,
     "font": 2,
@@ -137,10 +138,11 @@
     "bar": 1,
     "food": 1,
     "onboarding": 1,
-    "animation": 1
+    "animation": 1,
+    "app": 1
   },
   "categoryCounts": {
-    "ui": 27,
+    "ui": 28,
     "branding": 12,
     "ui-ux": 2
   }
