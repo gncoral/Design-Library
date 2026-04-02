@@ -66,7 +66,8 @@
     "nb048",
     "nb016",
     "d078",
-    "nb015"
+    "nb015",
+    "nb045"
   ],
   "tagCounts": {
     "ui": 20,
@@ -96,10 +97,10 @@
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
-    "branding": 8,
+    "branding": 9,
     "photography": 1,
     "colorful": 2,
-    "logo": 1,
+    "logo": 2,
     "tech": 2,
     "identity": 2,
     "system": 1,
@@ -127,16 +128,17 @@
     "real-estate": 1,
     "trading": 1,
     "wellness": 2,
-    "font": 1,
+    "font": 2,
     "cosmetics": 1,
     "packaging": 3,
     "feminine": 1,
     "mascot": 1,
-    "bar": 1
+    "bar": 1,
+    "food": 1
   },
   "categoryCounts": {
     "ui": 26,
-    "branding": 11,
+    "branding": 12,
     "ui-ux": 2
   }
 }
