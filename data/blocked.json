@@ -41,10 +41,11 @@
     "nu016",
     "nb031",
     "nb001",
-    "nu025"
+    "nu025",
+    "d085"
   ],
   "tagCounts": {
-    "ui": 7,
+    "ui": 8,
     "finance": 1,
     "mobile": 8,
     "dark": 1,
@@ -78,10 +79,15 @@
     "tech": 1,
     "identity": 1,
     "system": 1,
-    "health": 1
+    "health": 1,
+    "crypto": 1,
+    "web3": 1,
+    "telegram": 1,
+    "gaming": 1
   },
   "categoryCounts": {
     "ui": 11,
-    "branding": 3
+    "branding": 3,
+    "ui-ux": 1
   }
 }
