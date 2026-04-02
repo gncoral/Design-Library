@@ -76,7 +76,8 @@
     "nu010",
     "d084",
     "d091",
-    "d128"
+    "d128",
+    "d096"
   ],
   "tagCounts": {
     "ui": 23,
@@ -94,7 +95,7 @@
     "empty-state": 8,
     "icon": 1,
     "illustration": 10,
-    "minimal": 6,
+    "minimal": 7,
     "component": 1,
     "no-data": 1,
     "modal": 1,
@@ -106,7 +107,7 @@
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
-    "branding": 10,
+    "branding": 11,
     "photography": 1,
     "colorful": 3,
     "logo": 2,
@@ -134,7 +135,7 @@
     "graphic": 1,
     "automotive": 1,
     "ev": 1,
-    "real-estate": 2,
+    "real-estate": 3,
     "trading": 1,
     "wellness": 3,
     "font": 2,
@@ -152,11 +153,13 @@
     "sports": 1,
     "school": 1,
     "social": 1,
-    "meditation": 1
+    "meditation": 1,
+    "construction": 1,
+    "platform": 1
   },
   "categoryCounts": {
     "ui": 31,
-    "branding": 15,
+    "branding": 16,
     "ui-ux": 2,
     "mobile": 1
   }
