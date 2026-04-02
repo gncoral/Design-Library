@@ -45,7 +45,8 @@
     "d085",
     "nu030",
     "nu032",
-    "d109"
+    "d109",
+    "d110"
   ],
   "tagCounts": {
     "ui": 10,
@@ -93,7 +94,7 @@
     "startup": 1
   },
   "categoryCounts": {
-    "ui": 13,
+    "ui": 14,
     "branding": 4,
     "ui-ux": 1
   }
