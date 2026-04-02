@@ -82,7 +82,8 @@
     "nb038",
     "d072",
     "d119",
-    "d120"
+    "d120",
+    "nb013"
   ],
   "tagCounts": {
     "ui": 24,
@@ -112,7 +113,7 @@
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
-    "branding": 13,
+    "branding": 14,
     "photography": 1,
     "colorful": 4,
     "logo": 3,
@@ -125,9 +126,9 @@
     "telegram": 1,
     "gaming": 1,
     "energy": 1,
-    "green": 1,
+    "green": 2,
     "web": 2,
-    "startup": 2,
+    "startup": 3,
     "logistics": 1,
     "enterprise": 1,
     "banking": 1,
@@ -162,11 +163,12 @@
     "construction": 1,
     "platform": 1,
     "logomark": 1,
-    "creative": 1
+    "creative": 1,
+    "interior": 1
   },
   "categoryCounts": {
     "ui": 32,
-    "branding": 20,
+    "branding": 21,
     "ui-ux": 2,
     "mobile": 1
   }
