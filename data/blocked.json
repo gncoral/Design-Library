@@ -104,12 +104,13 @@
     "nb009",
     "nu043",
     "nb010",
-    "nb025"
+    "nb025",
+    "d100"
   ],
   "tagCounts": {
-    "ui": 31,
+    "ui": 32,
     "finance": 1,
-    "mobile": 21,
+    "mobile": 22,
     "dark": 8,
     "fintech": 3,
     "dashboard": 9,
@@ -153,7 +154,7 @@
     "logistics": 2,
     "enterprise": 1,
     "banking": 1,
-    "ai": 3,
+    "ai": 4,
     "productivity": 1,
     "streaming": 1,
     "marketplace": 1,
@@ -173,7 +174,7 @@
     "bar": 1,
     "food": 3,
     "onboarding": 1,
-    "animation": 2,
+    "animation": 3,
     "app": 5,
     "kids": 1,
     "bright": 1,
@@ -202,10 +203,11 @@
     "furniture": 1,
     "warm": 1,
     "baby": 1,
-    "soft": 1
+    "soft": 1,
+    "3d": 1
   },
   "categoryCounts": {
-    "ui": 39,
+    "ui": 40,
     "branding": 32,
     "ui-ux": 3,
     "mobile": 2,
