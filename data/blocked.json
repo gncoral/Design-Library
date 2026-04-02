@@ -102,7 +102,8 @@
     "d116",
     "d073",
     "nb009",
-    "nu043"
+    "nu043",
+    "nb010"
   ],
   "tagCounts": {
     "ui": 31,
@@ -132,7 +133,7 @@
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
-    "branding": 20,
+    "branding": 21,
     "photography": 1,
     "colorful": 5,
     "logo": 7,
@@ -165,7 +166,7 @@
     "wellness": 3,
     "font": 2,
     "cosmetics": 1,
-    "packaging": 3,
+    "packaging": 4,
     "feminine": 1,
     "mascot": 3,
     "bar": 1,
@@ -198,11 +199,13 @@
     "web-design": 1,
     "healthcare": 1,
     "furniture": 1,
-    "warm": 1
+    "warm": 1,
+    "baby": 1,
+    "soft": 1
   },
   "categoryCounts": {
     "ui": 39,
-    "branding": 30,
+    "branding": 31,
     "ui-ux": 3,
     "mobile": 2,
     "web-design": 1
