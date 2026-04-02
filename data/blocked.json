@@ -90,17 +90,18 @@
     "nu007",
     "nu008",
     "nb022",
-    "nb003"
+    "nb003",
+    "d068"
   ],
   "tagCounts": {
-    "ui": 27,
+    "ui": 28,
     "finance": 1,
     "mobile": 20,
     "dark": 7,
     "fintech": 3,
-    "dashboard": 8,
+    "dashboard": 9,
     "ios": 2,
-    "saas": 5,
+    "saas": 6,
     "analytics": 3,
     "light": 9,
     "payment": 1,
@@ -176,12 +177,14 @@
     "connectivity": 1,
     "wallet": 1,
     "print": 1,
-    "pharma": 1
+    "pharma": 1,
+    "ux": 1,
+    "b2b": 1
   },
   "categoryCounts": {
     "ui": 35,
     "branding": 25,
-    "ui-ux": 2,
+    "ui-ux": 3,
     "mobile": 1
   }
 }
