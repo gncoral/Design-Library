@@ -94,10 +94,11 @@
     "d068",
     "d069",
     "d113",
-    "d115"
+    "d115",
+    "d074"
   ],
   "tagCounts": {
-    "ui": 28,
+    "ui": 29,
     "finance": 1,
     "mobile": 20,
     "dark": 7,
@@ -167,7 +168,7 @@
     "app": 4,
     "kids": 1,
     "bright": 1,
-    "sports": 1,
+    "sports": 2,
     "school": 1,
     "social": 1,
     "meditation": 1,
@@ -184,12 +185,16 @@
     "ux": 1,
     "b2b": 1,
     "wordmark": 1,
-    "typography": 1
+    "typography": 1,
+    "landing-page": 1,
+    "luxury": 1,
+    "web-design": 1
   },
   "categoryCounts": {
     "ui": 36,
     "branding": 27,
     "ui-ux": 3,
-    "mobile": 1
+    "mobile": 1,
+    "web-design": 1
   }
 }
