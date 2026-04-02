@@ -47,7 +47,8 @@
     "nu032",
     "d109",
     "d110",
-    "d144"
+    "d144",
+    "d071"
   ],
   "tagCounts": {
     "ui": 10,
@@ -55,10 +56,10 @@
     "mobile": 8,
     "dark": 1,
     "fintech": 2,
-    "dashboard": 4,
+    "dashboard": 5,
     "ios": 1,
-    "saas": 2,
-    "analytics": 2,
+    "saas": 3,
+    "analytics": 3,
     "light": 7,
     "payment": 1,
     "checkout": 1,
@@ -92,11 +93,13 @@
     "energy": 1,
     "green": 1,
     "web": 1,
-    "startup": 1
+    "startup": 1,
+    "logistics": 1,
+    "enterprise": 1
   },
   "categoryCounts": {
     "ui": 15,
     "branding": 4,
-    "ui-ux": 1
+    "ui-ux": 2
   }
 }
