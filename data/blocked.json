@@ -96,7 +96,8 @@
     "d113",
     "d115",
     "d074",
-    "d123"
+    "d123",
+    "d130"
   ],
   "tagCounts": {
     "ui": 29,
@@ -193,7 +194,7 @@
   },
   "categoryCounts": {
     "ui": 36,
-    "branding": 28,
+    "branding": 29,
     "ui-ux": 3,
     "mobile": 1,
     "web-design": 1
