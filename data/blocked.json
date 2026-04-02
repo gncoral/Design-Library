@@ -61,12 +61,13 @@
     "b019n",
     "d092",
     "nu011",
-    "nu006"
+    "nu006",
+    "nu002"
   ],
   "tagCounts": {
-    "ui": 19,
+    "ui": 20,
     "finance": 1,
-    "mobile": 11,
+    "mobile": 12,
     "dark": 5,
     "fintech": 3,
     "dashboard": 8,
@@ -98,7 +99,7 @@
     "tech": 2,
     "identity": 2,
     "system": 1,
-    "health": 2,
+    "health": 3,
     "crypto": 3,
     "web3": 1,
     "telegram": 1,
@@ -110,7 +111,7 @@
     "logistics": 1,
     "enterprise": 1,
     "banking": 1,
-    "ai": 1,
+    "ai": 2,
     "productivity": 1,
     "streaming": 1,
     "marketplace": 1,
@@ -123,7 +124,7 @@
     "trading": 1
   },
   "categoryCounts": {
-    "ui": 25,
+    "ui": 26,
     "branding": 7,
     "ui-ux": 2
   }
