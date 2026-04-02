@@ -88,7 +88,8 @@
     "d080",
     "nu001",
     "nu007",
-    "nu008"
+    "nu008",
+    "nb022"
   ],
   "tagCounts": {
     "ui": 27,
@@ -118,9 +119,9 @@
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
-    "branding": 16,
+    "branding": 17,
     "photography": 1,
-    "colorful": 4,
+    "colorful": 5,
     "logo": 5,
     "tech": 3,
     "identity": 3,
@@ -155,7 +156,7 @@
     "feminine": 1,
     "mascot": 3,
     "bar": 1,
-    "food": 2,
+    "food": 3,
     "onboarding": 1,
     "animation": 1,
     "app": 4,
@@ -172,11 +173,12 @@
     "interior": 1,
     "desktop": 1,
     "connectivity": 1,
-    "wallet": 1
+    "wallet": 1,
+    "print": 1
   },
   "categoryCounts": {
     "ui": 35,
-    "branding": 23,
+    "branding": 24,
     "ui-ux": 2,
     "mobile": 1
   }
