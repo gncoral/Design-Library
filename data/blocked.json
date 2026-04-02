@@ -103,7 +103,8 @@
     "d073",
     "nb009",
     "nu043",
-    "nb010"
+    "nb010",
+    "nb025"
   ],
   "tagCounts": {
     "ui": 31,
@@ -133,7 +134,7 @@
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
-    "branding": 21,
+    "branding": 22,
     "photography": 1,
     "colorful": 5,
     "logo": 7,
@@ -147,7 +148,7 @@
     "gaming": 1,
     "energy": 1,
     "green": 2,
-    "web": 2,
+    "web": 3,
     "startup": 3,
     "logistics": 2,
     "enterprise": 1,
@@ -172,11 +173,11 @@
     "bar": 1,
     "food": 3,
     "onboarding": 1,
-    "animation": 1,
+    "animation": 2,
     "app": 5,
     "kids": 1,
     "bright": 1,
-    "sports": 2,
+    "sports": 3,
     "school": 1,
     "social": 1,
     "meditation": 1,
@@ -205,7 +206,7 @@
   },
   "categoryCounts": {
     "ui": 39,
-    "branding": 31,
+    "branding": 32,
     "ui-ux": 3,
     "mobile": 2,
     "web-design": 1
