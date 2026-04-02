@@ -521,11 +521,45 @@
   }
 
   // ── Actions ───────────────────────────────────────────────
+  // ── Liked.json sync（正向学习）────────────────────────────
+  const LIKE_FILE = 'data/liked.json';
+  async function pushLikedItem(id, tags, category) {
+    try {
+      const res = await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${LIKE_FILE}`, {
+        headers: { 'Authorization': `token ${BLOCK_TOKEN}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      let sha = null, existing = { ids: [], tagCounts: {}, categoryCounts: {} };
+      if (res.ok) {
+        const data = await res.json();
+        sha = data.sha;
+        try { existing = JSON.parse(atob(data.content.replace(/\n/g, ''))); } catch(e) {}
+        if (!existing.ids) existing = { ids: [], tagCounts: {}, categoryCounts: {} };
+      }
+      if (!existing.ids.includes(id)) existing.ids.push(id);
+      (tags || []).forEach(t => { existing.tagCounts[t] = (existing.tagCounts[t] || 0) + 1; });
+      if (category) existing.categoryCounts[category] = (existing.categoryCounts[category] || 0) + 1;
+      const body = {
+        message: `like: ${id}`,
+        content: btoa(unescape(encodeURIComponent(JSON.stringify(existing, null, 2)))),
+        ...(sha ? { sha } : {})
+      };
+      await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${LIKE_FILE}`, {
+        method: 'PUT',
+        headers: { 'Authorization': `token ${BLOCK_TOKEN}`, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+    } catch (err) { console.warn('liked.json sync failed:', err); }
+  }
+
   function toggleLike(e, id) {
     e.stopPropagation();
     const i = prefs.liked.indexOf(id);
     if (i >= 0) { prefs.liked.splice(i, 1); showToast('Removed from saved'); }
-    else { prefs.liked.push(id); showToast('❤️ Saved!'); }
+    else {
+      prefs.liked.push(id); showToast('❤️ Saved!');
+      const imgMeta = allImages.find(img => img.id === id);
+      pushLikedItem(id, imgMeta ? (imgMeta.tags || []) : [], imgMeta ? imgMeta.category : ''); // 正向学习
+    }
     savePrefs(); renderGallery(currentTab === 'liked' ? 'liked' : 'gallery'); updateCounts();
   }
   function getBestUrl(img) {
@@ -552,23 +586,26 @@
   const BLOCK_REPO  = 'gncoral/Design-Library';
   const BLOCK_FILE  = 'data/blocked.json';
 
-  async function pushBlockedId(id) {
+  async function pushBlockedItem(id, tags, category) {
     try {
       // 1. 获取当前文件 SHA + 内容
       const res = await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${BLOCK_FILE}`, {
         headers: { 'Authorization': `token ${BLOCK_TOKEN}`, 'Accept': 'application/vnd.github.v3+json' }
       });
-      let sha = null, existing = [];
+      let sha = null, existing = { ids: [], tagCounts: {}, categoryCounts: {} };
       if (res.ok) {
         const data = await res.json();
         sha = data.sha;
-        existing = JSON.parse(atob(data.content.replace(/\n/g, '')));
+        try { existing = JSON.parse(atob(data.content.replace(/\n/g, ''))); } catch(e) { existing = { ids: [], tagCounts: {}, categoryCounts: {} }; }
+        if (!existing.ids) existing = { ids: Array.isArray(existing) ? existing : [], tagCounts: {}, categoryCounts: {} };
       }
-      // 2. 去重后追加
-      if (!existing.includes(id)) existing.push(id);
+      // 2. 去重追加 id，累加 tag 计数（负向学习）
+      if (!existing.ids.includes(id)) existing.ids.push(id);
+      (tags || []).forEach(t => { existing.tagCounts[t] = (existing.tagCounts[t] || 0) + 1; });
+      if (category) existing.categoryCounts[category] = (existing.categoryCounts[category] || 0) + 1;
       const body = {
         message: `block: ${id}`,
-        content: btoa(JSON.stringify(existing, null, 2)),
+        content: btoa(unescape(encodeURIComponent(JSON.stringify(existing, null, 2)))),
         ...(sha ? { sha } : {})
       };
       // 3. PUT 写回
@@ -591,7 +628,9 @@
     if (!prefs.disliked.includes(id)) prefs.disliked.push(id);
     const li = prefs.liked.indexOf(id); if (li >= 0) prefs.liked.splice(li, 1);
     savePrefs(); showToast('👋 已屏蔽，明日清理'); renderGallery(); updateCounts();
-    pushBlockedId(id); // 异步写 GitHub，失败不影响 UI
+    // 把图的 tag 和 category 一起传过去，用于负向学习
+    const imgMeta = allImages.find(i => i.id === id);
+    pushBlockedItem(id, imgMeta ? (imgMeta.tags || []) : [], imgMeta ? imgMeta.category : ''); // 异步，失败不影响 UI
   }
   function savePrefs() { localStorage.setItem('dl_prefs', JSON.stringify(prefs)); }
 
