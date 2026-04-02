@@ -43,10 +43,11 @@
     "nb001",
     "nu025",
     "d085",
-    "nu030"
+    "nu030",
+    "nu032"
   ],
   "tagCounts": {
-    "ui": 9,
+    "ui": 10,
     "finance": 1,
     "mobile": 8,
     "dark": 1,
@@ -61,7 +62,7 @@
     "empty-state": 6,
     "icon": 1,
     "illustration": 4,
-    "minimal": 2,
+    "minimal": 3,
     "component": 1,
     "no-data": 1,
     "modal": 1,
@@ -77,7 +78,7 @@
     "photography": 1,
     "colorful": 1,
     "logo": 1,
-    "tech": 1,
+    "tech": 2,
     "identity": 1,
     "system": 1,
     "health": 1,
@@ -87,10 +88,11 @@
     "gaming": 1,
     "energy": 1,
     "green": 1,
-    "web": 1
+    "web": 1,
+    "startup": 1
   },
   "categoryCounts": {
-    "ui": 12,
+    "ui": 13,
     "branding": 3,
     "ui-ux": 1
   }
