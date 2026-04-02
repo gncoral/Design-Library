@@ -74,16 +74,17 @@
     "nu005",
     "nb020",
     "nu010",
-    "d084"
+    "d084",
+    "d091"
   ],
   "tagCounts": {
-    "ui": 22,
+    "ui": 23,
     "finance": 1,
-    "mobile": 17,
+    "mobile": 18,
     "dark": 5,
     "fintech": 3,
     "dashboard": 8,
-    "ios": 1,
+    "ios": 2,
     "saas": 5,
     "analytics": 3,
     "light": 9,
@@ -100,7 +101,7 @@
     "feedback": 1,
     "character": 1,
     "blue": 1,
-    "travel": 2,
+    "travel": 3,
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
@@ -144,7 +145,7 @@
     "food": 1,
     "onboarding": 1,
     "animation": 1,
-    "app": 1,
+    "app": 2,
     "kids": 1,
     "bright": 1,
     "sports": 1,
@@ -153,7 +154,7 @@
     "meditation": 1
   },
   "categoryCounts": {
-    "ui": 30,
+    "ui": 31,
     "branding": 14,
     "ui-ux": 2,
     "mobile": 1
