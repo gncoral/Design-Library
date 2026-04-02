@@ -72,12 +72,13 @@
     "es015",
     "d117",
     "nu005",
-    "nb020"
+    "nb020",
+    "nu010"
   ],
   "tagCounts": {
-    "ui": 21,
+    "ui": 22,
     "finance": 1,
-    "mobile": 15,
+    "mobile": 16,
     "dark": 5,
     "fintech": 3,
     "dashboard": 8,
@@ -98,7 +99,7 @@
     "feedback": 1,
     "character": 1,
     "blue": 1,
-    "travel": 1,
+    "travel": 2,
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
@@ -146,10 +147,11 @@
     "kids": 1,
     "bright": 1,
     "sports": 1,
-    "school": 1
+    "school": 1,
+    "social": 1
   },
   "categoryCounts": {
-    "ui": 29,
+    "ui": 30,
     "branding": 14,
     "ui-ux": 2
   }
