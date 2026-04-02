@@ -30,10 +30,11 @@
     "d108",
     "d064",
     "d065",
-    "d067"
+    "d067",
+    "es003"
   ],
   "tagCounts": {
-    "ui": 3,
+    "ui": 4,
     "finance": 1,
     "mobile": 3,
     "dark": 1,
@@ -42,11 +43,14 @@
     "ios": 1,
     "saas": 1,
     "analytics": 1,
-    "light": 2,
+    "light": 3,
     "payment": 1,
-    "checkout": 1
+    "checkout": 1,
+    "empty-state": 1,
+    "icon": 1,
+    "illustration": 1
   },
   "categoryCounts": {
-    "ui": 3
+    "ui": 4
   }
 }
