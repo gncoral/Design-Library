@@ -29,21 +29,24 @@
     "nu048",
     "d108",
     "d064",
-    "d065"
+    "d065",
+    "d067"
   ],
   "tagCounts": {
-    "ui": 2,
+    "ui": 3,
     "finance": 1,
-    "mobile": 2,
+    "mobile": 3,
     "dark": 1,
-    "fintech": 1,
+    "fintech": 2,
     "dashboard": 2,
     "ios": 1,
     "saas": 1,
     "analytics": 1,
-    "light": 1
+    "light": 2,
+    "payment": 1,
+    "checkout": 1
   },
   "categoryCounts": {
-    "ui": 2
+    "ui": 3
   }
 }
