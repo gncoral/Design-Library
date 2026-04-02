@@ -1,339 +1,5 @@
 [
   {
-    "id": "d064",
-    "title": "Finance Mobile iOS App — AI Assistant Dashboard",
-    "src": "https://cdn.dribbble.com/userupload/47148996/file/still-f4ed8d35fa8501b6e46e52fddd890022.png?format=webp&resize=400x300&vertical=center",
-    "url": "https://dribbble.com/shots/27208875-Finance-Mobile-iOS-App-Design",
-    "author": "Dribbble",
-    "platform": "dribbble",
-    "category": "ui",
-    "tags": [
-      "ui",
-      "finance",
-      "mobile",
-      "dark",
-      "fintech",
-      "dashboard",
-      "ios"
-    ],
-    "added": "2026-03-24"
-  },
-  {
-    "id": "d065",
-    "title": "Team Analytics App — SaaS Dashboard UI",
-    "src": "https://cdn.dribbble.com/userupload/47140845/file/82c277339caa90832547c86eae87a139.jpg?format=webp&resize=400x300&vertical=center",
-    "url": "https://dribbble.com/shots/27206717-Team-Analytics-App-SaaS-Dashboard-UI",
-    "author": "Dribbble",
-    "platform": "dribbble",
-    "category": "ui",
-    "tags": [
-      "ui",
-      "dashboard",
-      "saas",
-      "analytics",
-      "light",
-      "mobile"
-    ],
-    "added": "2026-03-24"
-  },
-  {
-    "id": "d067",
-    "title": "Payment Flow UI — Luxury Car Checkout",
-    "src": "https://cdn.dribbble.com/userupload/47149246/file/381e3a77b3f1f628705052b57450b698.png?format=webp&resize=400x300&vertical=center",
-    "url": "https://dribbble.com/shots/27208980-Payment-Flow-UI-Design-Luxury-Car-Checkout-Experience",
-    "author": "Dribbble",
-    "platform": "dribbble",
-    "category": "ui",
-    "tags": [
-      "ui",
-      "payment",
-      "checkout",
-      "light",
-      "mobile",
-      "fintech"
-    ],
-    "added": "2026-03-24"
-  },
-  {
-    "id": "es003",
-    "title": "Empty State UI — Icon Set",
-    "src": "https://cdn.dribbble.com/userupload/45726735/file/745631252286b53ecaba33af0b5bba5a.png?format=webp&resize=400x300&vertical=center",
-    "url": "https://dribbble.com/shots/26779541-Empty-State-UI",
-    "author": "Dribbble",
-    "platform": "dribbble",
-    "category": "ui",
-    "tags": [
-      "empty-state",
-      "icon",
-      "illustration",
-      "ui",
-      "light"
-    ],
-    "added": "2026-03-24"
-  },
-  {
-    "id": "es004",
-    "title": "Empty State UI Design for Kids Task App",
-    "src": "https://cdn.dribbble.com/userupload/43642750/file/original-e5207644709e42201ecf72ccc54284e9.png?format=webp&resize=400x300&vertical=center",
-    "url": "https://dribbble.com/shots/26129393-Empty-State-UI-Design-for-Kids-Task-App",
-    "author": "Dribbble",
-    "platform": "dribbble",
-    "category": "ui",
-    "tags": [
-      "empty-state",
-      "kids",
-      "illustration",
-      "colorful",
-      "mobile",
-      "playful"
-    ],
-    "added": "2026-03-24"
-  },
-  {
-    "id": "es005",
-    "title": "Empty State UI — Mobile App",
-    "src": "https://cdn.dribbble.com/userupload/46732981/file/252cee0f2221302474c7fe6bcc0bbff6.png?crop=384x0-3814x2573&format=webp&resize=400x300&vertical=center",
-    "url": "https://dribbble.com/shots/27085641-empty-state-ui",
-    "author": "Dribbble",
-    "platform": "dribbble",
-    "category": "ui",
-    "tags": [
-      "empty-state",
-      "mobile",
-      "illustration",
-      "ui",
-      "light",
-      "minimal"
-    ],
-    "added": "2026-03-24"
-  },
-  {
-    "id": "es006",
-    "title": "Empty State UI — Dashboard Components",
-    "src": "https://cdn.dribbble.com/userupload/46602211/file/8417859ce962a0949850ad0fc1d6c1e2.jpg?crop=558x418-2643x1983&format=webp&resize=400x300&vertical=center",
-    "url": "https://dribbble.com/shots/27047022-Empty-State-UI-Dashboard-Components",
-    "author": "Dribbble",
-    "platform": "dribbble",
-    "category": "ui",
-    "tags": [
-      "empty-state",
-      "dashboard",
-      "saas",
-      "component",
-      "no-data",
-      "light"
-    ],
-    "added": "2026-03-24"
-  },
-  {
-    "id": "es007",
-    "title": "APP Empty State UI Design — Illustration Set",
-    "src": "https://cdn.dribbble.com/userupload/45963935/file/8a7311a0b95359ff188e26837ca39bf4.png?format=webp&resize=400x300&vertical=center",
-    "url": "https://dribbble.com/shots/26853348-APP-Empty-State-UI-Design",
-    "author": "Dribbble",
-    "platform": "dribbble",
-    "category": "ui",
-    "tags": [
-      "empty-state",
-      "illustration",
-      "app",
-      "mobile",
-      "friendly",
-      "colorful"
-    ],
-    "added": "2026-03-24"
-  },
-  {
-    "id": "es008",
-    "title": "Mobile App Modal UI System — Status & Feedback",
-    "src": "https://cdn.dribbble.com/userupload/46099164/file/d08aa428446b1434dcd428e1be1ce4a9.png?format=webp&resize=400x300&vertical=center",
-    "url": "https://dribbble.com/shots/26895871-Mobile-App-Modal-UI-System",
-    "author": "Dribbble",
-    "platform": "dribbble",
-    "category": "ui",
-    "tags": [
-      "empty-state",
-      "modal",
-      "notification",
-      "mobile",
-      "light",
-      "feedback"
-    ],
-    "added": "2026-03-24"
-  },
-  {
-    "id": "es009",
-    "title": "Analytics Dashboard Empty State — Character Illustration",
-    "src": "https://cdn.dribbble.com/userupload/27378540/file/original-5ff70fbcfb422e3787ebabd594547314.jpg?format=webp&resize=400x300&vertical=center",
-    "url": "https://dribbble.com/shots/11604428-Analytics-dashboard-Empty-sate",
-    "author": "Dribbble",
-    "platform": "dribbble",
-    "category": "ui",
-    "tags": [
-      "empty-state",
-      "analytics",
-      "character",
-      "illustration",
-      "blue",
-      "dashboard"
-    ],
-    "added": "2026-03-24"
-  },
-  {
-    "id": "es010",
-    "title": "Data Visualization Empty State Illustrations",
-    "src": "https://cdn.dribbble.com/userupload/44505283/file/9a6c2f44acc2dc04820444f43329ffbe.png?format=webp&resize=400x300&vertical=center",
-    "url": "https://dribbble.com/shots/26401540-Data-Visualization-Empty-State-Illustrations",
-    "author": "Dribbble",
-    "platform": "dribbble",
-    "category": "ui",
-    "tags": [
-      "empty-state",
-      "data",
-      "visualization",
-      "illustration",
-      "light",
-      "no-data"
-    ],
-    "added": "2026-03-24"
-  },
-  {
-    "id": "es011",
-    "title": "Empty State UI — Travel App Booking",
-    "src": "https://cdn.dribbble.com/userupload/44889478/file/e7458323dea3a546d0c30c6b825d404a.jpg?format=webp&resize=400x300&vertical=center",
-    "url": "https://dribbble.com/shots/26519405--Empty-State-UI-Design-for-Travel-App-Booking",
-    "author": "Dribbble",
-    "platform": "dribbble",
-    "category": "ui",
-    "tags": [
-      "empty-state",
-      "travel",
-      "booking",
-      "mobile",
-      "light",
-      "illustration"
-    ],
-    "added": "2026-03-24"
-  },
-  {
-    "id": "es012",
-    "title": "No Data to Display — 3D Illustration (缺省页)",
-    "src": "https://cdn.dribbble.com/userupload/36016321/file/original-31dfa7089bfddb34343154f7dd882e44.png?format=webp&resize=400x300&vertical=center",
-    "url": "https://dribbble.com/shots/17751098-No-data-to-display",
-    "author": "Dribbble",
-    "platform": "dribbble",
-    "category": "ui",
-    "tags": [
-      "empty-state",
-      "3d",
-      "illustration",
-      "no-data",
-      "缺省页",
-      "cute"
-    ],
-    "added": "2026-03-24"
-  },
-  {
-    "id": "es013",
-    "title": "Empty State Icons — 404 & No Data Set",
-    "src": "https://cdn.dribbble.com/userupload/6923813/file/original-77fd338d568d49287945a3b05bcda72b.png?format=webp&resize=400x300&vertical=center",
-    "url": "https://dribbble.com/shots/21431408-Empty-State-Icons",
-    "author": "Dribbble",
-    "platform": "dribbble",
-    "category": "ui",
-    "tags": [
-      "empty-state",
-      "icons",
-      "404",
-      "illustration",
-      "isometric",
-      "set"
-    ],
-    "added": "2026-03-24"
-  },
-  {
-    "id": "es014",
-    "title": "Creative Illustration App Design — Onboarding",
-    "src": "https://cdn.dribbble.com/userupload/47145795/file/still-52d9b8b6963ea44f84fec52e1760db39.png?format=webp&resize=400x300&vertical=center",
-    "url": "https://dribbble.com/shots/27208005-Creative-Illustration-App-Design",
-    "author": "Dribbble",
-    "platform": "dribbble",
-    "category": "ui",
-    "tags": [
-      "empty-state",
-      "onboarding",
-      "illustration",
-      "colorful",
-      "mobile",
-      "animation"
-    ],
-    "added": "2026-03-24"
-  },
-  {
-    "id": "es015",
-    "title": "Real Estate Mobile App — Empty States",
-    "src": "https://cdn.dribbble.com/userupload/47110539/file/0e3315122ac52c6150e5acd49c3cc9d8.jpg?format=webp&resize=400x300&vertical=center",
-    "url": "https://dribbble.com/shots/27197910-Real-Estate-Mobile-App-Design",
-    "author": "Dribbble",
-    "platform": "dribbble",
-    "category": "ui",
-    "tags": [
-      "empty-state",
-      "real-estate",
-      "mobile",
-      "light",
-      "minimal",
-      "app"
-    ],
-    "added": "2026-03-24"
-  },
-  {
-    "id": "es016",
-    "title": "Telemedicine App — No Data Screen",
-    "src": "https://cdn.dribbble.com/userupload/47120231/file/78966c34402089567b7a11b8b4e87ce0.png?format=webp&resize=400x300&vertical=center",
-    "url": "https://dribbble.com/shots/27200786-Telemedicine-Mobile-App-UI-Design",
-    "author": "Dribbble",
-    "platform": "dribbble",
-    "category": "ui",
-    "tags": [
-      "empty-state",
-      "healthcare",
-      "mobile",
-      "light",
-      "no-data",
-      "app"
-    ],
-    "added": "2026-03-24"
-  },
-  {
-    "id": "b001n",
-    "src": "https://mir-s3-cdn-cf.behance.net/projects/404/f3afc8244803829.Y3JvcCw4MDgsNjMyLDAsMA.png",
-    "title": "Portfolio 2026 - Graphic Designer",
-    "tags": [
-      "branding",
-      "portfolio",
-      "illustration",
-      "colorful"
-    ],
-    "platform": "behance",
-    "category": "branding",
-    "added": "2026-03-24"
-  },
-  {
-    "id": "b002n",
-    "src": "https://mir-s3-cdn-cf.behance.net/projects/404/91f70a244682993.Y3JvcCwzMjYyLDI1NTIsMjU4LDA.png",
-    "title": "Travel Visual Identity",
-    "tags": [
-      "branding",
-      "travel",
-      "visual-identity",
-      "light"
-    ],
-    "platform": "behance",
-    "category": "branding",
-    "added": "2026-03-24"
-  },
-  {
     "id": "b003n",
     "src": "https://mir-s3-cdn-cf.behance.net/projects/404/26b870244572045.Y3JvcCw3NjcwLDYwMDAsNjY0LDA.jpg",
     "title": "Obteam Brand Identity Design",
@@ -2755,6 +2421,146 @@
     "url": "https://tubikstudio.com",
     "category": "ui",
     "tags": [],
+    "added": "2026-04-02"
+  },
+  {
+    "id": "d172",
+    "title": "AI Data Analytics SaaS Dashboard ai ai",
+    "src": "https://cdn.dribbble.com/userupload/47255245/file/55852c59a23f43411735c107b45a4181.jpg",
+    "url": "https://dribbble.com/shots/27240877-AI-Data-Analytics-SaaS-Dashboard",
+    "category": "ui",
+    "tags": [],
+    "added": "2026-04-02"
+  },
+  {
+    "id": "d177",
+    "title": "Mityu - AI Tools Landing Page Animation",
+    "src": "https://cdn.dribbble.com/userupload/47249179/file/still-8ef1363565616db381c62bc4721659bf.png",
+    "url": "https://dribbble.com/shots/27238944-Mityu-AI-Tools-Landing-Page-Animation",
+    "category": "visual",
+    "tags": [],
+    "added": "2026-04-02"
+  },
+  {
+    "id": "d178",
+    "title": "AI SaaS Dashboard - Dark Mode - My",
+    "src": "https://i.pinimg.com/736x/d6/87/c8/d687c84794d3ddf103c068dc23254230.jpg",
+    "url": "https://www.pinterest.com/pin/3237030978856610/",
+    "category": "ui",
+    "tags": [],
+    "added": "2026-04-02"
+  },
+  {
+    "id": "d179",
+    "title": "Sales Analytics Dashboard (Dark",
+    "src": "https://i.pinimg.com/736x/04/fa/a3/04faa3ca3f6ed76bc0946d02f38c20c2.jpg",
+    "url": "https://www.pinterest.com/pin/1970393583686253/",
+    "category": "ui",
+    "tags": [],
+    "added": "2026-04-02"
+  },
+  {
+    "id": "d189",
+    "title": "Logo Concept, Brand Storytelling, Visual Identity, Logo Breakdown, Symbolic",
+    "src": "https://i.pinimg.com/736x/10/7e/d1/107ed1e4ef217e7cadb72ada560faa77.jpg",
+    "url": "https://www.pinterest.com/pin/176133035424290463/",
+    "category": "branding",
+    "tags": [],
+    "added": "2026-04-02"
+  },
+  {
+    "id": "d193",
+    "title": "Logo",
+    "src": "https://i.pinimg.com/736x/9c/01/5d/9c015d617ba3c2d63917a7533eeca671.jpg",
+    "url": "https://www.pinterest.com/pin/3096293491346932/",
+    "category": "branding",
+    "tags": [],
+    "added": "2026-04-02"
+  },
+  {
+    "id": "d195",
+    "title": "START UP LOGO DESIGN",
+    "src": "https://i.pinimg.com/736x/0b/e3/7a/0be37a2c0488d7f3f8d1af4ad5bcb3ee.jpg",
+    "url": "https://www.pinterest.com/pin/288582288644350923/",
+    "category": "branding",
+    "tags": [],
+    "added": "2026-04-02"
+  },
+  {
+    "id": "d196",
+    "title": "Crypto Live Updates Dashboard Dark",
+    "src": "https://i.pinimg.com/736x/d6/fe/58/d6fe58460ee240f40d5843cf7be2c5bd.jpg",
+    "url": "https://www.pinterest.com/",
+    "category": "ui",
+    "tags": [
+      "pinterest"
+    ],
+    "added": "2026-04-02"
+  },
+  {
+    "id": "d197",
+    "title": "Financial Dashboard Dark UI",
+    "src": "https://i.pinimg.com/736x/ff/83/80/ff83807b7837737cbcc7dca3e72afd1d.jpg",
+    "url": "https://www.pinterest.com/",
+    "category": "ui",
+    "tags": [
+      "pinterest"
+    ],
+    "added": "2026-04-02"
+  },
+  {
+    "id": "d198",
+    "title": "Dark Dashboard Webflow Template",
+    "src": "https://i.pinimg.com/736x/77/f5/f1/77f5f1585355379f90c46114af2fd413.jpg",
+    "url": "https://www.pinterest.com/",
+    "category": "ui",
+    "tags": [
+      "pinterest"
+    ],
+    "added": "2026-04-02"
+  },
+  {
+    "id": "d199",
+    "title": "Finerar Logo & Business Card",
+    "src": "https://i.pinimg.com/736x/a6/46/bd/a646bde9f62f11ec8af5272a6b0ec19d.jpg",
+    "url": "https://www.pinterest.com/",
+    "category": "branding",
+    "tags": [
+      "pinterest"
+    ],
+    "added": "2026-04-02"
+  },
+  {
+    "id": "d200",
+    "title": "Lurax Logo Design Purple Blue",
+    "src": "https://i.pinimg.com/736x/16/4f/16/164f16d346099ba7ed1932104efe471d.jpg",
+    "url": "https://www.pinterest.com/",
+    "category": "branding",
+    "tags": [
+      "pinterest"
+    ],
+    "added": "2026-04-02"
+  },
+  {
+    "id": "d201",
+    "title": "Brand Identity Billboard Purple",
+    "src": "https://i.pinimg.com/736x/f6/a6/23/f6a6236b8f4d6b90d4ed88f12ed6f83c.jpg",
+    "url": "https://www.pinterest.com/",
+    "category": "branding",
+    "tags": [
+      "pinterest"
+    ],
+    "added": "2026-04-02"
+  },
+  {
+    "id": "d202",
+    "title": "Spectrum Logo Minimal Dark",
+    "src": "https://i.pinimg.com/736x/ae/1f/49/ae1f49a9e44494a57210e453efecb706.jpg",
+    "url": "https://www.pinterest.com/",
+    "category": "branding",
+    "tags": [
+      "pinterest"
+    ],
     "added": "2026-04-02"
   }
 ]
