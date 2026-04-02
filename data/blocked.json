@@ -37,12 +37,13 @@
     "es008",
     "es009",
     "es011",
-    "d122"
+    "d122",
+    "nu016"
   ],
   "tagCounts": {
-    "ui": 5,
+    "ui": 6,
     "finance": 1,
-    "mobile": 6,
+    "mobile": 7,
     "dark": 1,
     "fintech": 2,
     "dashboard": 4,
@@ -64,10 +65,12 @@
     "character": 1,
     "blue": 1,
     "travel": 1,
-    "booking": 1
+    "booking": 1,
+    "ecommerce": 1,
+    "grocery": 1
   },
   "categoryCounts": {
-    "ui": 9,
+    "ui": 10,
     "branding": 1
   }
 }
