@@ -63,7 +63,8 @@
     "nu011",
     "nu006",
     "nu002",
-    "nb048"
+    "nb048",
+    "nb016"
   ],
   "tagCounts": {
     "ui": 20,
@@ -93,7 +94,7 @@
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
-    "branding": 5,
+    "branding": 6,
     "photography": 1,
     "colorful": 2,
     "logo": 1,
@@ -124,11 +125,14 @@
     "real-estate": 1,
     "trading": 1,
     "wellness": 1,
-    "font": 1
+    "font": 1,
+    "cosmetics": 1,
+    "packaging": 1,
+    "feminine": 1
   },
   "categoryCounts": {
     "ui": 26,
-    "branding": 8,
+    "branding": 9,
     "ui-ux": 2
   }
 }
