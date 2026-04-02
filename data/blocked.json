@@ -51,17 +51,18 @@
     "d071",
     "d112",
     "d138",
-    "d098"
+    "d098",
+    "nu029"
   ],
   "tagCounts": {
-    "ui": 11,
+    "ui": 12,
     "finance": 1,
     "mobile": 8,
     "dark": 1,
     "fintech": 3,
     "dashboard": 5,
     "ios": 1,
-    "saas": 3,
+    "saas": 4,
     "analytics": 3,
     "light": 7,
     "payment": 1,
@@ -69,7 +70,7 @@
     "empty-state": 6,
     "icon": 1,
     "illustration": 5,
-    "minimal": 3,
+    "minimal": 4,
     "component": 1,
     "no-data": 1,
     "modal": 1,
@@ -99,10 +100,11 @@
     "startup": 1,
     "logistics": 1,
     "enterprise": 1,
-    "banking": 1
+    "banking": 1,
+    "ai": 1
   },
   "categoryCounts": {
-    "ui": 17,
+    "ui": 18,
     "branding": 5,
     "ui-ux": 2
   }
