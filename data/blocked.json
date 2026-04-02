@@ -67,12 +67,13 @@
     "nb016",
     "d078",
     "nb015",
-    "nb045"
+    "nb045",
+    "es014"
   ],
   "tagCounts": {
     "ui": 20,
     "finance": 1,
-    "mobile": 12,
+    "mobile": 13,
     "dark": 5,
     "fintech": 3,
     "dashboard": 8,
@@ -82,9 +83,9 @@
     "light": 8,
     "payment": 1,
     "checkout": 1,
-    "empty-state": 6,
+    "empty-state": 7,
     "icon": 1,
-    "illustration": 9,
+    "illustration": 10,
     "minimal": 4,
     "component": 1,
     "no-data": 1,
@@ -99,7 +100,7 @@
     "grocery": 1,
     "branding": 9,
     "photography": 1,
-    "colorful": 2,
+    "colorful": 3,
     "logo": 2,
     "tech": 2,
     "identity": 2,
@@ -134,10 +135,12 @@
     "feminine": 1,
     "mascot": 1,
     "bar": 1,
-    "food": 1
+    "food": 1,
+    "onboarding": 1,
+    "animation": 1
   },
   "categoryCounts": {
-    "ui": 26,
+    "ui": 27,
     "branding": 12,
     "ui-ux": 2
   }
