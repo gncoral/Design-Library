@@ -81,7 +81,8 @@
     "b012n",
     "nb038",
     "d072",
-    "d119"
+    "d119",
+    "d120"
   ],
   "tagCounts": {
     "ui": 24,
@@ -165,7 +166,7 @@
   },
   "categoryCounts": {
     "ui": 32,
-    "branding": 19,
+    "branding": 20,
     "ui-ux": 2,
     "mobile": 1
   }
