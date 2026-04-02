@@ -57,7 +57,8 @@
     "nu013",
     "nu015",
     "nu012",
-    "nb030"
+    "nb030",
+    "b019n"
   ],
   "tagCounts": {
     "ui": 16,
@@ -74,7 +75,7 @@
     "checkout": 1,
     "empty-state": 6,
     "icon": 1,
-    "illustration": 5,
+    "illustration": 6,
     "minimal": 4,
     "component": 1,
     "no-data": 1,
@@ -87,9 +88,9 @@
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
-    "branding": 3,
+    "branding": 4,
     "photography": 1,
-    "colorful": 1,
+    "colorful": 2,
     "logo": 1,
     "tech": 2,
     "identity": 2,
@@ -111,11 +112,12 @@
     "streaming": 1,
     "marketplace": 1,
     "art": 1,
-    "fitness": 1
+    "fitness": 1,
+    "graphic": 1
   },
   "categoryCounts": {
     "ui": 22,
-    "branding": 6,
+    "branding": 7,
     "ui-ux": 2
   }
 }
