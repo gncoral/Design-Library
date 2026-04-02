@@ -38,7 +38,8 @@
     "es009",
     "es011",
     "d122",
-    "nu016"
+    "nu016",
+    "nb031"
   ],
   "tagCounts": {
     "ui": 6,
@@ -67,10 +68,14 @@
     "travel": 1,
     "booking": 1,
     "ecommerce": 1,
-    "grocery": 1
+    "grocery": 1,
+    "branding": 1,
+    "photography": 1,
+    "colorful": 1,
+    "logo": 1
   },
   "categoryCounts": {
     "ui": 10,
-    "branding": 1
+    "branding": 2
   }
 }
