@@ -25,9 +25,11 @@
     "d106",
     "nb028",
     "d087",
-    "nu022"
+    "nu022",
+    "d169"
   ],
   "tagCounts": {
+    "2026": 1,
     "ui": 17,
     "crypto": 1,
     "trading": 2,
@@ -58,7 +60,6 @@
     "kids": 2,
     "colorful": 2,
     "mascot": 3,
-    "2026": 1,
     "logo": 2,
     "cute": 1,
     "cat": 1,
@@ -84,7 +85,7 @@
     "character": 1
   },
   "categoryCounts": {
-    "ui": 19,
+    "ui": 20,
     "branding": 6
   }
 }
