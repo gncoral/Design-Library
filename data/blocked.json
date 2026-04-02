@@ -49,7 +49,8 @@
     "d110",
     "d144",
     "d071",
-    "d112"
+    "d112",
+    "d138"
   ],
   "tagCounts": {
     "ui": 10,
@@ -100,7 +101,7 @@
   },
   "categoryCounts": {
     "ui": 16,
-    "branding": 4,
+    "branding": 5,
     "ui-ux": 2
   }
 }
