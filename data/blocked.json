@@ -53,15 +53,16 @@
     "d138",
     "d098",
     "nu029",
-    "nu024"
+    "nu024",
+    "nu013"
   ],
   "tagCounts": {
-    "ui": 13,
+    "ui": 14,
     "finance": 1,
     "mobile": 8,
-    "dark": 1,
+    "dark": 2,
     "fintech": 3,
-    "dashboard": 6,
+    "dashboard": 7,
     "ios": 1,
     "saas": 5,
     "analytics": 3,
@@ -91,7 +92,7 @@
     "identity": 1,
     "system": 1,
     "health": 1,
-    "crypto": 1,
+    "crypto": 2,
     "web3": 1,
     "telegram": 1,
     "gaming": 1,
@@ -106,7 +107,7 @@
     "productivity": 1
   },
   "categoryCounts": {
-    "ui": 19,
+    "ui": 20,
     "branding": 5,
     "ui-ux": 2
   }
