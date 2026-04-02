@@ -101,13 +101,14 @@
     "d104",
     "d116",
     "d073",
-    "nb009"
+    "nb009",
+    "nu043"
   ],
   "tagCounts": {
-    "ui": 30,
+    "ui": 31,
     "finance": 1,
     "mobile": 21,
-    "dark": 7,
+    "dark": 8,
     "fintech": 3,
     "dashboard": 9,
     "ios": 3,
@@ -140,7 +141,7 @@
     "system": 1,
     "health": 4,
     "crypto": 4,
-    "web3": 1,
+    "web3": 2,
     "telegram": 1,
     "gaming": 1,
     "energy": 1,
@@ -160,7 +161,7 @@
     "automotive": 1,
     "ev": 1,
     "real-estate": 3,
-    "trading": 1,
+    "trading": 2,
     "wellness": 3,
     "font": 2,
     "cosmetics": 1,
@@ -200,7 +201,7 @@
     "warm": 1
   },
   "categoryCounts": {
-    "ui": 38,
+    "ui": 39,
     "branding": 30,
     "ui-ux": 3,
     "mobile": 2,
