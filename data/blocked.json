@@ -86,12 +86,13 @@
     "nb013",
     "nb014",
     "d080",
-    "nu001"
+    "nu001",
+    "nu007"
   ],
   "tagCounts": {
-    "ui": 25,
+    "ui": 26,
     "finance": 1,
-    "mobile": 19,
+    "mobile": 20,
     "dark": 6,
     "fintech": 3,
     "dashboard": 8,
@@ -112,7 +113,7 @@
     "feedback": 1,
     "character": 1,
     "blue": 1,
-    "travel": 3,
+    "travel": 4,
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
@@ -168,10 +169,11 @@
     "logomark": 1,
     "creative": 1,
     "interior": 1,
-    "desktop": 1
+    "desktop": 1,
+    "connectivity": 1
   },
   "categoryCounts": {
-    "ui": 33,
+    "ui": 34,
     "branding": 23,
     "ui-ux": 2,
     "mobile": 1
