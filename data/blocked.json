@@ -91,7 +91,8 @@
     "nu008",
     "nb022",
     "nb003",
-    "d068"
+    "d068",
+    "d069"
   ],
   "tagCounts": {
     "ui": 28,
@@ -121,12 +122,12 @@
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
-    "branding": 18,
+    "branding": 19,
     "photography": 1,
     "colorful": 5,
-    "logo": 6,
+    "logo": 7,
     "tech": 3,
-    "identity": 3,
+    "identity": 4,
     "system": 1,
     "health": 4,
     "crypto": 4,
@@ -179,11 +180,13 @@
     "print": 1,
     "pharma": 1,
     "ux": 1,
-    "b2b": 1
+    "b2b": 1,
+    "wordmark": 1,
+    "typography": 1
   },
   "categoryCounts": {
     "ui": 35,
-    "branding": 25,
+    "branding": 26,
     "ui-ux": 3,
     "mobile": 1
   }
