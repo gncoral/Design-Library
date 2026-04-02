@@ -85,13 +85,14 @@
     "d120",
     "nb013",
     "nb014",
-    "d080"
+    "d080",
+    "nu001"
   ],
   "tagCounts": {
-    "ui": 24,
+    "ui": 25,
     "finance": 1,
     "mobile": 19,
-    "dark": 5,
+    "dark": 6,
     "fintech": 3,
     "dashboard": 8,
     "ios": 2,
@@ -155,7 +156,7 @@
     "food": 2,
     "onboarding": 1,
     "animation": 1,
-    "app": 3,
+    "app": 4,
     "kids": 1,
     "bright": 1,
     "sports": 1,
@@ -166,10 +167,11 @@
     "platform": 1,
     "logomark": 1,
     "creative": 1,
-    "interior": 1
+    "interior": 1,
+    "desktop": 1
   },
   "categoryCounts": {
-    "ui": 32,
+    "ui": 33,
     "branding": 23,
     "ui-ux": 2,
     "mobile": 1
