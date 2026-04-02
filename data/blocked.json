@@ -70,12 +70,13 @@
     "nb045",
     "es014",
     "es015",
-    "d117"
+    "d117",
+    "nu005"
   ],
   "tagCounts": {
-    "ui": 20,
+    "ui": 21,
     "finance": 1,
-    "mobile": 14,
+    "mobile": 15,
     "dark": 5,
     "fintech": 3,
     "dashboard": 8,
@@ -140,10 +141,12 @@
     "food": 1,
     "onboarding": 1,
     "animation": 1,
-    "app": 1
+    "app": 1,
+    "kids": 1,
+    "bright": 1
   },
   "categoryCounts": {
-    "ui": 28,
+    "ui": 29,
     "branding": 13,
     "ui-ux": 2
   }
