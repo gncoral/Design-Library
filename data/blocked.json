@@ -93,7 +93,8 @@
     "nb003",
     "d068",
     "d069",
-    "d113"
+    "d113",
+    "d115"
   ],
   "tagCounts": {
     "ui": 28,
@@ -186,7 +187,7 @@
     "typography": 1
   },
   "categoryCounts": {
-    "ui": 35,
+    "ui": 36,
     "branding": 27,
     "ui-ux": 3,
     "mobile": 1
