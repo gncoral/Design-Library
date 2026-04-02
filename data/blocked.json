@@ -48,7 +48,8 @@
     "d109",
     "d110",
     "d144",
-    "d071"
+    "d071",
+    "d112"
   ],
   "tagCounts": {
     "ui": 10,
@@ -98,7 +99,7 @@
     "enterprise": 1
   },
   "categoryCounts": {
-    "ui": 15,
+    "ui": 16,
     "branding": 4,
     "ui-ux": 2
   }
