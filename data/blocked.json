@@ -84,7 +84,8 @@
     "d119",
     "d120",
     "nb013",
-    "nb014"
+    "nb014",
+    "d080"
   ],
   "tagCounts": {
     "ui": 24,
@@ -101,7 +102,7 @@
     "checkout": 1,
     "empty-state": 8,
     "icon": 1,
-    "illustration": 10,
+    "illustration": 11,
     "minimal": 9,
     "component": 1,
     "no-data": 1,
@@ -114,10 +115,10 @@
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
-    "branding": 15,
+    "branding": 16,
     "photography": 1,
     "colorful": 4,
-    "logo": 4,
+    "logo": 5,
     "tech": 3,
     "identity": 3,
     "system": 1,
@@ -149,9 +150,9 @@
     "cosmetics": 1,
     "packaging": 3,
     "feminine": 1,
-    "mascot": 2,
+    "mascot": 3,
     "bar": 1,
-    "food": 1,
+    "food": 2,
     "onboarding": 1,
     "animation": 1,
     "app": 3,
@@ -169,7 +170,7 @@
   },
   "categoryCounts": {
     "ui": 32,
-    "branding": 22,
+    "branding": 23,
     "ui-ux": 2,
     "mobile": 1
   }
