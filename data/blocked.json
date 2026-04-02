@@ -34,7 +34,8 @@
     "es003",
     "es005",
     "es006",
-    "es008"
+    "es008",
+    "es009"
   ],
   "tagCounts": {
     "ui": 5,
@@ -42,24 +43,26 @@
     "mobile": 5,
     "dark": 1,
     "fintech": 2,
-    "dashboard": 3,
+    "dashboard": 4,
     "ios": 1,
     "saas": 2,
-    "analytics": 1,
+    "analytics": 2,
     "light": 6,
     "payment": 1,
     "checkout": 1,
-    "empty-state": 4,
+    "empty-state": 5,
     "icon": 1,
-    "illustration": 2,
+    "illustration": 3,
     "minimal": 1,
     "component": 1,
     "no-data": 1,
     "modal": 1,
     "notification": 1,
-    "feedback": 1
+    "feedback": 1,
+    "character": 1,
+    "blue": 1
   },
   "categoryCounts": {
-    "ui": 7
+    "ui": 8
   }
 }
