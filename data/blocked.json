@@ -69,7 +69,8 @@
     "nb015",
     "nb045",
     "es014",
-    "es015"
+    "es015",
+    "d117"
   ],
   "tagCounts": {
     "ui": 20,
@@ -143,7 +144,7 @@
   },
   "categoryCounts": {
     "ui": 28,
-    "branding": 12,
+    "branding": 13,
     "ui-ux": 2
   }
 }
