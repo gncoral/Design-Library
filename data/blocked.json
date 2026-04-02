@@ -31,26 +31,28 @@
     "d064",
     "d065",
     "d067",
-    "es003"
+    "es003",
+    "es005"
   ],
   "tagCounts": {
-    "ui": 4,
+    "ui": 5,
     "finance": 1,
-    "mobile": 3,
+    "mobile": 4,
     "dark": 1,
     "fintech": 2,
     "dashboard": 2,
     "ios": 1,
     "saas": 1,
     "analytics": 1,
-    "light": 3,
+    "light": 4,
     "payment": 1,
     "checkout": 1,
-    "empty-state": 1,
+    "empty-state": 2,
     "icon": 1,
-    "illustration": 1
+    "illustration": 2,
+    "minimal": 1
   },
   "categoryCounts": {
-    "ui": 4
+    "ui": 5
   }
 }
