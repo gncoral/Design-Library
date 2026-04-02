@@ -83,7 +83,8 @@
     "d072",
     "d119",
     "d120",
-    "nb013"
+    "nb013",
+    "nb014"
   ],
   "tagCounts": {
     "ui": 24,
@@ -101,7 +102,7 @@
     "empty-state": 8,
     "icon": 1,
     "illustration": 10,
-    "minimal": 8,
+    "minimal": 9,
     "component": 1,
     "no-data": 1,
     "modal": 1,
@@ -113,10 +114,10 @@
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
-    "branding": 14,
+    "branding": 15,
     "photography": 1,
     "colorful": 4,
-    "logo": 3,
+    "logo": 4,
     "tech": 3,
     "identity": 3,
     "system": 1,
@@ -129,7 +130,7 @@
     "green": 2,
     "web": 2,
     "startup": 3,
-    "logistics": 1,
+    "logistics": 2,
     "enterprise": 1,
     "banking": 1,
     "ai": 3,
@@ -168,7 +169,7 @@
   },
   "categoryCounts": {
     "ui": 32,
-    "branding": 21,
+    "branding": 22,
     "ui-ux": 2,
     "mobile": 1
   }
