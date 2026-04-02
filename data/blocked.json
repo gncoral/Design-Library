@@ -79,7 +79,8 @@
     "d128",
     "d096",
     "b012n",
-    "nb038"
+    "nb038",
+    "d072"
   ],
   "tagCounts": {
     "ui": 24,
@@ -109,12 +110,12 @@
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
-    "branding": 12,
+    "branding": 13,
     "photography": 1,
     "colorful": 4,
-    "logo": 2,
+    "logo": 3,
     "tech": 3,
-    "identity": 2,
+    "identity": 3,
     "system": 1,
     "health": 3,
     "crypto": 3,
@@ -157,11 +158,13 @@
     "social": 1,
     "meditation": 1,
     "construction": 1,
-    "platform": 1
+    "platform": 1,
+    "logomark": 1,
+    "creative": 1
   },
   "categoryCounts": {
     "ui": 32,
-    "branding": 17,
+    "branding": 18,
     "ui-ux": 2,
     "mobile": 1
   }
