@@ -105,7 +105,8 @@
     "nu043",
     "nb010",
     "nb025",
-    "d100"
+    "d100",
+    "d102"
   ],
   "tagCounts": {
     "ui": 32,
@@ -135,10 +136,10 @@
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
-    "branding": 22,
+    "branding": 23,
     "photography": 1,
     "colorful": 5,
-    "logo": 7,
+    "logo": 8,
     "tech": 3,
     "identity": 4,
     "system": 1,
@@ -204,11 +205,14 @@
     "warm": 1,
     "baby": 1,
     "soft": 1,
-    "3d": 1
+    "3d": 1,
+    "marketing": 1,
+    "geometric": 1,
+    "lettermark": 1
   },
   "categoryCounts": {
     "ui": 40,
-    "branding": 32,
+    "branding": 33,
     "ui-ux": 3,
     "mobile": 2,
     "web-design": 1
