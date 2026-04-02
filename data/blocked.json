@@ -54,15 +54,16 @@
     "d098",
     "nu029",
     "nu024",
-    "nu013"
+    "nu013",
+    "nu015"
   ],
   "tagCounts": {
-    "ui": 14,
+    "ui": 15,
     "finance": 1,
     "mobile": 8,
-    "dark": 2,
+    "dark": 3,
     "fintech": 3,
-    "dashboard": 7,
+    "dashboard": 8,
     "ios": 1,
     "saas": 5,
     "analytics": 3,
@@ -104,10 +105,11 @@
     "enterprise": 1,
     "banking": 1,
     "ai": 1,
-    "productivity": 1
+    "productivity": 1,
+    "streaming": 1
   },
   "categoryCounts": {
-    "ui": 20,
+    "ui": 21,
     "branding": 5,
     "ui-ux": 2
   }
