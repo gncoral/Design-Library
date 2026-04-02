@@ -58,13 +58,14 @@
     "nu015",
     "nu012",
     "nb030",
-    "b019n"
+    "b019n",
+    "d092"
   ],
   "tagCounts": {
-    "ui": 16,
+    "ui": 17,
     "finance": 1,
-    "mobile": 9,
-    "dark": 3,
+    "mobile": 10,
+    "dark": 4,
     "fintech": 3,
     "dashboard": 8,
     "ios": 1,
@@ -113,10 +114,12 @@
     "marketplace": 1,
     "art": 1,
     "fitness": 1,
-    "graphic": 1
+    "graphic": 1,
+    "automotive": 1,
+    "ev": 1
   },
   "categoryCounts": {
-    "ui": 22,
+    "ui": 23,
     "branding": 7,
     "ui-ux": 2
   }
