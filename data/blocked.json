@@ -71,7 +71,8 @@
     "es014",
     "es015",
     "d117",
-    "nu005"
+    "nu005",
+    "nb020"
   ],
   "tagCounts": {
     "ui": 21,
@@ -101,7 +102,7 @@
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
-    "branding": 9,
+    "branding": 10,
     "photography": 1,
     "colorful": 3,
     "logo": 2,
@@ -136,18 +137,20 @@
     "cosmetics": 1,
     "packaging": 3,
     "feminine": 1,
-    "mascot": 1,
+    "mascot": 2,
     "bar": 1,
     "food": 1,
     "onboarding": 1,
     "animation": 1,
     "app": 1,
     "kids": 1,
-    "bright": 1
+    "bright": 1,
+    "sports": 1,
+    "school": 1
   },
   "categoryCounts": {
     "ui": 29,
-    "branding": 13,
+    "branding": 14,
     "ui-ux": 2
   }
 }
