@@ -77,12 +77,13 @@
     "d084",
     "d091",
     "d128",
-    "d096"
+    "d096",
+    "b012n"
   ],
   "tagCounts": {
-    "ui": 23,
+    "ui": 24,
     "finance": 1,
-    "mobile": 18,
+    "mobile": 19,
     "dark": 5,
     "fintech": 3,
     "dashboard": 8,
@@ -109,7 +110,7 @@
     "grocery": 1,
     "branding": 11,
     "photography": 1,
-    "colorful": 3,
+    "colorful": 4,
     "logo": 2,
     "tech": 2,
     "identity": 2,
@@ -147,7 +148,7 @@
     "food": 1,
     "onboarding": 1,
     "animation": 1,
-    "app": 2,
+    "app": 3,
     "kids": 1,
     "bright": 1,
     "sports": 1,
@@ -158,7 +159,7 @@
     "platform": 1
   },
   "categoryCounts": {
-    "ui": 31,
+    "ui": 32,
     "branding": 16,
     "ui-ux": 2,
     "mobile": 1
