@@ -64,7 +64,8 @@
     "nu006",
     "nu002",
     "nb048",
-    "nb016"
+    "nb016",
+    "d078"
   ],
   "tagCounts": {
     "ui": 20,
@@ -81,7 +82,7 @@
     "checkout": 1,
     "empty-state": 6,
     "icon": 1,
-    "illustration": 7,
+    "illustration": 8,
     "minimal": 4,
     "component": 1,
     "no-data": 1,
@@ -94,7 +95,7 @@
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
-    "branding": 6,
+    "branding": 7,
     "photography": 1,
     "colorful": 2,
     "logo": 1,
@@ -124,15 +125,16 @@
     "ev": 1,
     "real-estate": 1,
     "trading": 1,
-    "wellness": 1,
+    "wellness": 2,
     "font": 1,
     "cosmetics": 1,
-    "packaging": 1,
-    "feminine": 1
+    "packaging": 2,
+    "feminine": 1,
+    "mascot": 1
   },
   "categoryCounts": {
     "ui": 26,
-    "branding": 9,
+    "branding": 10,
     "ui-ux": 2
   }
 }
