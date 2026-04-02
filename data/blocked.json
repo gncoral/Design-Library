@@ -35,24 +35,25 @@
     "es005",
     "es006",
     "es008",
-    "es009"
+    "es009",
+    "es011"
   ],
   "tagCounts": {
     "ui": 5,
     "finance": 1,
-    "mobile": 5,
+    "mobile": 6,
     "dark": 1,
     "fintech": 2,
     "dashboard": 4,
     "ios": 1,
     "saas": 2,
     "analytics": 2,
-    "light": 6,
+    "light": 7,
     "payment": 1,
     "checkout": 1,
-    "empty-state": 5,
+    "empty-state": 6,
     "icon": 1,
-    "illustration": 3,
+    "illustration": 4,
     "minimal": 1,
     "component": 1,
     "no-data": 1,
@@ -60,9 +61,11 @@
     "notification": 1,
     "feedback": 1,
     "character": 1,
-    "blue": 1
+    "blue": 1,
+    "travel": 1,
+    "booking": 1
   },
   "categoryCounts": {
-    "ui": 8
+    "ui": 9
   }
 }
