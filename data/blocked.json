@@ -100,7 +100,8 @@
     "d130",
     "d104",
     "d116",
-    "d073"
+    "d073",
+    "nb009"
   ],
   "tagCounts": {
     "ui": 30,
@@ -118,7 +119,7 @@
     "empty-state": 8,
     "icon": 1,
     "illustration": 11,
-    "minimal": 9,
+    "minimal": 10,
     "component": 1,
     "no-data": 1,
     "modal": 1,
@@ -130,7 +131,7 @@
     "booking": 1,
     "ecommerce": 1,
     "grocery": 1,
-    "branding": 19,
+    "branding": 20,
     "photography": 1,
     "colorful": 5,
     "logo": 7,
@@ -194,11 +195,13 @@
     "landing-page": 1,
     "luxury": 1,
     "web-design": 1,
-    "healthcare": 1
+    "healthcare": 1,
+    "furniture": 1,
+    "warm": 1
   },
   "categoryCounts": {
     "ui": 38,
-    "branding": 29,
+    "branding": 30,
     "ui-ux": 3,
     "mobile": 2,
     "web-design": 1
