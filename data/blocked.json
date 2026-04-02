@@ -40,12 +40,13 @@
     "d122",
     "nu016",
     "nb031",
-    "nb001"
+    "nb001",
+    "nu025"
   ],
   "tagCounts": {
-    "ui": 6,
+    "ui": 7,
     "finance": 1,
-    "mobile": 7,
+    "mobile": 8,
     "dark": 1,
     "fintech": 2,
     "dashboard": 4,
@@ -58,7 +59,7 @@
     "empty-state": 6,
     "icon": 1,
     "illustration": 4,
-    "minimal": 1,
+    "minimal": 2,
     "component": 1,
     "no-data": 1,
     "modal": 1,
@@ -76,10 +77,11 @@
     "logo": 1,
     "tech": 1,
     "identity": 1,
-    "system": 1
+    "system": 1,
+    "health": 1
   },
   "categoryCounts": {
-    "ui": 10,
+    "ui": 11,
     "branding": 3
   }
 }
