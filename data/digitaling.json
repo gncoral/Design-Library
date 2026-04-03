@@ -565,5 +565,30 @@
     ],
     "weekIndex": 14,
     "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/f75f613c2613c8acfca94e8fee3876a8140a8ac0-1200x630.jpg"
+  },
+  {
+    "id": "dg-2026-04-03",
+    "date": "2026-04-03",
+    "type": "daily",
+    "source": "digitaling",
+    "sourceName": "数英",
+    "sourceUrl": "https://www.digitaling.com/",
+    "title": "淘宝第一文案「步履不停」，又出神作了",
+    "url": "https://www.digitaling.com/articles/1478049.html",
+    "coverImg": "https://gncoral.github.io/Design-Library/data/covers/dg/dg-2026-04-03.jpg",
+    "summary": "依旧文艺，却更见肌理。",
+    "keyInsights": [],
+    "tags": [
+      "品牌广告",
+      "数英精选",
+      "步履不停",
+      "文案",
+      "盘点"
+    ],
+    "heat": {
+      "zan": 30,
+      "collect": 62,
+      "comment": 9
+    }
   }
 ]
