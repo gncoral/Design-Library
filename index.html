@@ -174,6 +174,16 @@
       width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
       font-size: 32px; color: var(--border);
     }
+    /* gradient fallback thumb */
+    .dg-thumb-gen {
+      width: 100%; height: 100%; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 6px;
+    }
+    .dg-thumb-char {
+      font-size: 28px; font-weight: 900; color: rgba(255,255,255,0.85);
+      line-height: 1; letter-spacing: -1px;
+    }
+    .dg-thumb-icon { font-size: 16px; opacity: 0.7; }
     /* 右侧文字区 */
     .dg-body { padding: 14px 16px; flex: 1; min-width: 0; display: flex; flex-direction: column; }
     /* 广告策划卡片蓝色风格 */
@@ -435,8 +445,25 @@
   }
 
   // ── Insights Panel ───────────────────────────────────────
+  // Gradient palette for text-based thumb fallback
+  const DG_GRADIENTS = [
+    ['#1a1a2e','#e94560'], ['#0f3460','#533483'], ['#16213e','#0f3460'],
+    ['#1b1b2f','#e94560'], ['#162447','#1f4068'], ['#1a1a2e','#533483'],
+    ['#0d0d0d','#e94560'], ['#1f4068','#1b262c'], ['#2c003e','#e94560'],
+  ];
+  function dgGradient(title) {
+    let h = 0; for (let i=0; i<(title||'').length; i++) h = (h*31+title.charCodeAt(i))&0xffff;
+    const g = DG_GRADIENTS[h % DG_GRADIENTS.length];
+    return `linear-gradient(135deg, ${g[0]} 0%, ${g[1]} 100%)`;
+  }
+  function makeDgThumbInner(d, isAd) {
+    const char = (d.title||'?')[0];
+    const grad = dgGradient(d.title);
+    const icon = isAd ? '📣' : '🎨';
+    return `<div class="dg-thumb-gen" style="background:${grad}"><span class="dg-thumb-char">${esc(char)}</span><span class="dg-thumb-icon">${icon}</span></div>`;
+  }
+
   function getThumbUrl(d) {
-    // 优先用已存储的封面图
     if (d.coverImg) return d.coverImg;
     if (d.imageUrl) return d.imageUrl;
     return null;
@@ -450,9 +477,15 @@
     card.rel = 'noopener';
 
     const thumbUrl = getThumbUrl(d);
-    const thumbHtml = thumbUrl
-      ? `<div class="dg-thumb"><img src="${esc(thumbUrl)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onerror="this.parentElement.innerHTML='<div class=\\"dg-thumb-placeholder\\">${isAd ? '📣' : '🎨'}</div>'"></div>`
-      : `<div class="dg-thumb"><div class="dg-thumb-placeholder">${isAd ? '📣' : '🎨'}</div></div>`;
+    let thumbHtml;
+    if (thumbUrl) {
+      const fallbackContent = makeDgThumbInner(d, isAd);
+      // encode fallback as base64 to avoid quote issues in onerror
+      const fbB64 = btoa(unescape(encodeURIComponent(fallbackContent)));
+      thumbHtml = `<div class="dg-thumb" id="th-${esc(d.id)}"><img src="${esc(thumbUrl)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onerror="(function(el){var p=el.closest('.dg-thumb');if(p)p.innerHTML=decodeURIComponent(escape(atob('${fbB64}')));el.onerror=null;})(this)"></div>`;
+    } else {
+      thumbHtml = `<div class="dg-thumb">${makeDgThumbInner(d, isAd)}</div>`;
+    }
 
     const insightsHtml = (d.keyInsights || []).slice(0, 2).map(i =>
       `<div class="dg-insight">${esc(i)}</div>`
