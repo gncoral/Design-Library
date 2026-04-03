@@ -153,24 +153,44 @@
       padding: 2px 8px; border-radius: 8px; font-size: 11px; font-weight: 600;
       background: #ff6b2b22; color: #ff8c55; border: 1px solid #ff6b2b33;
     }
-    .dg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; padding: 16px 24px 32px; }
+    .dg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 14px; padding: 16px 24px 32px; }
     .dg-card {
-      background: var(--surface); border-radius: 12px; padding: 18px;
+      background: var(--surface); border-radius: 12px; overflow: hidden;
       border: 1px solid var(--border); transition: border-color 0.2s, transform 0.15s;
-      cursor: pointer; text-decoration: none; display: block;
+      cursor: pointer; text-decoration: none; display: flex; flex-direction: row; align-items: stretch;
     }
     .dg-card:hover { border-color: #ff6b2b55; transform: translateY(-2px); }
-    .dg-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+    /* 配图 */
+    .dg-thumb {
+      width: 120px; min-width: 120px; max-width: 120px;
+      overflow: hidden; flex-shrink: 0; background: var(--surface2);
+    }
+    .dg-thumb img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.3s;
+    }
+    .dg-card:hover .dg-thumb img { transform: scale(1.05); }
+    .dg-thumb-placeholder {
+      width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+      font-size: 32px; color: var(--border);
+    }
+    /* 右侧文字区 */
+    .dg-body { padding: 14px 16px; flex: 1; min-width: 0; display: flex; flex-direction: column; }
+    /* 广告策划卡片蓝色风格 */
+    .dg-card.dg-ad:hover { border-color: #1a3aff55; }
+    .dg-card.dg-ad .dg-dot { background: #6b8cff; }
+    .dg-card.dg-ad .dg-insight::before { color: #6b8cff; }
+    .dg-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
     .dg-card-meta { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); }
     .dg-dot { width: 6px; height: 6px; border-radius: 50%; background: #ff8c55; flex-shrink: 0; }
     .dg-heat { display: flex; align-items: center; gap: 10px; font-size: 11px; color: var(--muted); white-space: nowrap; }
     .dg-heat span { display: flex; align-items: center; gap: 3px; }
-    .dg-title { font-size: 15px; font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 8px; }
-    .dg-summary { font-size: 12px; line-height: 1.65; color: #888; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-    .dg-insights { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+    .dg-title { font-size: 14px; font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 6px; }
+    .dg-summary { font-size: 12px; line-height: 1.65; color: #888; margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; flex: 1; }
+    .dg-insights { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
     .dg-insight { font-size: 11px; color: #777; line-height: 1.5; }
     .dg-insight::before { content: '•'; color: #ff8c55; margin-right: 5px; }
-    .dg-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .dg-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; }
     .dg-tag { padding: 2px 8px; background: var(--surface2); border-radius: 8px; font-size: 10px; color: var(--muted); border: 1px solid var(--border); }
 
     /* Weekly Summary Card */
@@ -276,7 +296,7 @@
     ❤️ Saved <span class="badge" id="tab-liked-count">0</span>
   </div>
   <div class="tab" data-tab="trends" onclick="switchTab('trends')">
-    📈 Trends <span class="badge" id="tab-trends-count">0</span>
+    📚 Insights <span class="badge" id="tab-trends-count">0</span>
   </div>
 </div>
 
@@ -304,21 +324,21 @@
   </main>
 </div>
 
-<!-- TRENDS PANEL -->
+<!-- INSIGHTS PANEL -->
 <div class="panel" id="panel-trends">
-  <!-- 品牌知识库 Section -->
+  <!-- 品牌视觉重塑案例 Section -->
   <div class="trends-section-header">
-    <span class="trends-section-title">🧠 品牌知识库</span>
-    <span class="trends-section-badge">Daily · Brand Cases</span>
+    <span class="trends-section-title">🎨 品牌视觉重塑案例</span>
+    <span class="trends-section-badge">Daily · Rebrand Cases</span>
   </div>
-  <div class="dg-grid" id="dg-grid"></div>
+  <div class="dg-grid" id="dg-grid-rebrand"></div>
 
-  <!-- 设计趋势 Section -->
-  <div class="trends-section-header">
-    <span class="trends-section-title">📈 2026 设计趋势</span>
-    <span class="trends-section-badge">Global · Curated</span>
+  <!-- 品牌广告策划案例 Section -->
+  <div class="trends-section-header" style="margin-top:8px">
+    <span class="trends-section-title">📣 品牌广告策划案例</span>
+    <span class="trends-section-badge" style="background:#1a3aff22;color:#6b8cff;border-color:#1a3aff33">Daily · Ad Cases</span>
   </div>
-  <div class="trends-grid" id="trends-grid"></div>
+  <div class="dg-grid" id="dg-grid-digitaling"></div>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -414,111 +434,91 @@
     return div;
   }
 
-  // ── Brand Knowledge Base ─────────────────────────────────
-  function renderDigitaling() {
-    const grid = document.getElementById('dg-grid');
-    if (!grid) return;
-    grid.innerHTML = '';
+  // ── Insights Panel ───────────────────────────────────────
+  function getThumbUrl(d) {
+    // rebrand.gallery 缩略图：取项目 slug 拼装 og image
+    if (d.source === 'rebrand' && d.url) {
+      const slug = d.url.split('/rebrand/')[1];
+      if (slug) return `https://www.rebrand.gallery/og/${slug}.jpg`;
+    }
+    // 数英：用 coverImg 字段，或从 url 取 og（降级用占位）
+    if (d.coverImg) return d.coverImg;
+    if (d.imageUrl) return d.imageUrl;
+    return null;
+  }
 
-    // Separate weekly summaries and daily entries
-    const weeklies = allDigitaling.filter(d => d.type === 'weekly');
-    const dailies = allDigitaling.filter(d => d.type === 'daily');
+  function makeDgCard(d, isAd) {
+    const card = document.createElement('a');
+    card.className = 'dg-card' + (isAd ? ' dg-ad' : '');
+    card.href = d.url || '#';
+    card.target = '_blank';
+    card.rel = 'noopener';
 
-    // Render weekly summaries first (most recent)
-    weeklies.sort((a, b) => b.date.localeCompare(a.date)).forEach(w => {
-      const card = document.createElement('a');
-      card.className = 'dg-card dg-weekly-card';
-      card.href = '#';
-      card.target = '_blank';
-      card.innerHTML = `
-        <div class="dg-weekly-badge">📅 WEEKLY</div>
-        <div class="dg-weekly-title">${esc(w.title)}</div>
-        <div class="dg-summary">${esc(w.summary)}</div>
-        <ul class="dg-weekly-list">
-          ${(w.articles || []).map(a =>
-            `<li><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.title)}</a></li>`
-          ).join('')}
-        </ul>
-        <div class="dg-card-meta" style="margin-top:12px">
-          <span class="dg-dot"></span>
-          <span>第 ${w.weekNumber || '?'} 周总结</span>
-          <span>·</span>
-          <span>${w.date}</span>
-        </div>`;
-      var ci=card.querySelector('.card-img');if(ci){ci.style.cursor='zoom-in';ci.addEventListener('click',function(ev){ev.stopPropagation();lbOpen(img.src,img.title,img.url||'');});}
-    grid.appendChild(card);
-    });
+    const thumbUrl = getThumbUrl(d);
+    const thumbHtml = thumbUrl
+      ? `<div class="dg-thumb"><img src="${esc(thumbUrl)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onerror="this.parentElement.innerHTML='<div class=\\"dg-thumb-placeholder\\">${isAd ? '📣' : '🎨'}</div>'"></div>`
+      : `<div class="dg-thumb"><div class="dg-thumb-placeholder">${isAd ? '📣' : '🎨'}</div></div>`;
 
-    // Render daily entries (most recent first)
-    dailies.sort((a, b) => b.date.localeCompare(a.date)).forEach(d => {
-      const card = document.createElement('a');
-      card.className = 'dg-card';
-      card.href = d.url;
-      card.target = '_blank';
-      card.rel = 'noopener';
-      const insightsHtml = (d.keyInsights || []).slice(0, 3).map(i =>
-        `<div class="dg-insight">${esc(i)}</div>`
-      ).join('');
-      const tagsHtml = (d.tags || []).map(t =>
-        `<span class="dg-tag">${esc(t)}</span>`
-      ).join('');
-      card.innerHTML = `
+    const insightsHtml = (d.keyInsights || []).slice(0, 2).map(i =>
+      `<div class="dg-insight">${esc(i)}</div>`
+    ).join('');
+    const tagsHtml = (d.tags || []).slice(0, 4).map(t =>
+      `<span class="dg-tag">${esc(t)}</span>`
+    ).join('');
+
+    card.innerHTML = `
+      ${thumbHtml}
+      <div class="dg-body">
         <div class="dg-card-header">
           <div class="dg-card-meta">
             <span class="dg-dot"></span>
             <span>${d.date}</span>
-            ${d.author ? `<span>· ${esc(d.author)}</span>` : ''}
+            ${d.sourceName ? `<span>· ${esc(d.sourceName)}</span>` : ''}
           </div>
-          <div style="display:flex;align-items:center;gap:8px">
-            ${d.sourceName ? `<span style="font-size:10px;padding:1px 7px;background:#ffffff0d;border:1px solid #333;border-radius:6px;color:#666">${esc(d.sourceName)}</span>` : ''}
-            <div class="dg-heat">
-              <span>🔖 ${d.heat?.saves || 0}</span>
-              <span>❤️ ${d.heat?.likes || 0}</span>
-            </div>
+          <div class="dg-heat">
+            ${d.heat?.views ? `<span>👁 ${d.heat.views}</span>` : ''}
+            ${d.heat?.saves ? `<span>🔖 ${d.heat.saves}</span>` : ''}
+            ${d.heat?.likes ? `<span>❤️ ${d.heat.likes}</span>` : ''}
           </div>
         </div>
         <div class="dg-title">${esc(d.title)}</div>
         <div class="dg-summary">${esc(d.summary)}</div>
         ${insightsHtml ? `<div class="dg-insights">${insightsHtml}</div>` : ''}
-        <div class="dg-tags">${tagsHtml}</div>`;
-      grid.appendChild(card);
-    });
+        <div class="dg-tags">${tagsHtml}</div>
+      </div>`;
+    return card;
+  }
 
-    if (allDigitaling.length === 0) {
-      grid.innerHTML = '<div style="padding:24px;color:#555;font-size:13px">暂无数据，首篇将于今日更新</div>';
+  function renderDigitaling() {
+    const rebrandGrid = document.getElementById('dg-grid-rebrand');
+    const dgGrid = document.getElementById('dg-grid-digitaling');
+    if (!rebrandGrid || !dgGrid) return;
+
+    const rebrandItems = allDigitaling.filter(d => d.source === 'rebrand' && d.type === 'daily');
+    const dgItems = allDigitaling.filter(d => d.source !== 'rebrand' || d.type === 'weekly');
+
+    // 品牌视觉重塑
+    rebrandGrid.innerHTML = '';
+    rebrandItems.sort((a, b) => b.date.localeCompare(a.date)).forEach(d => {
+      rebrandGrid.appendChild(makeDgCard(d, false));
+    });
+    if (rebrandItems.length === 0) {
+      rebrandGrid.innerHTML = '<div style="padding:24px;color:#555;font-size:13px">暂无重塑案例，将于每日10:15自动更新</div>';
+    }
+
+    // 品牌广告策划
+    dgGrid.innerHTML = '';
+    const adItems = allDigitaling.filter(d => d.source === 'digitaling' || (d.source !== 'rebrand'));
+    adItems.sort((a, b) => b.date.localeCompare(a.date)).forEach(d => {
+      dgGrid.appendChild(makeDgCard(d, true));
+    });
+    if (adItems.length === 0) {
+      dgGrid.innerHTML = '<div style="padding:24px;color:#555;font-size:13px">暂无数英案例，将于每日10:00自动更新</div>';
     }
   }
 
-  // ── Trends ────────────────────────────────────────────────
-  function renderTrends() {
-    const grid = document.getElementById('trends-grid');
-    grid.innerHTML = '';
-    allTrends.forEach(t => {
-      const card = document.createElement('div');
-      card.className = 'trend-card';
-      const imgs = (t.coverImages || []).slice(0, 2);
-      const imgHtml = imgs.map(src =>
-        `<img src="${esc(src)}" loading="lazy" onerror="this.style.background='#2a2a2a'">`
-      ).join('');
-      const signalHtml = (t.signals || []).map(s => `<span class="signal-tag">${esc(s)}</span>`).join('');
-      card.innerHTML = `
-        <div class="trend-cover">${imgHtml}</div>
-        <div class="trend-body">
-          <div class="trend-year">${t.year} · 设计趋势</div>
-          <div class="trend-title">${esc(t.title)}</div>
-          <div class="trend-summary">${esc(t.summary)}</div>
-          <div class="trend-signals">${signalHtml}</div>
-          <div class="trend-studios"><strong>代表工作室</strong>：${esc((t.studios||[]).join(' · '))}</div>
-          <div class="trend-sources">${
-            (t.sources||[]).map(s => {
-              if (typeof s === 'string') return '<a class="trend-source-link" href="#" target="_blank">📎 ' + esc(s) + '</a>';
-              return '<a class="trend-source-link" href="' + esc(s.url) + '" target="_blank" rel="noopener">📎 ' + esc(s.name) + '</a>';
-            }).join('')
-          }</div>
-        </div>`;
-      grid.appendChild(card);
-    });
-  }
+  // ── Trends (unused, kept for compat) ─────────────────────
+  function renderTrends() { /* 已移除 2026设计趋势模块 */ }
 
   // ── Actions ───────────────────────────────────────────────
   // ── Liked.json sync（正向学习）────────────────────────────
@@ -638,7 +638,8 @@
     const visible = allImages.filter(i => !prefs.disliked.includes(i.id)).length;
     document.getElementById('tab-all-count').textContent = visible;
     document.getElementById('tab-liked-count').textContent = prefs.liked.length;
-    document.getElementById('tab-trends-count').textContent = allTrends.length + allDigitaling.length;
+    const insightsCount = allDigitaling.filter(d => d.type === 'daily').length;
+    document.getElementById('tab-trends-count').textContent = insightsCount;
   }
 
   // ── Tabs ─────────────────────────────────��────────────────
