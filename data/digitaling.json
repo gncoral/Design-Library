@@ -69,7 +69,8 @@
       "Sans Serif",
       "Monospace"
     ],
-    "weekIndex": 1
+    "weekIndex": 1,
+    "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/b64766c1233ccbcf80ba62b4c144c306227ead55-1200x630.jpg"
   },
   {
     "id": "rb-2026-03-25",
@@ -108,7 +109,8 @@
       "Sans Serif",
       "Serif"
     ],
-    "weekIndex": 13
+    "weekIndex": 13,
+    "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/870665139ce10e3cc176f36979db831c08a8618e-1200x630.jpg"
   },
   {
     "id": "rb-2026-03-26",
@@ -146,7 +148,8 @@
       "Sans Serif",
       "Display"
     ],
-    "weekIndex": 13
+    "weekIndex": 13,
+    "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/b322879e12842eb7aa18601419406b0259faf91e-1200x630.jpg"
   },
   {
     "id": "rb-2026-03-27",
@@ -188,7 +191,8 @@
       "Sans Serif",
       "Monospace"
     ],
-    "weekIndex": 13
+    "weekIndex": 13,
+    "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/14759f76c75a0840b9a8cb6041a0bdd0debc0691-1200x630.jpg"
   },
   {
     "id": "dg-2026-03-28",
@@ -324,7 +328,8 @@
       "Display",
       "Sans Serif"
     ],
-    "weekIndex": 14
+    "weekIndex": 14,
+    "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/6c0af9a78123a2a1d4c28a33fc3c068c2a5af7d5-1200x630.jpg"
   },
   {
     "id": "rb-2026-03-28",
@@ -361,7 +366,8 @@
     "typography": [
       "Sans Serif"
     ],
-    "weekIndex": 14
+    "weekIndex": 14,
+    "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/bbcbbfb86bfd847e0400471760f23eaae7d793e1-1200x630.jpg"
   },
   {
     "id": "rb-2026-03-29",
@@ -401,7 +407,8 @@
       "Sans Serif",
       "Display"
     ],
-    "weekIndex": 14
+    "weekIndex": 14,
+    "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/bdae54ed3300d35b38375595374ec9bb50ba7cb3-1200x630.jpg"
   },
   {
     "id": "rb-2026-03-30",
@@ -439,7 +446,8 @@
       "Serif",
       "Sans Serif"
     ],
-    "weekIndex": 14
+    "weekIndex": 14,
+    "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/3191d119c48b14b0f001db088c12413d7cae5c47-1200x630.jpg"
   },
   {
     "id": "rb-2026-03-31",
@@ -474,7 +482,8 @@
       "Sans Serif",
       "Serif"
     ],
-    "weekIndex": 14
+    "weekIndex": 14,
+    "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/a86338411a8762716b925c1a567cc11d000f6761-1200x630.jpg"
   },
   {
     "id": "rb-2026-04-02",
@@ -512,7 +521,8 @@
     "typography": [
       "Sans Serif"
     ],
-    "weekIndex": 14
+    "weekIndex": 14,
+    "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/95f9eecd030c4858a7c4c87ee4c247e957190f4a-1200x630.jpg"
   },
   {
     "id": "rb-2026-04-03",
@@ -549,6 +559,7 @@
     "typography": [
       "Sans Serif"
     ],
-    "weekIndex": 14
+    "weekIndex": 14,
+    "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/f75f613c2613c8acfca94e8fee3876a8140a8ac0-1200x630.jpg"
   }
 ]
