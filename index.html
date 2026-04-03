@@ -203,6 +203,29 @@
     .dg-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; }
     .dg-tag { padding: 2px 8px; background: var(--surface2); border-radius: 8px; font-size: 10px; color: var(--muted); border: 1px solid var(--border); }
 
+    /* 搜狗品牌启发 */
+    .dg-sogou-wrap { margin-top: 10px; border-top: 1px solid #2a2a2a; padding-top: 8px; }
+    .dg-sogou-toggle {
+      display: flex; align-items: center; gap: 6px; font-size: 11px; color: #6b8cff;
+      cursor: pointer; background: none; border: none; padding: 0; font-family: inherit;
+      opacity: 0.8; transition: opacity 0.2s;
+    }
+    .dg-sogou-toggle:hover { opacity: 1; }
+    .dg-sogou-toggle .arrow { transition: transform 0.2s; display: inline-block; font-size: 9px; }
+    .dg-sogou-toggle.open .arrow { transform: rotate(90deg); }
+    .dg-sogou-body {
+      display: none; margin-top: 8px; padding: 10px 12px;
+      background: #0e1525; border-radius: 8px; border: 1px solid #1a3aff22;
+    }
+    .dg-sogou-body.open { display: block; }
+    .dg-sogou-label {
+      font-size: 10px; font-weight: 700; color: #6b8cff; letter-spacing: 0.5px;
+      text-transform: uppercase; margin-bottom: 8px; opacity: 0.8;
+    }
+    .dg-sogou-item { font-size: 11px; color: #8899cc; line-height: 1.65; margin-bottom: 6px; padding-left: 12px; position: relative; }
+    .dg-sogou-item:last-child { margin-bottom: 0; }
+    .dg-sogou-item::before { content: '→'; position: absolute; left: 0; color: #1a3aff; font-size: 10px; }
+
     /* Weekly Summary Card */
     .dg-weekly-card {
       background: linear-gradient(135deg, #1e1510 0%, #1a1a1a 100%);
@@ -494,6 +517,22 @@
       `<span class="dg-tag">${esc(t)}</span>`
     ).join('');
 
+    // 搜狗品牌启发
+    const sogouHtml = (d.sogouInsight && d.sogouInsight.length > 0 && isAd) ? (() => {
+      const cardId = 'sogou-' + esc(d.id);
+      const itemsHtml = d.sogouInsight.map(s => `<div class="dg-sogou-item">${esc(s)}</div>`).join('');
+      return `<div class="dg-sogou-wrap">
+        <button class="dg-sogou-toggle" onclick="event.preventDefault();event.stopPropagation();var b=document.getElementById('${cardId}');var t=this;b.classList.toggle('open');t.classList.toggle('open');" >
+          <span class="arrow">▶</span>
+          <span>🔍 搜狗品牌启发</span>
+        </button>
+        <div class="dg-sogou-body" id="${cardId}">
+          <div class="dg-sogou-label">对搜狗输入法的品牌建议</div>
+          ${itemsHtml}
+        </div>
+      </div>`;
+    })() : '';
+
     card.innerHTML = `
       ${thumbHtml}
       <div class="dg-body">
@@ -504,15 +543,15 @@
             ${d.sourceName ? `<span>· ${esc(d.sourceName)}</span>` : ''}
           </div>
           <div class="dg-heat">
-            ${d.heat?.views ? `<span>👁 ${d.heat.views}</span>` : ''}
-            ${d.heat?.saves ? `<span>🔖 ${d.heat.saves}</span>` : ''}
-            ${d.heat?.likes ? `<span>❤️ ${d.heat.likes}</span>` : ''}
+            ${d.heat?.zan ? `<span>❤️ ${d.heat.zan}</span>` : d.heat?.likes ? `<span>❤️ ${d.heat.likes}</span>` : ''}
+            ${d.heat?.collect ? `<span>⭐ ${d.heat.collect}</span>` : d.heat?.saves ? `<span>⭐ ${d.heat.saves}</span>` : ''}
           </div>
         </div>
         <div class="dg-title">${esc(d.title)}</div>
         <div class="dg-summary">${esc(d.summary)}</div>
         ${insightsHtml ? `<div class="dg-insights">${insightsHtml}</div>` : ''}
         <div class="dg-tags">${tagsHtml}</div>
+        ${sogouHtml}
       </div>`;
     return card;
   }
