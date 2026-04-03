@@ -518,16 +518,17 @@
     ).join('');
 
     // 搜狗品牌启发
-    const sogouHtml = (d.sogouInsight && d.sogouInsight.length > 0 && isAd) ? (() => {
+    const sogouHtml = (d.sogouInsight && d.sogouInsight.length > 0) ? (() => {
       const cardId = 'sogou-' + esc(d.id);
       const itemsHtml = d.sogouInsight.map(s => `<div class="dg-sogou-item">${esc(s)}</div>`).join('');
+      const label = isAd ? '对搜狗输入法的品牌建议' : '对搜狗输入法的视觉设计启发';
       return `<div class="dg-sogou-wrap">
         <button class="dg-sogou-toggle" onclick="event.preventDefault();event.stopPropagation();var b=document.getElementById('${cardId}');var t=this;b.classList.toggle('open');t.classList.toggle('open');" >
           <span class="arrow">▶</span>
-          <span>🔍 搜狗品牌启发</span>
+          <span>${isAd ? '🔍 搜狗品牌启发' : '🎯 搜狗设计启发'}</span>
         </button>
         <div class="dg-sogou-body" id="${cardId}">
-          <div class="dg-sogou-label">对搜狗输入法的品牌建议</div>
+          <div class="dg-sogou-label">${label}</div>
           ${itemsHtml}
         </div>
       </div>`;
