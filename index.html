@@ -436,12 +436,7 @@
 
   // ── Insights Panel ───────────────────────────────────────
   function getThumbUrl(d) {
-    // rebrand.gallery 缩略图：取项目 slug 拼装 og image
-    if (d.source === 'rebrand' && d.url) {
-      const slug = d.url.split('/rebrand/')[1];
-      if (slug) return `https://www.rebrand.gallery/og/${slug}.jpg`;
-    }
-    // 数英：用 coverImg 字段，或从 url 取 og（降级用占位）
+    // 优先用已存储的封面图
     if (d.coverImg) return d.coverImg;
     if (d.imageUrl) return d.imageUrl;
     return null;
