@@ -743,5 +743,45 @@
       "collect": 69,
       "comment": 6
     }
+  },
+  {
+    "id": "rb-2026-04-05",
+    "date": "2026-04-05",
+    "type": "daily",
+    "source": "rebrand",
+    "sourceName": "Rebrand Gallery",
+    "sourceUrl": "https://www.rebrand.gallery/",
+    "title": "ZK Nation 品牌重塑",
+    "url": "https://www.rebrand.gallery/rebrand/zk-nation",
+    "caseStudyUrl": null,
+    "companyUrl": null,
+    "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/f0e56c6e6f33c2e404a9d0ac2e5b4411c2f9685b-1200x630.jpg",
+    "summary": "ZK Nation 完成了一次品牌视觉重塑，设计由 In-house 团队主导。品牌所在行业：Blockchain。视觉风格以 Pattern、Geometric 为主，字体系统选用 Sans Serif + Monospace，整体呈现出清晰的现代品牌语言。",
+    "keyInsights": [
+      "行业：Blockchain — 观察该行业品牌重塑的视觉趋势",
+      "设计主导：In-house — 内部团队主导，品牌基因延续性强",
+      "视觉语言：Pattern + Geometric 的组合策略",
+      "字体系统：Sans Serif + Monospace — 字体选择是品牌调性的隐性表达"
+    ],
+    "tags": [
+      "品牌重塑",
+      "VI设计",
+      "Blockchain",
+      "Rebrand Video"
+    ],
+    "heat": {
+      "views": 1522
+    },
+    "industry": "Blockchain",
+    "designBy": "In-house",
+    "visualStyles": [
+      "Pattern",
+      "Geometric"
+    ],
+    "typography": [
+      "Sans Serif",
+      "Monospace"
+    ],
+    "weekIndex": 15
   }
 ]
