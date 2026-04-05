@@ -718,5 +718,30 @@
       "Sans Serif"
     ],
     "weekIndex": 15
+  },
+  {
+    "id": "dg-2026-04-05",
+    "date": "2026-04-05",
+    "type": "daily",
+    "source": "digitaling",
+    "sourceName": "数英",
+    "sourceUrl": "https://www.digitaling.com/",
+    "title": "40句小孩子语录，打开想象力",
+    "url": "https://www.digitaling.com/articles/1479169.html",
+    "coverImg": "https://gncoral.github.io/Design-Library/data/covers/dg/dg-2026-04-05.png",
+    "summary": "看多了ai，来点真实的。",
+    "keyInsights": [],
+    "tags": [
+      "品牌广告",
+      "数英精选",
+      "文案",
+      "生活",
+      "精选合集"
+    ],
+    "heat": {
+      "zan": 48,
+      "collect": 69,
+      "comment": 6
+    }
   }
 ]
