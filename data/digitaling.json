@@ -1,5 +1,46 @@
 [
   {
+    "id": "rb-weekly-2026-04-06",
+    "date": "2026-04-06",
+    "type": "weekly",
+    "source": "rebrand",
+    "sourceName": "Rebrand Gallery",
+    "title": "品牌重塑周报 · 第 15 周：7 个视觉重塑案例",
+    "summary": "本周从 Rebrand Gallery 精选了 7 个品牌重塑案例，涵盖 Insurance、Energy、Advertising、Tech、Education、Aviation、Software 等行业。",
+    "articles": [
+      {
+        "title": "Mapfre 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/mapfre"
+      },
+      {
+        "title": "So Energy 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/so-energy"
+      },
+      {
+        "title": "BBH 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/bbh"
+      },
+      {
+        "title": "Arena 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/arena"
+      },
+      {
+        "title": "Cadmus 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/cadmus"
+      },
+      {
+        "title": "Joby Aviation 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/joby-aviation"
+      },
+      {
+        "title": "Maxon 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/maxon-one"
+      }
+    ],
+    "weekNumber": 15,
+    "weekIndex": 14
+  },
+  {
     "id": "dg-2026-03-23",
     "date": "2026-03-23",
     "type": "daily",
@@ -808,5 +849,45 @@
       "collect": 28,
       "comment": 9
     }
+  },
+  {
+    "id": "rb-2026-04-06",
+    "date": "2026-04-06",
+    "type": "daily",
+    "source": "rebrand",
+    "sourceName": "Rebrand Gallery",
+    "sourceUrl": "https://www.rebrand.gallery/",
+    "title": "Transavia 品牌重塑",
+    "url": "https://www.rebrand.gallery/rebrand/transavia",
+    "caseStudyUrl": null,
+    "companyUrl": null,
+    "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/58445b30a4ee75b5e75544dc73f826986e4c05ff-1200x630.jpg",
+    "summary": "Transavia 完成了一次品牌视觉重塑，设计由 In-house 团队主导。品牌所在行业：Aviation。视觉风格以 Bold、Photography、Illustration 为主，字体系统选用 Sans Serif，整体呈现出清晰的现代品牌语言。",
+    "keyInsights": [
+      "行业：Aviation — 观察该行业品牌重塑的视觉趋势",
+      "设计主导：In-house — 内部团队主导，品牌基因延续性强",
+      "视觉语言：Bold + Photography + Illustration 的组合策略",
+      "字体系统：Sans Serif — 字体选择是品牌调性的隐性表达"
+    ],
+    "tags": [
+      "品牌重塑",
+      "VI设计",
+      "Aviation",
+      "Rebrand Video"
+    ],
+    "heat": {
+      "views": 2833
+    },
+    "industry": "Aviation",
+    "designBy": "In-house",
+    "visualStyles": [
+      "Bold",
+      "Photography",
+      "Illustration"
+    ],
+    "typography": [
+      "Sans Serif"
+    ],
+    "weekIndex": 15
   }
 ]
