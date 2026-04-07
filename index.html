@@ -939,10 +939,30 @@
       }
     } catch(e) {}
   }
+  const LS_DGLIKES_KEY = 'dl_dglikes_counts_v1'; // 存 allDgLikes {id:count}
+
+  function saveDgLikesLocal() {
+    try { localStorage.setItem(LS_DGLIKES_KEY, JSON.stringify(allDgLikes)); } catch(e) {}
+  }
+  function loadDgLikesLocal() {
+    try { return JSON.parse(localStorage.getItem(LS_DGLIKES_KEY) || '{}'); } catch(e) { return {}; }
+  }
+
   async function loadDgLikes() {
+    // 先用本地缓存
+    const local = loadDgLikesLocal();
+    if (Object.keys(local).length > 0) allDgLikes = local;
+    // 再从 GitHub 拉（权威数据，成功则覆盖本地）
     try {
       const r = await fetch(DG_LIKES_FILE + '?t=' + Date.now());
-      if (r.ok) allDgLikes = await r.json();
+      if (r.ok) {
+        const remote = await r.json();
+        // 取两边较大值（防止本地点赞丢失）
+        const merged = { ...local };
+        for (const k in remote) merged[k] = Math.max(remote[k] || 0, local[k] || 0);
+        allDgLikes = merged;
+        saveDgLikesLocal();
+      }
     } catch(e) {}
   }
 
@@ -1136,6 +1156,7 @@
       allDgLikes[id] = (allDgLikes[id] || 0) + 1;
     }
     localStorage.setItem('dl_dglikes', JSON.stringify(myDgLikes));
+    saveDgLikesLocal(); // 同时保存计数，刷新不丢
     btn.classList.toggle('active', !already);
     btn.querySelector('.dg-like-count').textContent = allDgLikes[id] || 0;
     showToast(already ? '取消点赞' : '👍 已点赞！');
