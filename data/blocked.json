@@ -37,7 +37,8 @@
     "d245",
     "d244",
     "d242",
-    "d241"
+    "d241",
+    "d243"
   ],
   "tagCounts": {
     "2026": 1,
@@ -61,7 +62,7 @@
     "ecommerce": 3,
     "health": 4,
     "app": 4,
-    "branding": 16,
+    "branding": 17,
     "web3": 1,
     "real-estate": 1,
     "property": 1,
@@ -94,10 +95,10 @@
     "baby": 1,
     "pet": 1,
     "character": 1,
-    "behance": 11
+    "behance": 12
   },
   "categoryCounts": {
     "ui": 20,
-    "branding": 17
+    "branding": 18
   }
 }
