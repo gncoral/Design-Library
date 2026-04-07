@@ -260,6 +260,87 @@
 
     /* share mode */
     body.share-mode .btn-like, body.share-mode .btn-dislike { display: none; }
+
+    /* ── NOTES / ANNOTATION ── */
+    .btn-note { background: rgba(255,255,255,0.08); color: #ccc; border: 1px solid rgba(255,255,255,0.15); font-size: 13px; }
+    .btn-note:hover { background: rgba(255,215,0,0.2); color: #ffd700; border-color: rgba(255,215,0,0.4); }
+    .btn-note.has-note { background: rgba(255,215,0,0.18); color: #ffd700; border-color: rgba(255,215,0,0.5); }
+
+    /* note badge on card */
+    .note-badge {
+      position: absolute; top: 8px; right: 8px;
+      background: rgba(255,215,0,0.85); color: #000; border-radius: 10px;
+      padding: 1px 6px; font-size: 10px; font-weight: 700; z-index: 3;
+      display: none; pointer-events: none;
+    }
+    .card.has-note .note-badge { display: block; }
+
+    /* dg-card note / like row */
+    .dg-action-row {
+      display: flex; align-items: center; gap: 8px;
+      margin-top: 8px; padding-top: 8px; border-top: 1px solid #2a2a2a;
+    }
+    .dg-action-btn {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 4px 10px; border-radius: 14px; border: 1px solid var(--border);
+      background: transparent; color: var(--muted); font-size: 11px; cursor: pointer;
+      transition: all 0.15s; font-family: inherit;
+    }
+    .dg-action-btn:hover { border-color: #555; color: var(--text); }
+    .dg-like-btn:hover, .dg-like-btn.active { background: rgba(255,107,107,0.15); color: #ff6b6b; border-color: rgba(255,107,107,0.4); }
+    .dg-note-btn:hover, .dg-note-btn.has-note { background: rgba(255,215,0,0.12); color: #ffd700; border-color: rgba(255,215,0,0.35); }
+    .dg-note-count, .dg-like-count { font-weight: 600; }
+
+    /* ── NOTE MODAL ── */
+    #note-modal {
+      display: none; position: fixed; inset: 0; z-index: 9000;
+      background: rgba(0,0,0,0.75); backdrop-filter: blur(6px);
+      align-items: center; justify-content: center;
+    }
+    #note-modal.on { display: flex; }
+    .note-modal-box {
+      background: #1a1a1a; border: 1px solid #333; border-radius: 14px;
+      width: 480px; max-width: 95vw; padding: 24px; display: flex; flex-direction: column; gap: 16px;
+    }
+    .note-modal-title { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.4; }
+    .note-modal-subtitle { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .note-tag-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .note-tag-btn {
+      padding: 5px 12px; border-radius: 14px; border: 1px solid var(--border);
+      background: transparent; color: var(--muted); font-size: 12px; cursor: pointer;
+      transition: all 0.15s; font-family: inherit;
+    }
+    .note-tag-btn:hover { border-color: #555; color: var(--text); }
+    .note-tag-btn.active { font-weight: 600; }
+    .note-tag-btn[data-tag="✅可吸收"].active { background: #0d3320; color: #4ade80; border-color: #166534; }
+    .note-tag-btn[data-tag="🤔待讨论"].active { background: #2d2200; color: #fbbf24; border-color: #713f12; }
+    .note-tag-btn[data-tag="❌不适合"].active { background: #2d0f0f; color: #f87171; border-color: #7f1d1d; }
+    .note-textarea {
+      width: 100%; min-height: 90px; resize: vertical;
+      background: #111; border: 1px solid #333; border-radius: 8px;
+      color: var(--text); font-size: 13px; font-family: inherit; padding: 10px 12px;
+      line-height: 1.6; outline: none; transition: border-color 0.2s;
+    }
+    .note-textarea:focus { border-color: #555; }
+    .note-textarea::placeholder { color: #444; }
+    .note-modal-footer { display: flex; justify-content: space-between; align-items: center; }
+    .note-existing { font-size: 11px; color: var(--muted); max-height: 80px; overflow-y: auto; }
+    .note-existing-item { padding: 4px 0; border-bottom: 1px solid #222; line-height: 1.5; }
+    .note-existing-item:last-child { border-bottom: none; }
+    .note-existing-tag { display: inline-block; margin-right: 4px; font-size: 10px; }
+    .note-btn-row { display: flex; gap: 8px; }
+    .note-submit-btn {
+      padding: 7px 18px; border-radius: 8px; border: none;
+      background: #e8e8e8; color: #111; font-size: 13px; font-weight: 600;
+      cursor: pointer; font-family: inherit; transition: opacity 0.15s;
+    }
+    .note-submit-btn:hover { opacity: 0.85; }
+    .note-cancel-btn {
+      padding: 7px 14px; border-radius: 8px; border: 1px solid var(--border);
+      background: transparent; color: var(--muted); font-size: 13px;
+      cursor: pointer; font-family: inherit;
+    }
+    .note-cancel-btn:hover { color: var(--text); }
   
     /* Category chips */
     .category-chips {
@@ -376,6 +457,32 @@
 
 <div class="toast" id="toast"></div>
 
+<!-- NOTE MODAL -->
+<div id="note-modal">
+  <div class="note-modal-box">
+    <div>
+      <div class="note-modal-title" id="note-modal-title">添加标注</div>
+      <div class="note-modal-subtitle" id="note-modal-subtitle"></div>
+    </div>
+    <div id="note-existing" style="display:none">
+      <div style="font-size:11px;color:#666;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px">已有标注</div>
+      <div class="note-existing" id="note-existing-list"></div>
+    </div>
+    <div class="note-tag-row">
+      <button class="note-tag-btn" data-tag="✅可吸收">✅ 可吸收</button>
+      <button class="note-tag-btn" data-tag="🤔待讨论">🤔 待讨论</button>
+      <button class="note-tag-btn" data-tag="❌不适合">❌ 不适合</button>
+    </div>
+    <textarea class="note-textarea" id="note-textarea" placeholder="写下你的看法、哪里好、可以怎么用..."></textarea>
+    <div class="note-modal-footer">
+      <div class="note-btn-row">
+        <button class="note-submit-btn" onclick="submitNote()">保存标注</button>
+        <button class="note-cancel-btn" onclick="closeNoteModal()">取消</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   const isShareMode = new URLSearchParams(location.search).has('share');
   if (isShareMode) document.body.classList.add('share-mode');
@@ -394,10 +501,12 @@
     allImages = imgRes;
     allTrends = trendRes;
     allDigitaling = dgRes;
+    await Promise.all([loadNotes(), loadDgLikes()]);
     renderGallery();
     renderDigitaling();
     renderTrends();
     updateCounts();
+    refreshNoteBadges();
   }
 
   // ── Gallery ───────────────────────────────────────────────
@@ -442,6 +551,7 @@
     div.dataset.id = img.id;
     div.innerHTML = `
       <div class="liked-badge">♥</div>
+      <div class="note-badge" id="nb-${esc(img.id)}">💬</div>
       <div style="position:relative;overflow:hidden">
         <img src="${esc(img.src)}" alt="${esc(img.title)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="cursor:zoom-in" onclick="event.stopPropagation();lbOpen(this.src,this.alt,'');"
           onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 120%22><rect fill=%22%23222%22 width=%22200%22 height=%22120%22/><text fill=%22%23444%22 x=%22100%22 y=%2265%22 text-anchor=%22middle%22 font-size=%2212%22>unavailable</text></svg>'">
@@ -450,6 +560,7 @@
             <button class="action-btn btn-zoom" title="放大查看" onclick="event.stopPropagation();var i=this.closest('[data-id]').querySelector('img');lbOpen(i.src,i.alt,'');">&#128269;</button>
             ${!isShareMode ? `
             <button class="action-btn btn-like ${liked?'active':''}" onclick="toggleLike(event,'${img.id}')" title="Save">♥</button>
+            <button class="action-btn btn-note ${noteCount(img.id)>0?'has-note':''}" onclick="event.stopPropagation();openNoteModal('${img.id}','image','${esc(img.title)}')" title="标注">💬</button>
             <button class="action-btn btn-dislike" onclick="doDislike(event,'${img.id}')" title="Not for me">✕</button>
             ` : ''}
             <a class="action-btn btn-open" href="${getBestUrl(img)}" target="_blank" onclick="event.stopPropagation()" title="Open">↗</a>
@@ -553,6 +664,14 @@
         ${insightsHtml ? `<div class="dg-insights">${insightsHtml}</div>` : ''}
         <div class="dg-tags">${tagsHtml}</div>
         ${sogouHtml}
+        ${!isShareMode ? `<div class="dg-action-row">
+          <button class="dg-action-btn dg-like-btn ${dgLiked(d.id)?'active':''}" onclick="event.preventDefault();event.stopPropagation();toggleDgLike('${esc(d.id)}',this)">
+            👍 <span class="dg-like-count">${dgLikeCount(d.id)}</span>
+          </button>
+          <button class="dg-action-btn dg-note-btn ${noteCount(d.id)>0?'has-note':''}" onclick="event.preventDefault();event.stopPropagation();openNoteModal('${esc(d.id)}','article','${esc(d.title)}')">
+            💬 标注 <span class="dg-note-count">${noteCount(d.id)||''}</span>
+          </button>
+        </div>` : ''}
       </div>`;
     return card;
   }
@@ -750,6 +869,179 @@
 
   function esc(s) {
     return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // ── Notes & DG Likes ─────────────────────────────────────
+  const NOTES_FILE = 'data/notes.json';
+  const DG_LIKES_FILE = 'data/dglikes.json';
+  let allNotes = [];      // [{targetId, targetType, author, tag, text, createdAt}]
+  let allDgLikes = {};    // {articleId: count}
+  let myDgLikes = JSON.parse(localStorage.getItem('dl_dglikes') || '[]'); // ids liked by me
+
+  async function loadNotes() {
+    try {
+      const r = await fetch(NOTES_FILE + '?t=' + Date.now());
+      if (r.ok) allNotes = await r.json();
+    } catch(e) {}
+  }
+  async function loadDgLikes() {
+    try {
+      const r = await fetch(DG_LIKES_FILE + '?t=' + Date.now());
+      if (r.ok) allDgLikes = await r.json();
+    } catch(e) {}
+  }
+
+  function noteCount(id) { return allNotes.filter(n => n.targetId === id).length; }
+  function dgLikeCount(id) { return allDgLikes[id] || 0; }
+  function dgLiked(id) { return myDgLikes.includes(id); }
+
+  // 用于在卡片上显示 note badge
+  function refreshNoteBadges() {
+    document.querySelectorAll('.card[data-id]').forEach(card => {
+      const id = card.dataset.id;
+      const cnt = noteCount(id);
+      card.classList.toggle('has-note', cnt > 0);
+      const badge = card.querySelector('.note-badge');
+      if (badge) badge.textContent = cnt > 0 ? '💬' + cnt : '💬';
+    });
+  }
+
+  // ── Note Modal ────────────────────────────────────────────
+  let _noteTarget = null; // {id, type, title}
+  let _noteTag = null;
+
+  function openNoteModal(id, type, title) {
+    _noteTarget = { id, type, title };
+    _noteTag = null;
+    document.getElementById('note-modal-title').textContent = title || id;
+    document.getElementById('note-modal-subtitle').textContent = type === 'image' ? '图片标注' : '文章标注';
+    document.getElementById('note-textarea').value = '';
+    document.querySelectorAll('.note-tag-btn').forEach(b => b.classList.remove('active'));
+
+    // 显示已有标注
+    const existing = allNotes.filter(n => n.targetId === id);
+    const existEl = document.getElementById('note-existing');
+    const listEl = document.getElementById('note-existing-list');
+    if (existing.length > 0) {
+      existEl.style.display = 'block';
+      listEl.innerHTML = existing.map(n =>
+        `<div class="note-existing-item">
+          ${n.tag ? `<span class="note-existing-tag">${n.tag}</span>` : ''}
+          <span style="color:#aaa">${esc(n.text)}</span>
+          <span style="color:#444;margin-left:6px;font-size:10px">${n.author||''} · ${(n.createdAt||'').slice(0,10)}</span>
+        </div>`
+      ).join('');
+    } else {
+      existEl.style.display = 'none';
+    }
+
+    document.getElementById('note-modal').classList.add('on');
+    document.getElementById('note-textarea').focus();
+  }
+
+  function closeNoteModal() {
+    document.getElementById('note-modal').classList.remove('on');
+    _noteTarget = null; _noteTag = null;
+  }
+
+  document.getElementById('note-modal').addEventListener('click', e => {
+    if (e.target === document.getElementById('note-modal')) closeNoteModal();
+  });
+
+  document.querySelectorAll('.note-tag-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tag = btn.dataset.tag;
+      if (_noteTag === tag) { _noteTag = null; btn.classList.remove('active'); }
+      else {
+        _noteTag = tag;
+        document.querySelectorAll('.note-tag-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+    });
+  });
+
+  async function submitNote() {
+    const text = document.getElementById('note-textarea').value.trim();
+    if (!text && !_noteTag) { showToast('请输入内容或选择标签'); return; }
+    if (!_noteTarget) return;
+
+    const note = {
+      targetId: _noteTarget.id,
+      targetType: _noteTarget.type,
+      author: 'nataliegao',
+      tag: _noteTag || null,
+      text: text,
+      createdAt: new Date().toISOString()
+    };
+
+    // 乐观更新
+    allNotes.push(note);
+    refreshNoteBadges();
+    showToast('💬 标注已保存...');
+    closeNoteModal();
+
+    // 推送 GitHub
+    try {
+      const res = await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${NOTES_FILE}`, {
+        headers: { 'Authorization': `token ${BLOCK_TOKEN}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      let sha = null, existing = [];
+      if (res.ok) {
+        const data = await res.json();
+        sha = data.sha;
+        try { existing = JSON.parse(atob(data.content.replace(/\n/g,''))); } catch(e) {}
+      }
+      existing.push(note);
+      await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${NOTES_FILE}`, {
+        method: 'PUT',
+        headers: { 'Authorization': `token ${BLOCK_TOKEN}`, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: `note: ${note.targetId} by ${note.author}`,
+          content: btoa(unescape(encodeURIComponent(JSON.stringify(existing, null, 2)))),
+          ...(sha ? { sha } : {})
+        })
+      });
+      showToast('✅ 标注已同步');
+    } catch(err) { console.warn('note push failed', err); showToast('⚠️ 同步失败，本地已保存'); }
+  }
+
+  // ── DG Article Likes ──────────────────────────────────────
+  async function toggleDgLike(id, btn) {
+    const already = myDgLikes.includes(id);
+    if (already) {
+      myDgLikes = myDgLikes.filter(x => x !== id);
+      allDgLikes[id] = Math.max(0, (allDgLikes[id] || 1) - 1);
+    } else {
+      myDgLikes.push(id);
+      allDgLikes[id] = (allDgLikes[id] || 0) + 1;
+    }
+    localStorage.setItem('dl_dglikes', JSON.stringify(myDgLikes));
+    btn.classList.toggle('active', !already);
+    btn.querySelector('.dg-like-count').textContent = allDgLikes[id] || 0;
+    showToast(already ? '取消点赞' : '👍 已点赞！');
+
+    // 推送 GitHub
+    try {
+      const res = await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${DG_LIKES_FILE}`, {
+        headers: { 'Authorization': `token ${BLOCK_TOKEN}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      let sha = null, data = {};
+      if (res.ok) {
+        const j = await res.json();
+        sha = j.sha;
+        try { data = JSON.parse(atob(j.content.replace(/\n/g,''))); } catch(e) {}
+      }
+      data[id] = allDgLikes[id] || 0;
+      await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${DG_LIKES_FILE}`, {
+        method: 'PUT',
+        headers: { 'Authorization': `token ${BLOCK_TOKEN}`, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: `like: ${id}`,
+          content: btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2)))),
+          ...(sha ? { sha } : {})
+        })
+      });
+    } catch(err) { console.warn('dg like push failed', err); }
   }
 
   init();
