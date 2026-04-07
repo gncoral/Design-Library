@@ -889,5 +889,30 @@
       "Sans Serif"
     ],
     "weekIndex": 15
+  },
+  {
+    "id": "dg-2026-04-07",
+    "date": "2026-04-07",
+    "type": "daily",
+    "source": "digitaling",
+    "sourceName": "数英",
+    "sourceUrl": "https://www.digitaling.com/",
+    "title": "热血沸腾，终于出现张雪机车这样的中国品牌！",
+    "url": "https://www.digitaling.com/articles/1480296.html",
+    "coverImg": "https://gncoral.github.io/Design-Library/data/covers/dg/dg-2026-04-07.png",
+    "summary": "怎么能争气成这样！",
+    "keyInsights": [],
+    "tags": [
+      "品牌广告",
+      "数英精选",
+      "摩托车",
+      "张雪机车",
+      "营销"
+    ],
+    "heat": {
+      "zan": 39,
+      "collect": 15,
+      "comment": 18
+    }
   }
 ]
