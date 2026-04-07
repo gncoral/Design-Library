@@ -962,6 +962,13 @@
         for (const k in remote) merged[k] = Math.max(remote[k] || 0, local[k] || 0);
         allDgLikes = merged;
         saveDgLikesLocal();
+        // 把 GitHub 上计数 > 0 的 id 补回 myDgLikes（防止 localStorage 被清后高亮丢失）
+        const remoteIds = Object.keys(remote).filter(k => (remote[k] || 0) > 0);
+        remoteIds.forEach(id => { if (!myDgLikes.includes(id)) myDgLikes.push(id); });
+        // 把 GitHub 上计数 = 0 的从 myDgLikes 移除
+        const zeroIds = new Set(Object.keys(remote).filter(k => (remote[k] || 0) === 0));
+        myDgLikes = myDgLikes.filter(id => !zeroIds.has(id));
+        localStorage.setItem('dl_dglikes', JSON.stringify(myDgLikes));
       }
     } catch(e) {}
   }
