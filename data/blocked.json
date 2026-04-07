@@ -26,7 +26,8 @@
     "nb028",
     "d087",
     "nu022",
-    "d169"
+    "d169",
+    "d265"
   ],
   "tagCounts": {
     "2026": 1,
@@ -50,7 +51,7 @@
     "ecommerce": 3,
     "health": 4,
     "app": 4,
-    "branding": 5,
+    "branding": 6,
     "web3": 1,
     "real-estate": 1,
     "property": 1,
@@ -82,10 +83,11 @@
     "productivity": 1,
     "baby": 1,
     "pet": 1,
-    "character": 1
+    "character": 1,
+    "behance": 1
   },
   "categoryCounts": {
     "ui": 20,
-    "branding": 6
+    "branding": 7
   }
 }
