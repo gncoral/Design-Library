@@ -523,6 +523,11 @@
     allImages = imgRes;
     allTrends = trendRes;
     allDigitaling = dgRes;
+    // 清理 prefs.liked 里已不存在的 id（图片被删除后不留垃圾）
+    const validIds = new Set(allImages.map(i => i.id));
+    const beforeLen = prefs.liked.length;
+    prefs.liked = prefs.liked.filter(id => validIds.has(id));
+    if (prefs.liked.length !== beforeLen) savePrefs();
     await Promise.all([loadNotes(), loadDgLikes()]);
     renderGallery();
     renderDigitaling();
@@ -850,7 +855,11 @@
   function updateCounts() {
     const visible = allImages.filter(i => !prefs.disliked.includes(i.id)).length;
     document.getElementById('tab-all-count').textContent = visible;
-    document.getElementById('tab-liked-count').textContent = prefs.liked.length;
+    // 收藏数量：只统计实际存在于 allImages 且未屏蔽的
+    const likedVisible = allImages.filter(i =>
+      prefs.liked.includes(i.id) && !prefs.disliked.includes(i.id)
+    ).length;
+    document.getElementById('tab-liked-count').textContent = likedVisible;
     const insightsCount = allDigitaling.filter(d => d.type === 'daily').length;
     document.getElementById('tab-trends-count').textContent = insightsCount;
   }
