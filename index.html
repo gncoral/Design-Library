@@ -904,10 +904,30 @@
   let allDgLikes = {};    // {articleId: count}
   let myDgLikes = JSON.parse(localStorage.getItem('dl_dglikes') || '[]'); // ids liked by me
 
+  const LS_NOTES_KEY = 'dl_notes_v1';
+
+  function saveNotesLocal() {
+    try { localStorage.setItem(LS_NOTES_KEY, JSON.stringify(allNotes)); } catch(e) {}
+  }
+  function loadNotesLocal() {
+    try { return JSON.parse(localStorage.getItem(LS_NOTES_KEY) || '[]'); } catch(e) { return []; }
+  }
+
   async function loadNotes() {
+    // 先用本地缓存立即显示（不闪烁）
+    const local = loadNotesLocal();
+    if (local.length > 0) allNotes = local;
+    // 再从 GitHub 拉最新（作为权威数据源）
     try {
       const r = await fetch(NOTES_FILE + '?t=' + Date.now());
-      if (r.ok) allNotes = await r.json();
+      if (r.ok) {
+        const remote = await r.json();
+        // 合并：以 createdAt 为唯一键，remote 优先，再补本地有但 remote 没有的
+        const remoteKeys = new Set(remote.map(n => n.targetId + '_' + n.createdAt));
+        const localOnly = local.filter(n => !remoteKeys.has(n.targetId + '_' + n.createdAt));
+        allNotes = [...remote, ...localOnly];
+        saveNotesLocal(); // 把合并结果写回本地
+      }
     } catch(e) {}
   }
   async function loadDgLikes() {
@@ -1028,10 +1048,11 @@
       createdAt: new Date().toISOString()
     };
 
-    // 乐观更新
+    // 写入本地 + 刷新 UI
     allNotes.push(note);
+    saveNotesLocal(); // localStorage 持久化，刷新不丢
     refreshNoteBadges();
-    showToast('💬 标注已保存...');
+    showToast('💬 标注已保存');
     closeNoteModal();
 
     // 推送 GitHub
@@ -1070,6 +1091,7 @@
     btn.disabled = true; btn.textContent = '…';
     const idx = allNotes.findIndex(n => n.targetId === targetId && n.createdAt === createdAt);
     if (idx >= 0) allNotes.splice(idx, 1);
+    saveNotesLocal(); // 删除也同步到 localStorage
     btn.closest('.note-existing-item')?.remove();
     if (!document.querySelectorAll('.note-existing-item').length) {
       document.getElementById('note-existing').style.display = 'none';
