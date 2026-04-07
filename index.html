@@ -632,6 +632,7 @@
     card.href = d.url || '#';
     card.target = '_blank';
     card.rel = 'noopener';
+    card.dataset.dgId = d.id;
 
     const thumbUrl = getThumbUrl(d);
     let thumbHtml;
@@ -922,12 +923,37 @@
 
   // 用于在卡片上显示 note badge
   function refreshNoteBadges() {
+    // 图片卡片
     document.querySelectorAll('.card[data-id]').forEach(card => {
       const id = card.dataset.id;
       const cnt = noteCount(id);
       card.classList.toggle('has-note', cnt > 0);
       const badge = card.querySelector('.note-badge');
       if (badge) badge.innerHTML = cnt > 1 ? `💬 ${cnt}` : '💬';
+    });
+    // 文章卡片（品牌洞察）
+    document.querySelectorAll('.dg-card[data-dg-id]').forEach(card => {
+      const id = card.dataset.dgId;
+      const cnt = noteCount(id);
+      // 找或创建角标
+      let badge = card.querySelector('.dg-note-badge');
+      if (cnt > 0) {
+        if (!badge) {
+          badge = document.createElement('div');
+          badge.className = 'dg-note-badge';
+          card.prepend(badge);
+        }
+        badge.textContent = cnt > 1 ? `💬 ${cnt}` : '💬';
+      } else {
+        badge?.remove();
+      }
+      // 更新底部按钮状态
+      const noteBtn = card.querySelector('.dg-note-btn');
+      if (noteBtn) {
+        noteBtn.classList.toggle('has-note', cnt > 0);
+        const countEl = noteBtn.querySelector('.dg-note-count');
+        if (countEl) countEl.textContent = cnt || '';
+      }
     });
   }
 
