@@ -558,9 +558,9 @@
   function makeCard(img) {
     const liked = prefs.liked.includes(img.id);
     const div = document.createElement('div');
-    div.className = 'card' + (liked ? ' liked' : '');
     div.dataset.id = img.id;
     const nc = noteCount(img.id);
+    div.className = 'card' + (liked ? ' liked' : '') + (nc > 0 ? ' has-note' : '');
     div.innerHTML = `
       <div class="liked-badge">♥</div>
       <div class="note-badge" id="nb-${esc(img.id)}">💬 ${nc > 1 ? nc : ''}</div>
