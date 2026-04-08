@@ -5,14 +5,15 @@
     "d153",
     "d156",
     "d158",
-    "d205"
+    "d205",
+    "d246"
   ],
   "tagCounts": {
-    "branding": 1,
-    "behance": 1
+    "branding": 2,
+    "behance": 2
   },
   "categoryCounts": {
-    "branding": 1,
+    "branding": 2,
     "ui": 3,
     "visual": 2
   }
