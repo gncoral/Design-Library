@@ -2,6 +2,57 @@
 
 ---
 
+## v0.5 — 2026-04-07
+
+### 🖼 爬图脚本重写：锁定智能感/科技品牌审美方向
+
+用户明确指出之前爬入了卡通插图类图片，不符合方向。三个爬图脚本全部修正：
+
+**`fetch-behance-rss.js`（修复）**
+- 加入白名单（brand / saas / ui / tech / fintech / product / minimal / identity / visual / branding）
+- 强化黑名单（illustration / cartoon / anime / kids / cute / game / gaming / nft / fan art / sticker）
+- TARGET_NEW 从 15 降为 8 张/天
+
+**`fetch-dribbble-playwright.js`（新建）**
+- 替代之前无效的 HTTP fetch 版本（Dribbble 返回 202，必须用浏览器渲染）
+- 使用 Playwright + Chromium 打开 Dribbble popular 页面，抓取 8 张/天
+- 同步应用白/黑名单审美过滤
+
+**`fetch-pinterest-playwright.js`（新建）**
+- 使用 Playwright 爬 Pinterest 搜索结果
+- 搜索词：`brand identity minimal` / `saas ui dark` / `tech startup branding`
+- 抓取 8 张/天，同步过滤
+
+**安装依赖**：playwright + Chromium（`scripts/node_modules`）
+
+---
+
+### 🤖 Cron 任务更新
+
+| 任务 | 变更 |
+|------|------|
+| `5cffef9a` 10:00 图片更新 | 超时 120s → 300s；步骤从2步扩展为4步（cleanup-blocked + Behance + Dribbble + Pinterest） |
+| `51a1dc52` 10:05 数英 | 今日超时，数英已有当日数据，未影响结果，持续观察 |
+| `76b023b4` 10:15 Rebrand | ✅ 正常 |
+
+---
+
+### 📦 手动补跑（4月7日当日数据）
+
+由于 cron 连续5天超时失败，昨日改完脚本后手动补跑：
+- Behance：+8 张（`e9cd6ed`）
+- Dribbble：+8 张（`a5014f4`）
+- Pinterest：+8 张（`5a29040`）
+
+⚠️ 首批 Dribbble/Pinterest 图仍有插图混入（新脚本首次跑），可在网站点 ✕ 屏蔽，次日 cleanup 自动清除。
+
+---
+
+### 📊 图片库现状（截至 2026-04-07）
+- 总量：216 条（branding 88 / ui 96 / visual 6 / ui-ux 4 / mobile 3 / web-design 3）
+
+---
+
 ## v0.4 — 2026-04-03（今日）
 
 ### 🗂 页面结构
