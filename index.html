@@ -949,25 +949,23 @@
   }
 
   async function loadDgLikes() {
-    // 先用本地缓存
+    // 先用本地缓存立即渲染
     const local = loadDgLikesLocal();
     if (Object.keys(local).length > 0) allDgLikes = local;
-    // 再从 GitHub 拉（权威数据，成功则覆盖本地）
+    // 再从 GitHub 拉最新数据，取两边较大值（本地优先，防 CDN 缓存旧数据覆盖掉刚点的赞）
     try {
       const r = await fetch(DG_LIKES_FILE + '?t=' + Date.now());
       if (r.ok) {
         const remote = await r.json();
-        // 取两边较大值（防止本地点赞丢失）
+        // 只取较大值：本地刚点的赞不会被 remote 旧数据冲掉
         const merged = { ...local };
         for (const k in remote) merged[k] = Math.max(remote[k] || 0, local[k] || 0);
         allDgLikes = merged;
         saveDgLikesLocal();
-        // 把 GitHub 上计数 > 0 的 id 补回 myDgLikes（防止 localStorage 被清后高亮丢失）
+        // 把 GitHub 上计数 > 0 的 id 补回 myDgLikes（设备间同步）
         const remoteIds = Object.keys(remote).filter(k => (remote[k] || 0) > 0);
         remoteIds.forEach(id => { if (!myDgLikes.includes(id)) myDgLikes.push(id); });
-        // 把 GitHub 上计数 = 0 的从 myDgLikes 移除
-        const zeroIds = new Set(Object.keys(remote).filter(k => (remote[k] || 0) === 0));
-        myDgLikes = myDgLikes.filter(id => !zeroIds.has(id));
+        // 注意：不从 myDgLikes 移除任何 id（CDN 缓存可能落后，不能用 remote=0 来取消本地点赞）
         localStorage.setItem('dl_dglikes', JSON.stringify(myDgLikes));
       }
     } catch(e) {}
@@ -1180,7 +1178,7 @@
         try { data = JSON.parse(atob(j.content.replace(/\n/g,''))); } catch(e) {}
       }
       data[id] = allDgLikes[id] || 0;
-      await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${DG_LIKES_FILE}`, {
+      const putRes = await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${DG_LIKES_FILE}`, {
         method: 'PUT',
         headers: { 'Authorization': `token ${BLOCK_TOKEN}`, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -1189,7 +1187,12 @@
           ...(sha ? { sha } : {})
         })
       });
-    } catch(err) { console.warn('dg like push failed', err); }
+      if (!putRes.ok) {
+        const errData = await putRes.json().catch(() => ({}));
+        console.warn('dg like PUT failed', putRes.status, errData.message);
+        showToast('⚠️ 点赞同步失败: ' + (errData.message || putRes.status));
+      }
+    } catch(err) { console.warn('dg like push failed', err); showToast('⚠️ 点赞同步失败'); }
   }
 
   init();
