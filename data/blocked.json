@@ -11,7 +11,8 @@
     "d172",
     "d232",
     "d280",
-    "d224"
+    "d224",
+    "d222"
   ],
   "tagCounts": {
     "branding": 3,
@@ -19,7 +20,7 @@
   },
   "categoryCounts": {
     "branding": 5,
-    "ui": 5,
+    "ui": 6,
     "visual": 2
   }
 }
