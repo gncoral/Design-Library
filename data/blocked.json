@@ -4,7 +4,8 @@
     "d152",
     "d153",
     "d156",
-    "d158"
+    "d158",
+    "d205"
   ],
   "tagCounts": {
     "branding": 1,
@@ -13,6 +14,6 @@
   "categoryCounts": {
     "branding": 1,
     "ui": 3,
-    "visual": 1
+    "visual": 2
   }
 }
