@@ -726,7 +726,7 @@
 
     // 品牌广告策划
     dgGrid.innerHTML = '';
-    const adItems = allDigitaling.filter(d => d.source === 'digitaling' || (d.source !== 'rebrand'));
+    const adItems = allDigitaling.filter(d => d.source === 'digitaling');
     adItems.sort((a, b) => b.date.localeCompare(a.date)).forEach(d => {
       dgGrid.appendChild(makeDgCard(d, true));
     });
@@ -875,6 +875,7 @@
     document.getElementById('filters').style.pointerEvents = tab === 'trends' ? 'none' : '';
     if (tab === 'liked') renderGallery('liked');
     if (tab === 'gallery') renderGallery('gallery');
+    if (tab === 'trends') renderDigitaling();
   }
 
   // ── Filters ───────────────────────────────────────────────
