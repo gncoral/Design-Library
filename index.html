@@ -516,7 +516,7 @@
   // ── Load ─���────────────────────────────────────────────────
   async function init() {
     const [imgRes, trendRes, dgRes] = await Promise.all([
-      fetch('data/images.json?t=' + Date.now()).then(r => r.json()),
+      fetch('data/images.json?t=' + Date.now()).then(r => r.json()).catch(() => []),
       fetch('data/trends.json?t=' + Date.now()).then(r => r.json()).catch(() => []),
       fetch('data/digitaling.json?t=' + Date.now()).then(r => r.json()).catch(() => [])
     ]);
@@ -1196,7 +1196,7 @@
     } catch(err) { console.warn('dg like push failed', err); showToast('⚠️ 点赞同步失败'); }
   }
 
-  init();
+  init().catch(err => { console.error('init failed:', err); showToast('⚠️ 加载失败，请刷新重试'); });
 </script>
 
 <!-- Lightbox -->
