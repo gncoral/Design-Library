@@ -528,12 +528,17 @@
     const beforeLen = prefs.liked.length;
     prefs.liked = prefs.liked.filter(id => validIds.has(id));
     if (prefs.liked.length !== beforeLen) savePrefs();
-    await Promise.all([loadNotes(), loadDgLikes()]);
+    // 先渲染主内容（不依赖 notes/likes）
     renderGallery();
     renderDigitaling();
     renderTrends();
     updateCounts();
-    refreshNoteBadges();
+    // notes/likes 异步加载，完成后刷新角标，失败不影响主流程
+    Promise.all([loadNotes(), loadDgLikes()]).catch(() => {}).then(() => {
+      refreshNoteBadges();
+      renderGallery();
+      renderDigitaling();
+    });
   }
 
   // ── Gallery ───────────────────────────────────────────────
