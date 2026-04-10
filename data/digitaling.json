@@ -1153,5 +1153,30 @@
       "collect": 21,
       "comment": 3
     }
+  },
+  {
+    "id": "dg-2026-04-10",
+    "date": "2026-04-10",
+    "type": "daily",
+    "source": "digitaling",
+    "sourceName": "数英",
+    "sourceUrl": "https://www.digitaling.com/",
+    "title": "12吨被盗的巧克力，成了雀巢最好的广告",
+    "url": "https://www.digitaling.com/articles/1480961.html",
+    "coverImg": "https://file.digitaling.com/eImg/cover/20260401/20260401135725_28903.jpg",
+    "summary": "货肯定是亏了，但传播上，KitKat真的赚麻了。",
+    "keyInsights": [],
+    "tags": [
+      "品牌广告",
+      "数英精选",
+      "雀巢",
+      "巧克力",
+      "KitKat"
+    ],
+    "heat": {
+      "zan": 17,
+      "collect": 16,
+      "comment": 4
+    }
   }
 ]
