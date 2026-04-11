@@ -1218,5 +1218,29 @@
     ],
     "weekIndex": 15,
     "sogouInsight": "1. 字体分层系统：Chaos Labs双字体策略（无衬线+等宽）兼顾可读性与科技感。搜狗AI升级期可引入字重功能分层——主UI用无衬线体传递现代清晰感，AI功能模块用等宽字体强调精准属性，构建有层次的品牌字体语言。2. 几何模块语言：Chaos Labs以统一几何形态建立高辨识视觉系统。搜狗可将键盘、候选框、皮肤等核心UI元素抽象为几何模块语言，用形状一致性替代装饰堆砌，在年轻化皮肤与品牌物料中形成系统性视觉锚点。"
+  },
+  {
+    "id": "dg-2026-04-11",
+    "date": "2026-04-11",
+    "type": "daily",
+    "source": "digitaling",
+    "sourceName": "数英",
+    "sourceUrl": "https://www.digitaling.com/",
+    "title": "用对5个套路，设计效果立竿见影",
+    "url": "https://www.digitaling.com/articles/1479974.html",
+    "coverImg": "https://file.digitaling.com/eImg/cover/20260330/20260330161814_97476.png",
+    "summary": "不要鄙视套路，但更要敬畏真实。所有的技巧，都必须建立在事实的基础上。",
+    "keyInsights": [],
+    "tags": [
+      "品牌广告",
+      "数英精选",
+      "设计",
+      "方法论"
+    ],
+    "heat": {
+      "zan": 14,
+      "collect": 29,
+      "comment": 1
+    }
   }
 ]
