@@ -1313,5 +1313,43 @@
       "comment": 0
     },
     "sogouInsight": "1. 商场越卷活动越迷茫，搜狗也要警惕「功能堆砌焦虑」——AI能力上线不等于用户感知升级，每个新功能上线前先问：用户在哪个真实输入场景中会「被惊到」？从感知出发倒推产品设计。2. 商场靠活动留不住人，最终拼的是「底层商业力」；搜狗同理，品牌年轻化不是靠话题事件，而是靠高频使用时的情绪满足感——输入体验本身就是最高频的品牌接触点，做好它比任何传播都有效。3. 商场活动内卷揭示差异化困境：都在办活动，反而都不被记住。搜狗与竞品（微信键盘/百度输入法）的差异化，可从「个性化表达工具」角度切入——不抢AI功能赛道，而是成为「让人说话更像自己」的品牌，在表情包、方言、梗词库上建立独特记忆点。"
+  },
+  {
+    "id": "rb-2026-04-12",
+    "date": "2026-04-12",
+    "type": "daily",
+    "source": "rebrand",
+    "sourceName": "Rebrand Gallery",
+    "sourceUrl": "https://www.rebrand.gallery/",
+    "title": "Cloudflare 品牌重塑",
+    "url": "https://www.rebrand.gallery/rebrand/cloudflare",
+    "caseStudyUrl": null,
+    "companyUrl": null,
+    "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/68776b863bbb0cef39e9b4854d164d02bd48eef3-1400x800.png",
+    "summary": "Cloudflare 完成了一次品牌视觉重塑，设计由 In-house 团队主导。品牌所在行业：Software。视觉风格以 Pattern 为主，字体系统选用 Sans Serif，整体呈现出清晰的现代品牌语言。",
+    "keyInsights": [
+      "行业：Software — 观察该行业品牌重塑的视觉趋势",
+      "设计主导：In-house — 内部团队主导，品牌基因延续性强",
+      "视觉语言：Pattern 的组合策略",
+      "字体系统：Sans Serif — 字体选择是品牌调性的隐性表达"
+    ],
+    "tags": [
+      "品牌重塑",
+      "VI设计",
+      "Software",
+      "Rebrand Video"
+    ],
+    "heat": {
+      "views": 2466
+    },
+    "industry": "Software",
+    "designBy": "In-house",
+    "visualStyles": [
+      "Pattern"
+    ],
+    "typography": [
+      "Sans Serif"
+    ],
+    "weekIndex": 16
   }
 ]
