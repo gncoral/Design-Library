@@ -1287,5 +1287,30 @@
     ],
     "weekIndex": 16,
     "sogouInsight": "1. 字体系统分级激活品牌感知：Domino's 用 Sans Serif+Display 双字体建立功能/品牌双层次，搜狗可在输入法 UI 中正文用清晰无衬线字体保障可读性，品牌关键词/AI 能力点用展示型字体强化视觉张力，传递现代感与科技感。2. 内容摄影提升真实感：Domino's 以 Photography 拉近用户距离，搜狗可将用户真实打字场景引入品牌视觉——手机持握、文字跳出屏幕等真实镜头替代抽象图形，强化 AI 输入的生活感与年轻化调性。"
+  },
+  {
+    "id": "dg-2026-04-12",
+    "date": "2026-04-12",
+    "type": "daily",
+    "source": "digitaling",
+    "sourceName": "数英",
+    "sourceUrl": "https://www.digitaling.com/",
+    "title": "困在“活动”里的商场：越热闹，越迷茫",
+    "url": "https://www.digitaling.com/articles/1479806.html",
+    "coverImg": "https://file.digitaling.com/eImg/cover/20260402/20260402175650_20795.jpg",
+    "summary": "不整活，就淘汰？",
+    "keyInsights": [],
+    "tags": [
+      "品牌广告",
+      "数英精选",
+      "观点洞察",
+      "商场",
+      "活动"
+    ],
+    "heat": {
+      "zan": 8,
+      "collect": 13,
+      "comment": 0
+    }
   }
 ]
