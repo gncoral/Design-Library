@@ -662,7 +662,12 @@
       `<span class="dg-tag">${esc(t)}</span>`
     ).join('');
 
-    // 搜狗品牌启发
+    // 搜狗品牌启发（兼容字符串或数组格式）
+    if (d.sogouInsight && !Array.isArray(d.sogouInsight)) {
+      const s = String(d.sogouInsight);
+      const parts = s.split(/(?=\d+\.\s)/).map(p => p.replace(/^\d+\.\s*/, '').trim()).filter(p => p);
+      d.sogouInsight = parts.length > 0 ? parts : [s.trim()];
+    }
     const sogouHtml = (d.sogouInsight && d.sogouInsight.length > 0) ? (() => {
       const cardId = 'sogou-' + esc(d.id);
       const itemsHtml = d.sogouInsight.map(s => `<div class="dg-sogou-item">${esc(s)}</div>`).join('');
