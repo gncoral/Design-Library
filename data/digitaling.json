@@ -1,5 +1,46 @@
 [
   {
+    "id": "rb-weekly-2026-04-13",
+    "date": "2026-04-13",
+    "type": "weekly",
+    "source": "rebrand",
+    "sourceName": "Rebrand Gallery",
+    "title": "品牌重塑周报 · 第 16 周：7 个视觉重塑案例",
+    "summary": "本周从 Rebrand Gallery 精选了 7 个品牌重塑案例，涵盖 Blockchain、Tech、Software、Gaming、Aviation、Food & Beverage 等行业。",
+    "articles": [
+      {
+        "title": "Chaos Labs 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/chaos-labs"
+      },
+      {
+        "title": "Arrakis 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/arrakis"
+      },
+      {
+        "title": "Superhuman 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/superhuman"
+      },
+      {
+        "title": "Electronic Arts 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/electronic-arts"
+      },
+      {
+        "title": "Transavia 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/transavia"
+      },
+      {
+        "title": "ZK Nation 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/zk-nation"
+      },
+      {
+        "title": "Mocha 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/mocha"
+      }
+    ],
+    "weekNumber": 16,
+    "weekIndex": 15
+  },
+  {
     "id": "rb-weekly-2026-04-06",
     "date": "2026-04-06",
     "type": "weekly",
@@ -1382,5 +1423,40 @@
       "**用户共情切口：对抗「AI时代的无力感」**：这篇文章戳中了知识工作者的集体焦虑。搜狗可以策划一组内容，以「你的创意本能，我来保留」为主线，展示用户用搜狗AI功能快速记录灵感、整理思路的真实故事——把工具感转化为情感连接，完成品牌年轻化中的「共情升级」。",
       "**品牌差异化：「成全创造者」而非「提效工具」**：竞品多强调效率、准确率。搜狗可以从「成全」角度切入，主打「当你脑子里有一团火，搜狗不让它熄掉」——以创造力守护者的身份建立情感护城河，尤其对年轻内容创作者、学生群体有强吸引力。"
     ]
+  },
+  {
+    "id": "rb-2026-04-13",
+    "date": "2026-04-13",
+    "type": "daily",
+    "source": "rebrand",
+    "sourceName": "Rebrand Gallery",
+    "sourceUrl": "https://www.rebrand.gallery/",
+    "title": "Toca Boca 品牌重塑",
+    "url": "https://www.rebrand.gallery/rebrand/toca-boca",
+    "caseStudyUrl": null,
+    "companyUrl": null,
+    "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/805a727f018ccb9844362497b15a0d0817a2fcf8-1200x630.jpg",
+    "summary": "Toca Boca 完成了一次品牌视觉重塑，设计由 In-house 团队主导。品牌所在行业：Gaming。字体系统选用 Sans Serif，整体呈现出清晰的现代品牌语言。",
+    "keyInsights": [
+      "行业：Gaming — 观察该行业品牌重塑的视觉趋势",
+      "设计主导：In-house — 内部团队主导，品牌基因延续性强",
+      "字体系统：Sans Serif — 字体选择是品牌调性的隐性表达"
+    ],
+    "tags": [
+      "品牌重塑",
+      "VI设计",
+      "Gaming",
+      "Rebrand Video"
+    ],
+    "heat": {
+      "views": 6109
+    },
+    "industry": "Gaming",
+    "designBy": "In-house",
+    "visualStyles": [],
+    "typography": [
+      "Sans Serif"
+    ],
+    "weekIndex": 16
   }
 ]
