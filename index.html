@@ -1158,16 +1158,18 @@
     const listEl = document.getElementById('note-existing-list');
     if (existing.length > 0) {
       existEl.style.display = 'block';
-      listEl.innerHTML = existing.map(n =>
-        `<div class="note-existing-item">
+      const ADMIN_USER = 'nataliegao';
+      listEl.innerHTML = existing.map(n => {
+        const canDelete = (currentUser === n.author) || (currentUser === ADMIN_USER);
+        return `<div class="note-existing-item">
           <div class="note-existing-text">
             ${n.tag ? `<span class="note-existing-tag">${n.tag}</span>` : ''}
             <span>${esc(n.text || '')}</span>
             <span style="color:#444;margin-left:5px;font-size:10px">${n.author||''} · ${(n.createdAt||'').slice(0,10)}</span>
           </div>
-          <button class="note-delete-btn" onclick="deleteNote('${esc(n.targetId)}','${esc(n.createdAt||'')}',this)" title="删除此标注">✕</button>
-        </div>`
-      ).join('');
+          ${canDelete ? `<button class="note-delete-btn" onclick="deleteNote('${esc(n.targetId)}','${esc(n.createdAt||'')}',this)" title="删除此标注">✕</button>` : '<span style="width:24px;display:inline-block"></span>'}
+        </div>`;
+      }).join('');
     } else {
       existEl.style.display = 'none';
     }
@@ -1251,6 +1253,13 @@
 
   // 删除单条标注
   async function deleteNote(targetId, createdAt, btn) {
+    // 权限再校验：只有作者本人或管理员才能删除
+    const ADMIN_USER = 'nataliegao';
+    const note = allNotes.find(n => n.targetId === targetId && n.createdAt === createdAt);
+    if (note && note.author !== currentUser && currentUser !== ADMIN_USER) {
+      showToast('⚠️ 只能删除自己的标注');
+      return;
+    }
     btn.disabled = true; btn.textContent = '…';
     const idx = allNotes.findIndex(n => n.targetId === targetId && n.createdAt === createdAt);
     if (idx >= 0) allNotes.splice(idx, 1);
