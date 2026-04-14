@@ -182,16 +182,20 @@
     .card:hover .card-overlay { opacity: 1; }
     .card-actions { display: flex; gap: 6px; justify-content: flex-end; }
     .action-btn {
-      width: 32px; height: 32px; border-radius: 50%; border: none; cursor: pointer;
-      font-size: 14px; display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 50%; cursor: pointer;
+      font-size: 14px; display: inline-flex; align-items: center; justify-content: center;
       transition: all 0.15s; backdrop-filter: blur(8px);
+      background: rgba(0,0,0,0.55); color: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.12); text-decoration: none;
     }
-    .btn-like { background: rgba(255,107,107,0.2); color: var(--like); border: 1px solid rgba(255,107,107,0.3); }
-    .btn-like:hover, .btn-like.active { background: var(--like); color: white; }
-    .btn-dislike { background: rgba(80,80,80,0.3); color: #aaa; border: 1px solid rgba(255,255,255,0.1); }
-    .btn-dislike:hover { background: rgba(80,80,80,0.8); color: white; }
-    .btn-open { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; font-size: 13px; }
-    .btn-open:hover { background: rgba(255,255,255,0.25); }
+    .action-btn:hover { background: rgba(255,255,255,0.18); color: white; border-color: rgba(255,255,255,0.3); transform: scale(1.08); }
+    .btn-like { color: #ff8080; border-color: rgba(255,107,107,0.25); }
+    .btn-like:hover, .btn-like.active { background: #ff6b6b; color: white; border-color: #ff6b6b; transform: scale(1.08); }
+    .btn-note { color: #ccc; }
+    .btn-note:hover, .btn-note.has-note { background: rgba(255,215,0,0.22); color: #ffd700; border-color: rgba(255,215,0,0.4); }
+    .btn-dislike { color: #888; }
+    .btn-dislike:hover { background: rgba(255,80,80,0.25); color: #ff8080; border-color: rgba(255,80,80,0.3); transform: scale(1.08); }
+    .btn-open { font-size: 13px; }
     .card-info { color: white; }
     .card-title { font-size: 12px; font-weight: 500; line-height: 1.3; margin-bottom: 3px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     .card-meta { display: flex; align-items: center; gap: 5px; font-size: 11px; color: rgba(255,255,255,0.65); }
@@ -359,9 +363,7 @@
     body.is-owner .card:hover [data-owner-only] { display: inline-flex !important; }
 
     /* ── NOTES / ANNOTATION ── */
-    .btn-note { background: rgba(255,255,255,0.08); color: #ccc; border: 1px solid rgba(255,255,255,0.15); font-size: 13px; }
-    .btn-note:hover { background: rgba(255,215,0,0.2); color: #ffd700; border-color: rgba(255,215,0,0.4); }
-    .btn-note.has-note { background: rgba(255,215,0,0.18); color: #ffd700; border-color: rgba(255,215,0,0.5); }
+    /* btn-note: merged into .action-btn block */
 
     /* note badge on card — always visible when has notes */
     .note-badge {
@@ -478,9 +480,8 @@
     .chip:hover { border-color: var(--accent); color: var(--text); }
     .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
   
-  /* ── Zoom btn ── */
-  .btn-zoom { font-size:16px; line-height:1; padding:5px 7px; background:rgba(0,0,0,.55); border-radius:6px; }
-  .btn-zoom:hover { background:rgba(255,255,255,.15); transform:scale(1.1); }
+  /* ── Zoom btn - inherits .action-btn ── */
+  .btn-zoom { font-size: 15px; }
   /* ── Lightbox ── */
   #lb{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;flex-direction:column;gap:14px;}
   #lb.on{display:flex;}
@@ -827,7 +828,6 @@
           onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 120%22><rect fill=%22%23222%22 width=%22200%22 height=%22120%22/><text fill=%22%23444%22 x=%22100%22 y=%2265%22 text-anchor=%22middle%22 font-size=%2212%22>unavailable</text></svg>'">
         <div class="card-overlay">
           <div class="card-actions">
-            <button class="action-btn btn-zoom" title="放大查看" onclick="event.stopPropagation();var i=this.closest('[data-id]').querySelector('img');lbOpen(i.src,i.alt,'');">&#128269;</button>
             ${!isShareMode ? `
             <button class="action-btn btn-like ${liked?'active':''}" onclick="toggleLike(event,'${img.id}')" title="Save">♥${likeCount > 0 ? ' <span style=\'font-size:10px\'>' + likeCount + '</span>' : ''}</button>
             <button class="action-btn btn-note ${noteCount(img.id)>0?'has-note':''}" onclick="event.stopPropagation();openNoteModal('${img.id}','image','${esc(img.title)}')" title="标注">💬</button>
