@@ -658,7 +658,7 @@
             ${!isShareMode ? `
             <button class="action-btn btn-like ${liked?'active':''}" onclick="toggleLike(event,'${img.id}')" title="Save">♥${likeCount > 0 ? ' <span style=\'font-size:10px\'>' + likeCount + '</span>' : ''}</button>
             <button class="action-btn btn-note ${noteCount(img.id)>0?'has-note':''}" onclick="event.stopPropagation();openNoteModal('${img.id}','image','${esc(img.title)}')" title="标注">💬</button>
-            <button class="action-btn btn-dislike" onclick="doDislike(event,'${img.id}')" title="Not for me">✕</button>
+            ${currentUser === 'nataliegao' ? `<button class="action-btn btn-dislike" onclick="doDislike(event,'${img.id}')" title="Not for me">✕</button>` : ''}
             ` : ''}
             <a class="action-btn btn-open" href="${getBestUrl(img)}" target="_blank" onclick="event.stopPropagation()" title="Open">↗</a>
           </div>
@@ -971,6 +971,8 @@
 
   function doDislike(e, id) {
     e.stopPropagation();
+    // 权限校验：只有管理员能叉图
+    if (currentUser !== 'nataliegao') { showToast('⚠️ 没有权限'); return; }
     if (!prefs.disliked.includes(id)) prefs.disliked.push(id);
     const li = prefs.liked.indexOf(id); if (li >= 0) prefs.liked.splice(li, 1);
     savePrefs(); showToast('👋 已屏蔽，明日清理'); renderGallery(); updateCounts();
