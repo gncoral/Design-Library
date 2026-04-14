@@ -57,6 +57,7 @@
     #activity-bar.visible { display: flex; align-items: flex-start; gap: 10px; }
     .activity-dot { width: 6px; height: 6px; border-radius: 50%; background: #3883FF; flex-shrink: 0; margin-top: 15px; animation: pulse 1.5s infinite; }
     @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
     /* 滚动容器：显示约1.5条（每条34px），fade 底部暗示可滚动 */
     .activity-scroll {
       flex: 1; overflow-y: scroll; height: 88px;
@@ -616,7 +617,7 @@
     <button class="chip" data-cat="ui" onclick="setCategoryFilter('ui')">📱 UI界面</button>
     
   </div>
-  <div class="grid" id="grid"></div>
+  <div class="grid" id="grid"><div id="grid-loading" style="grid-column:1/-1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 0;gap:16px;color:var(--muted)"><div style="width:36px;height:36px;border:3px solid #333;border-top-color:#3883FF;border-radius:50%;animation:spin 0.8s linear infinite"></div><div style="font-size:13px">加载灵感库…</div></div></div>
     <div class="empty" id="empty"><h3>Nothing here</h3><p>Try a different filter</p></div>
   </main>
 </div>
@@ -1835,7 +1836,7 @@
     } catch(err) { console.warn('dg like push failed', err); showToast('⚠️ 点赞同步失败'); }
   }
 
-  init().catch(err => { console.error('init failed:', err); showToast('⚠️ 加载失败，请刷新重试'); });
+  init().catch(err => { console.error('init failed:', err); const gl = document.getElementById('grid-loading'); if(gl) gl.remove(); showToast('⚠️ 加载失败，请刷新重试'); });
 </script>
 
 <!-- Lightbox -->
