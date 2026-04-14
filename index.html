@@ -1166,7 +1166,18 @@
     if (currentUser !== 'nataliegao') { showToast('⚠️ 没有权限'); return; }
     if (!prefs.disliked.includes(id)) prefs.disliked.push(id);
     const li = prefs.liked.indexOf(id); if (li >= 0) prefs.liked.splice(li, 1);
-    savePrefs(); showToast('👋 已屏蔽，明日清理'); renderGallery(); updateCounts();
+    const learnMsgs = [
+      '📐 收到，正在校准审美坐标…',
+      '🧠 嗯，记住了，这不是你的风格',
+      '✂️ 剪掉，给更好的让路',
+      '🎯 明白了，品味在变精准',
+      '👁️ 眼光又提高了一点点',
+      '🗑️ 移走，审美不将就',
+      '💡 这条负反馈很有价值，谢谢',
+      '🌊 滤掉噪音，留下真正打动你的',
+    ];
+    const msg = learnMsgs[Math.floor(Math.random() * learnMsgs.length)];
+    savePrefs(); showToast(msg); renderGallery(); updateCounts();
     // 把图的 tag 和 category 一起传过去，用于负向学习
     const imgMeta = allImages.find(i => i.id === id);
     pushBlockedItem(id, imgMeta ? (imgMeta.tags || []) : [], imgMeta ? imgMeta.category : ''); // 异步，失败不影响 UI
