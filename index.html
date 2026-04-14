@@ -14,7 +14,7 @@
       --border: #2a2a2a;
       --text: #e8e8e8;
       --muted: #777;
-      --accent: #ff6b6b;
+      --accent: #3883FF;
       --like: #ff6b6b;
       --platform-dribbble: #ea4c89;
       --platform-behance: #1769ff;
@@ -41,11 +41,11 @@
     }
     .share-btn:hover { border-color: #555; color: var(--text); }
     .user-badge {
-      padding: 5px 12px; border-radius: 20px; border: 1px solid #ff6b6b44;
-      background: #ff6b6b11; color: #ff9999; font-size: 12px; cursor: pointer; transition: all 0.15s;
+      padding: 5px 12px; border-radius: 20px; border: 1px solid #3883FF44;
+      background: #3883FF11; color: #8bbfff; font-size: 12px; cursor: pointer; transition: all 0.15s;
       white-space: nowrap;
     }
-    .user-badge:hover { border-color: #ff6b6b; background: #ff6b6b22; color: #ffbbbb; }
+    .user-badge:hover { border-color: #3883FF; background: #3883FF22; color: #aad0ff; }
 
     /* NAV TABS */
     /* ── Activity Bar ── */
@@ -55,7 +55,7 @@
       padding: 6px 24px 0;
     }
     #activity-bar.visible { display: flex; align-items: flex-start; gap: 10px; }
-    .activity-dot { width: 6px; height: 6px; border-radius: 50%; background: #ff6b6b; flex-shrink: 0; margin-top: 15px; animation: pulse 1.5s infinite; }
+    .activity-dot { width: 6px; height: 6px; border-radius: 50%; background: #3883FF; flex-shrink: 0; margin-top: 15px; animation: pulse 1.5s infinite; }
     @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
     /* 滚动容器：显示约1.5条（每条34px），fade 底部暗示可滚动 */
     .activity-scroll {
@@ -74,7 +74,7 @@
       scroll-snap-align: start;
     }
     .activity-item:hover { background: #272727; border-color: #3a3a3a; }
-    .activity-avatar { width: 18px; height: 18px; border-radius: 50%; background: #ff6b6b33; color: #ff6b6b; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; }
+    .activity-avatar { width: 18px; height: 18px; border-radius: 50%; background: #3883FF33; color: #3883FF; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; }
     .activity-text { flex: 1; font-size: 12px; color: #bbb; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .activity-text strong { color: #eee; }
     .activity-text .activity-target { color: #ff9898; }
@@ -95,7 +95,7 @@
       background: #141414; color: #444; font-size: 12px; text-align: center;
       padding: 12px;
     }
-    .upload-card:hover { border-color: #ff6b6b; color: #ff6b6b; background: #1a1010; }
+    .upload-card:hover { border-color: #3883FF; color: #3883FF; background: #1a1010; }
     .upload-card .uc-icon { font-size: 28px; line-height: 1; }
     .upload-card .uc-label { font-size: 11px; line-height: 1.4; }
 
@@ -104,7 +104,7 @@
       padding: 5px 12px; border-radius: 20px; border: 1px solid var(--border);
       background: transparent; color: var(--muted); font-size: 12px; cursor: pointer; transition: all 0.15s;
     }
-    #upload-btn:hover { border-color: #ff6b6b; color: #ff6b6b; }
+    #upload-btn:hover { border-color: #3883FF; color: #3883FF; }
     .upload-modal-overlay { display:none; position:fixed; inset:0; z-index:9000; background:rgba(0,0,0,0.75); backdrop-filter:blur(8px); align-items:center; justify-content:center; }
     .upload-modal-overlay.open { display:flex; }
     .upload-modal { background:#1a1a1a; border:1px solid #333; border-radius:16px; padding:28px; width:460px; max-width:94vw; }
@@ -112,14 +112,14 @@
     .upload-modal .um-sub { font-size:12px; color:#666; margin-bottom:20px; }
     .um-tabs { display:flex; gap:8px; margin-bottom:16px; }
     .um-tab { padding:5px 14px; border-radius:20px; border:1px solid #333; background:transparent; color:#777; font-size:12px; cursor:pointer; }
-    .um-tab.active { background:#ff6b6b; border-color:#ff6b6b; color:#fff; font-weight:600; }
+    .um-tab.active { background:#3883FF; border-color:#3883FF; color:#fff; font-weight:600; }
     .um-panel { display:none; }
     .um-panel.active { display:block; }
     .um-drop-zone {
       border: 2px dashed #333; border-radius: 10px; padding: 32px 20px;
       text-align: center; cursor: pointer; transition: border-color 0.15s; color: #555; font-size: 13px;
     }
-    .um-drop-zone:hover, .um-drop-zone.drag-over { border-color: #ff6b6b; color: #ff6b6b; }
+    .um-drop-zone:hover, .um-drop-zone.drag-over { border-color: #3883FF; color: #3883FF; }
     .um-drop-zone input[type=file] { display:none; }
     .um-preview { margin-top: 12px; display:none; }
     .um-preview img { max-width:100%; max-height:160px; border-radius:8px; object-fit:contain; }
@@ -131,7 +131,7 @@
     }
     .um-field input:focus, .um-field select:focus { border-color: #555; }
     .um-actions { display:flex; gap:10px; margin-top:18px; }
-    .um-submit { flex:1; padding:10px; background:#ff6b6b; border:none; border-radius:8px; color:#fff; font-size:14px; font-weight:600; cursor:pointer; }
+    .um-submit { flex:1; padding:10px; background:#3883FF; border:none; border-radius:8px; color:#fff; font-size:14px; font-weight:600; cursor:pointer; }
     .um-submit:disabled { opacity:0.5; cursor:not-allowed; }
     .um-cancel { padding:10px 18px; background:transparent; border:1px solid #333; border-radius:8px; color:#777; font-size:14px; cursor:pointer; }
     .um-cancel:hover { border-color:#555; color:#aaa; }
@@ -187,7 +187,7 @@
     .btn-note { color: #ccc; }
     .btn-note:hover, .btn-note.has-note { background: rgba(255,215,0,0.22); color: #ffd700; border-color: rgba(255,215,0,0.4); }
     .btn-dislike { color: #888; }
-    .btn-dislike:hover { background: rgba(255,80,80,0.25); color: #ff8080; border-color: rgba(255,80,80,0.3); transform: scale(1.08); }
+    .btn-dislike:hover { background: rgba(56,131,255,0.25); color: #6aaeff; border-color: rgba(56,131,255,0.3); transform: scale(1.08); }
     .btn-open { font-size: 13px; }
     .card-info { color: white; }
     .card-title { font-size: 12px; font-weight: 500; line-height: 1.3; margin-bottom: 3px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
@@ -242,7 +242,7 @@
     .trends-section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
     .trends-section-badge {
       padding: 2px 8px; border-radius: 8px; font-size: 11px; font-weight: 600;
-      background: #ff6b2b22; color: #ff8c55; border: 1px solid #ff6b2b33;
+      background: #3883FF22; color: #6aaeff; border: 1px solid #3883FF33;
     }
     .dg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 14px; padding: 16px 24px 32px; }
     .dg-card {
@@ -251,7 +251,7 @@
       cursor: pointer; text-decoration: none; display: flex; flex-direction: row; align-items: stretch;
       position: relative;
     }
-    .dg-card:hover { border-color: #ff6b2b55; transform: translateY(-2px); }
+    .dg-card:hover { border-color: #3883FF55; transform: translateY(-2px); }
     /* 配图 */
     .dg-thumb {
       width: 120px; min-width: 120px; max-width: 120px;
@@ -284,14 +284,14 @@
     .dg-card.dg-ad .dg-insight::before { color: #6b8cff; }
     .dg-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
     .dg-card-meta { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); }
-    .dg-dot { width: 6px; height: 6px; border-radius: 50%; background: #ff8c55; flex-shrink: 0; }
+    .dg-dot { width: 6px; height: 6px; border-radius: 50%; background: #6aaeff; flex-shrink: 0; }
     .dg-heat { display: flex; align-items: center; gap: 10px; font-size: 11px; color: var(--muted); white-space: nowrap; }
     .dg-heat span { display: flex; align-items: center; gap: 3px; }
     .dg-title { font-size: 14px; font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 6px; }
     .dg-summary { font-size: 12px; line-height: 1.65; color: #888; margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; flex: 1; }
     .dg-insights { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
     .dg-insight { font-size: 11px; color: #777; line-height: 1.5; }
-    .dg-insight::before { content: '•'; color: #ff8c55; margin-right: 5px; }
+    .dg-insight::before { content: '•'; color: #6aaeff; margin-right: 5px; }
     .dg-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; }
     .dg-tag { padding: 2px 8px; background: var(--surface2); border-radius: 8px; font-size: 10px; color: var(--muted); border: 1px solid var(--border); }
 
@@ -321,11 +321,11 @@
     /* Weekly Summary Card */
     .dg-weekly-card {
       background: linear-gradient(135deg, #1e1510 0%, #1a1a1a 100%);
-      border-color: #ff6b2b44;
+      border-color: #3883FF44;
     }
-    .dg-weekly-card:hover { border-color: #ff6b2b99; }
+    .dg-weekly-card:hover { border-color: #3883FF99; }
     .dg-weekly-badge {
-      display: inline-block; padding: 2px 8px; background: #ff6b2b33; color: #ff8c55;
+      display: inline-block; padding: 2px 8px; background: #3883FF33; color: #6aaeff;
       border-radius: 8px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
       text-transform: uppercase; margin-bottom: 8px;
     }
@@ -389,7 +389,7 @@
       transition: all 0.15s; font-family: inherit;
     }
     .dg-action-btn:hover { border-color: #555; color: var(--text); }
-    .dg-like-btn:hover, .dg-like-btn.active { background: rgba(255,107,107,0.15); color: #ff6b6b; border-color: rgba(255,107,107,0.4); }
+    .dg-like-btn:hover, .dg-like-btn.active { background: rgba(56,131,255,0.15); color: #3883FF; border-color: rgba(56,131,255,0.4); }
     .dg-note-btn:hover, .dg-note-btn.has-note { background: rgba(255,215,0,0.12); color: #ffd700; border-color: rgba(255,215,0,0.35); }
     .dg-note-count, .dg-like-count { font-weight: 600; }
 
@@ -589,7 +589,7 @@
       style="width:100%;padding:10px 14px;background:#111;border:1px solid #444;border-radius:8px;color:#eee;font-size:15px;outline:none;box-sizing:border-box;text-align:center"
       onkeydown="if(event.key==='Enter')confirmIdentity()">
     <div style="margin-top:8px;font-size:11px;color:#555">名字会保存在浏览器里，下次进来自动带入</div>
-    <button onclick="confirmIdentity()" style="margin-top:20px;width:100%;padding:11px;background:#ff6b6b;border:none;border-radius:8px;color:white;font-size:15px;font-weight:600;cursor:pointer">进入 →</button>
+    <button onclick="confirmIdentity()" style="margin-top:20px;width:100%;padding:11px;background:#3883FF;border:none;border-radius:8px;color:white;font-size:15px;font-weight:600;cursor:pointer">进入 →</button>
   </div>
 </div>
 
@@ -711,7 +711,7 @@
 
   function confirmIdentity() {
     const val = document.getElementById('identity-input').value.trim();
-    if (!val) { document.getElementById('identity-input').style.borderColor = '#ff6b6b'; return; }
+    if (!val) { document.getElementById('identity-input').style.borderColor = '#3883FF'; return; }
     currentUser = val;
     localStorage.setItem(LS_USER_KEY, currentUser);
     document.getElementById('identity-modal').style.display = 'none';
@@ -1232,7 +1232,7 @@
       const targetLabel = getTargetLabel(n.targetId, n.targetType);
       const typeIcon = n.targetType === 'image' ? '🖼️' : '📝';
       return `<div class="activity-item" onclick="activityJump('${esc(n.targetId)}','${esc(n.targetType)}')"
-        style="${isUnread ? 'border-color:#ff6b6b44;' : 'opacity:0.55;'}">
+        style="${isUnread ? 'border-color:#3883FF44;' : 'opacity:0.55;'}">
         <div class="activity-avatar">${initials}</div>
         <div class="activity-text">
           <strong>${esc(n.author || '?')}</strong>标注了 ${typeIcon} <span class="activity-target">「${esc(targetLabel)}」</span>${tagHtml}${textPreview}
@@ -1311,7 +1311,7 @@
     });
     el.classList.add('activity-highlight');
     el.style.transition = 'box-shadow 0.3s';
-    el.style.boxShadow = '0 0 0 2px #ff6b6b, 0 0 16px #ff6b6b44';
+    el.style.boxShadow = '0 0 0 2px #3883FF, 0 0 16px #3883FF44';
     // 下次滚动或点击时取消
     function clear() {
       el.classList.remove('activity-highlight');
