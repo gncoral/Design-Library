@@ -842,9 +842,8 @@
       <div class="note-badge" id="nb-${esc(img.id)}">💬 ${nc > 1 ? nc : ''}</div>
       <div style="position:relative;overflow:hidden">
         ${img.isVideo
-          ? `<video class="card-video" src="${esc(img.src)}" muted loop playsinline autoplay style="cursor:default" title="${esc(img.title)}"></video>`
-          : `<img src="${esc(img.src)}" alt="${esc(img.title)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="cursor:zoom-in" onclick="event.stopPropagation();lbOpen(this.src,this.alt,'');"
-          onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 120%22><rect fill=%22%23222%22 width=%22200%22 height=%22120%22/><text fill=%22%23444%22 x=%22100%22 y=%2265%22 text-anchor=%22middle%22 font-size=%2212%22>unavailable</text></svg>'"`}
+          ? '<video class="card-video" src="' + esc(img.src) + '" muted loop playsinline autoplay style="cursor:default" title="' + esc(img.title) + '"></video>'
+          : '<img src="' + esc(img.src) + '" alt="' + esc(img.title) + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="cursor:zoom-in" onclick="event.stopPropagation();lbOpen(this.src,this.alt,\'\');" onerror="this.src=\'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 120%22><rect fill=%22%23222%22 width=%22200%22 height=%22120%22/><text fill=%22%23444%22 x=%22100%22 y=%2265%22 text-anchor=%22middle%22 font-size=%2212%22>unavailable</text></svg>\'">'  }
         <div class="card-overlay">
           <div class="card-actions">
             ${!isShareMode ? `
