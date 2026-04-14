@@ -60,42 +60,38 @@
 
     /* NAV TABS */
     /* ── Activity Bar ── */
-    /* ── Activity Bar (compact) ── */
+    /* ── Activity Bar (scrollable) ── */
     #activity-bar {
       display: none; background: #161616; border-bottom: 1px solid #252525;
-      padding: 0 24px; overflow: hidden;
+      padding: 6px 24px 0;
     }
-    #activity-bar.visible { display: block; }
-    .activity-bar-inner {
-      display: flex; align-items: center; gap: 10px; height: 44px;
-    }
-    .activity-dot { width: 6px; height: 6px; border-radius: 50%; background: #ff6b6b; flex-shrink: 0; animation: pulse 1.5s infinite; }
+    #activity-bar.visible { display: flex; align-items: flex-start; gap: 10px; }
+    .activity-dot { width: 6px; height: 6px; border-radius: 50%; background: #ff6b6b; flex-shrink: 0; margin-top: 11px; animation: pulse 1.5s infinite; }
     @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
-    /* 滚动区域：只显示约1.5条高度 */
+    /* 滚动容器：显示约1.5条（每条34px），fade 底部暗示可滚动 */
     .activity-scroll {
-      flex: 1; overflow: hidden; position: relative; height: 32px;
+      flex: 1; overflow-y: scroll; height: 54px;
+      scrollbar-width: none; -ms-overflow-style: none;
+      -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+      scroll-snap-type: y mandatory;
     }
-    .activity-list {
-      display: flex; flex-direction: column; gap: 4px;
-      transition: transform 0.35s ease;
-    }
+    .activity-scroll::-webkit-scrollbar { display: none; }
+    .activity-list { display: flex; flex-direction: column; gap: 2px; padding-bottom: 18px; }
     .activity-item {
-      display: flex; align-items: center; gap: 8px; height: 28px;
+      display: flex; align-items: center; gap: 8px; height: 32px; min-height: 32px;
       padding: 0 10px; border-radius: 6px; cursor: pointer; flex-shrink: 0;
-      background: #222; border: 1px solid #2a2a2a; transition: background 0.15s;
+      background: #1e1e1e; border: 1px solid #2a2a2a; transition: background 0.15s;
+      scroll-snap-align: start;
     }
-    .activity-item:hover { background: #2a2a2a; border-color: #3a3a3a; }
+    .activity-item:hover { background: #272727; border-color: #3a3a3a; }
     .activity-avatar { width: 18px; height: 18px; border-radius: 50%; background: #ff6b6b33; color: #ff6b6b; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; }
     .activity-text { flex: 1; font-size: 12px; color: #bbb; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .activity-text strong { color: #eee; }
     .activity-text .activity-target { color: #ff9898; }
     .activity-time { font-size: 11px; color: #555; white-space: nowrap; flex-shrink: 0; }
     .activity-tag-badge { display: inline-block; padding: 1px 5px; border-radius: 8px; font-size: 10px; background: #2a2a2a; border: 1px solid #3a3a3a; color: #aaa; margin-left: 3px; }
-    .activity-nav { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
-    .activity-nav-btn { background: none; border: 1px solid #2a2a2a; border-radius: 4px; color: #555; font-size: 11px; cursor: pointer; padding: 2px 6px; line-height: 1; }
-    .activity-nav-btn:hover { color: #aaa; border-color: #444; }
-    .activity-nav-count { font-size: 11px; color: #444; white-space: nowrap; }
-    .activity-close { background: none; border: none; color: #444; font-size: 14px; cursor: pointer; padding: 2px 4px; margin-left: 4px; }
+    .activity-close { background: none; border: none; color: #444; font-size: 14px; cursor: pointer; padding: 2px 4px; flex-shrink: 0; margin-top: 8px; }
     .activity-close:hover { color: #aaa; }
 
     /* ── Upload Card in gallery ── */
@@ -521,20 +517,13 @@
   </div>
 </header>
 
-<!-- Activity Bar (compact) -->
+<!-- Activity Bar (scrollable) -->
 <div id="activity-bar">
-  <div class="activity-bar-inner">
-    <div class="activity-dot"></div>
-    <div class="activity-scroll">
-      <div class="activity-list" id="activity-list"></div>
-    </div>
-    <div class="activity-nav">
-      <button class="activity-nav-btn" onclick="activityPrev()" title="上一条">↑</button>
-      <span class="activity-nav-count" id="activity-nav-count"></span>
-      <button class="activity-nav-btn" onclick="activityNext()" title="下一条">↓</button>
-    </div>
-    <button class="activity-close" onclick="closeActivityBar()" title="关闭">×</button>
+  <div class="activity-dot"></div>
+  <div class="activity-scroll" id="activity-scroll">
+    <div class="activity-list" id="activity-list"></div>
   </div>
+  <button class="activity-close" onclick="closeActivityBar()" title="关闭">×</button>
 </div>
 
 <!-- Upload Modal -->
@@ -1214,9 +1203,6 @@
   // ── Activity Bar ──────────────────────────────────────────
   const LS_ACTIVITY_READ_KEY = 'dl_activity_read_v1';
 
-  let activityItems = []; // 全部条目缓存
-  let activityIdx = 0;   // 当前显示的条目索引
-
   function renderActivityBar() {
     if (!allNotes.length) return;
     const readUntil = localStorage.getItem(LS_ACTIVITY_READ_KEY) || '';
@@ -1226,26 +1212,17 @@
       .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
       .slice(0, 20);
     if (!recent.length) return;
-    activityItems = recent;
-    activityIdx = 0; // 从最新一条开始
     const bar = document.getElementById('activity-bar');
-    bar.classList.add('visible');
-    activityRender();
-  }
-
-  function activityRender() {
     const list = document.getElementById('activity-list');
-    const countEl = document.getElementById('activity-nav-count');
-    const readUntil = localStorage.getItem(LS_ACTIVITY_READ_KEY) || '';
-    list.innerHTML = activityItems.map((n, i) => {
+    list.innerHTML = recent.map(n => {
       const isUnread = n.createdAt > readUntil;
       const timeStr = formatRelativeTime(n.createdAt);
       const initials = (n.author || '?')[0].toUpperCase();
       const tagHtml = n.tag ? `<span class="activity-tag-badge">${esc(n.tag)}</span>` : '';
-      const textPreview = n.text ? ('："' + esc(n.text.slice(0, 18)) + (n.text.length > 18 ? '…' : '') + '"') : '';
+      const textPreview = n.text ? ('："' + esc(n.text.slice(0, 22)) + (n.text.length > 22 ? '…' : '') + '"') : '';
       const targetLabel = getTargetLabel(n.targetId, n.targetType);
       return `<div class="activity-item" onclick="activityJump('${esc(n.targetId)}','${esc(n.targetType)}')"
-        style="${isUnread ? 'border-color:#ff6b6b44;' : 'opacity:0.6;'}">
+        style="${isUnread ? 'border-color:#ff6b6b44;' : 'opacity:0.55;'}">
         <div class="activity-avatar">${initials}</div>
         <div class="activity-text">
           <strong>${esc(n.author || '?')}</strong> 在 <span class="activity-target">${esc(targetLabel)}</span> 添加了标注${tagHtml}${textPreview}
@@ -1253,17 +1230,21 @@
         <div class="activity-time">${timeStr}</div>
       </div>`;
     }).join('');
-    // 滑到当前条目
-    const itemH = 32; // item 28px + gap 4px
-    list.style.transform = `translateY(-${activityIdx * itemH}px)`;
-    countEl.textContent = activityItems.length > 1 ? `${activityIdx+1}/${activityItems.length}` : '';
-  }
-
-  function activityPrev() {
-    if (activityIdx > 0) { activityIdx--; activityRender(); }
-  }
-  function activityNext() {
-    if (activityIdx < activityItems.length - 1) { activityIdx++; activityRender(); }
+    bar.classList.add('visible');
+    // 滚回顶部（最新条目在最上）
+    const scroll = document.getElementById('activity-scroll');
+    if (scroll) scroll.scrollTop = 0;
+    // 绑定触摸滑动（只绑一次）
+    if (scroll && !scroll._touchBound) {
+      scroll._touchBound = true;
+      let ty0 = 0;
+      scroll.addEventListener('touchstart', e => { ty0 = e.touches[0].clientY; }, { passive: true });
+      scroll.addEventListener('touchmove', e => {
+        const dy = ty0 - e.touches[0].clientY;
+        scroll.scrollTop += dy * 0.6;
+        ty0 = e.touches[0].clientY;
+      }, { passive: true });
+    }
   }
 
   function getTargetLabel(targetId, targetType) {
