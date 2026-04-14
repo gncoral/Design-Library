@@ -1221,11 +1221,12 @@
       const tagHtml = n.tag ? `<span class="activity-tag-badge">${esc(n.tag)}</span>` : '';
       const textPreview = n.text ? ('："' + esc(n.text.slice(0, 22)) + (n.text.length > 22 ? '…' : '') + '"') : '';
       const targetLabel = getTargetLabel(n.targetId, n.targetType);
+      const typeIcon = n.targetType === 'image' ? '🖼️' : '📝';
       return `<div class="activity-item" onclick="activityJump('${esc(n.targetId)}','${esc(n.targetType)}')"
         style="${isUnread ? 'border-color:#ff6b6b44;' : 'opacity:0.55;'}">
         <div class="activity-avatar">${initials}</div>
         <div class="activity-text">
-          <strong>${esc(n.author || '?')}</strong> 在 <span class="activity-target">${esc(targetLabel)}</span> 添加了标注${tagHtml}${textPreview}
+          <strong>${esc(n.author || '?')}</strong>标注了 ${typeIcon} <span class="activity-target">「${esc(targetLabel)}」</span>${tagHtml}${textPreview}
         </div>
         <div class="activity-time">${timeStr}</div>
       </div>`;
@@ -1262,20 +1263,38 @@
     if (sorted.length) localStorage.setItem(LS_ACTIVITY_READ_KEY, sorted[0].createdAt);
     renderActivityBar();
     if (targetType === 'image') {
+      const img = allImages.find(i => i.id === targetId);
+      const label = img ? (img.title || '图片') : '图片';
       switchTab('gallery');
       setTimeout(() => {
         const card = document.querySelector(`[data-id="${targetId}"]`);
-        if (card) card.scrollIntoView({ behavior:'smooth', block:'center' });
-        const img = allImages.find(i => i.id === targetId);
-        openNoteModal(targetId, 'image', img ? img.title : targetId);
+        if (card) {
+          card.scrollIntoView({ behavior:'smooth', block:'center' });
+          // 闪烁高亮卡片，让用户看出是哪一张
+          card.style.transition = 'box-shadow 0.3s';
+          card.style.boxShadow = '0 0 0 2px #ff6b6b, 0 0 20px #ff6b6b55';
+          setTimeout(() => { card.style.boxShadow = ''; }, 2000);
+        }
+        // 先弹出标题提示 Toast，再打开标注弹窗
+        showToast(`🖼️ ${label}`);
+        setTimeout(() => openNoteModal(targetId, 'image', label), 600);
       }, 300);
     } else {
+      const art = allTrends.find(a => a.id === targetId);
+      const label = art ? (art.title || '文章') : '文章';
       switchTab('digitaling');
       setTimeout(() => {
         const el = document.getElementById('th-' + targetId);
-        if (el) el.scrollIntoView({ behavior:'smooth', block:'center' });
-        const art = allTrends.find(a => a.id === targetId);
-        openNoteModal(targetId, 'article', art ? art.title : targetId);
+        if (el) {
+          el.scrollIntoView({ behavior:'smooth', block:'center' });
+          // 闪烁高亮文章封面
+          const card = el.closest('.dg-card') || el;
+          card.style.transition = 'box-shadow 0.3s, outline 0.3s';
+          card.style.boxShadow = '0 0 0 2px #ff6b6b, 0 0 20px #ff6b6b55';
+          setTimeout(() => { card.style.boxShadow = ''; }, 2000);
+        }
+        showToast(`📝 ${label}`);
+        setTimeout(() => openNoteModal(targetId, 'article', label), 600);
       }, 300);
     }
   }
