@@ -94,6 +94,10 @@
     .activity-close { background: none; border: none; color: #444; font-size: 14px; cursor: pointer; padding: 2px 4px; flex-shrink: 0; margin-top: 8px; }
     .activity-close:hover { color: #aaa; }
 
+    /* ── Video card in gallery ── */
+    .card-video { width:100%; display:block; object-fit:cover; cursor:zoom-in; }
+    .card.is-video .card-img-wrap { background:#000; }
+
     /* ── Upload Card in gallery ── */
     .upload-card {
       aspect-ratio: 1; border-radius: 10px; border: 2px dashed #333;
@@ -533,19 +537,32 @@
 <div class="upload-modal-overlay" id="upload-modal-overlay" onclick="if(event.target===this)closeUploadModal()">
   <div class="upload-modal">
     <h3>↑ 添加到图库</h3>
-    <div class="um-sub">上传你看到的好图，或直接粘贴图片链接</div>
+    <div class="um-sub">上传图片或视频，或直接粘贴图片链接</div>
     <div class="um-tabs">
       <button class="um-tab active" onclick="umSwitchTab('file')">🖼️ 上传图片</button>
       <button class="um-tab" onclick="umSwitchTab('url')">🔗 图片链接</button>
+      <button class="um-tab" onclick="umSwitchTab('video')">🎬 上传视频</button>
     </div>
     <!-- File Panel -->
     <div class="um-panel active" id="um-panel-file">
       <div class="um-drop-zone" id="um-drop-zone" onclick="document.getElementById('um-file-input').click()" ondragover="event.preventDefault();this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="umHandleDrop(event)">
         <input type="file" id="um-file-input" accept="image/*" onchange="umHandleFile(this.files[0])">
         <div>🖼️ 点击或拖放图片到此</div>
-        <div style="font-size:11px;margin-top:6px;color:#444">支持 JPG / PNG / WebP，建议 < 2MB</div>
+        <div style="font-size:11px;margin-top:6px;color:#444">支持 JPG / PNG / WebP，建议 < 3MB</div>
       </div>
       <div class="um-preview" id="um-preview"><img id="um-preview-img" src="" alt=""></div>
+    </div>
+    <!-- Video Panel -->
+    <div class="um-panel" id="um-panel-video">
+      <div class="um-drop-zone" id="um-video-drop-zone" onclick="document.getElementById('um-video-input').click()" ondragover="event.preventDefault();this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="umHandleVideoDrop(event)">
+        <input type="file" id="um-video-input" accept="video/mp4,video/webm,video/mov" onchange="umHandleVideo(this.files[0])">
+        <div>🎬 点击或拖放视频到此</div>
+        <div style="font-size:11px;margin-top:6px;color:#444">支持 MP4 / WebM，建议 < 20MB，会循环静音播放</div>
+      </div>
+      <div class="um-preview" id="um-video-preview" style="display:none;margin-top:12px">
+        <video id="um-video-preview-el" style="max-width:100%;max-height:160px;border-radius:8px;object-fit:contain" muted loop playsinline autoplay></video>
+        <div id="um-video-info" style="font-size:11px;color:#666;margin-top:6px"></div>
+      </div>
     </div>
     <!-- URL Panel -->
     <div class="um-panel" id="um-panel-url">
@@ -824,8 +841,10 @@
       <div class="liked-badge">♥</div>
       <div class="note-badge" id="nb-${esc(img.id)}">💬 ${nc > 1 ? nc : ''}</div>
       <div style="position:relative;overflow:hidden">
-        <img src="${esc(img.src)}" alt="${esc(img.title)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="cursor:zoom-in" onclick="event.stopPropagation();lbOpen(this.src,this.alt,'');"
-          onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 120%22><rect fill=%22%23222%22 width=%22200%22 height=%22120%22/><text fill=%22%23444%22 x=%22100%22 y=%2265%22 text-anchor=%22middle%22 font-size=%2212%22>unavailable</text></svg>'">
+        ${img.isVideo
+          ? `<video class="card-video" src="${esc(img.src)}" muted loop playsinline autoplay style="cursor:default" title="${esc(img.title)}"></video>`
+          : `<img src="${esc(img.src)}" alt="${esc(img.title)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="cursor:zoom-in" onclick="event.stopPropagation();lbOpen(this.src,this.alt,'');"
+          onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 120%22><rect fill=%22%23222%22 width=%22200%22 height=%22120%22/><text fill=%22%23444%22 x=%22100%22 y=%2265%22 text-anchor=%22middle%22 font-size=%2212%22>unavailable</text></svg>'"`}
         <div class="card-overlay">
           <div class="card-actions">
             ${!isShareMode ? `
@@ -1354,27 +1373,62 @@
     umReset();
   }
   function umReset() {
-    umFileData = null;
+    umFileData = null; umVideoData = null;
     const fi = document.getElementById('um-file-input'); if (fi) fi.value = '';
+    const vi = document.getElementById('um-video-input'); if (vi) vi.value = '';
     document.getElementById('um-preview').style.display = 'none';
+    const vp = document.getElementById('um-video-preview'); if (vp) vp.style.display = 'none';
+    const vel = document.getElementById('um-video-preview-el'); if (vel) { vel.src=''; vel.load(); }
     document.getElementById('um-url-input').value = '';
     document.getElementById('um-url-preview').style.display = 'none';
     document.getElementById('um-source-url').value = '';
     document.getElementById('um-title').value = '';
     document.getElementById('um-progress').style.display = 'none';
     document.getElementById('um-submit').disabled = false;
+    umSwitchTab('file');
   }
   function umSwitchTab(tab) {
     umCurrentTab = tab;
-    document.querySelectorAll('.um-tab').forEach((b,i) => b.classList.toggle('active', (i===0&&tab==='file')||(i===1&&tab==='url')));
+    document.querySelectorAll('.um-tab').forEach((b,i) => b.classList.toggle('active',
+      (i===0&&tab==='file')||(i===1&&tab==='url')||(i===2&&tab==='video')));
     document.getElementById('um-panel-file').classList.toggle('active', tab==='file');
     document.getElementById('um-panel-url').classList.toggle('active', tab==='url');
+    document.getElementById('um-panel-video').classList.toggle('active', tab==='video');
   }
   function umHandleDrop(e) {
     e.preventDefault();
     document.getElementById('um-drop-zone').classList.remove('drag-over');
     const file = e.dataTransfer.files[0];
     if (file) umHandleFile(file);
+  }
+  function umHandleVideoDrop(e) {
+    e.preventDefault();
+    document.getElementById('um-video-drop-zone').classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (file) umHandleVideo(file);
+  }
+  let umVideoData = null;
+  function umHandleVideo(file) {
+    if (!file || !file.type.startsWith('video/')) { showToast('请选择视频文件（MP4/WebM）'); return; }
+    if (file.size > 20 * 1024 * 1024) { showToast('视频过大，建议 < 20MB'); return; }
+    const reader = new FileReader();
+    reader.onload = ev => {
+      const dataUrl = ev.target.result;
+      const vid = document.getElementById('um-video-preview-el');
+      vid.src = dataUrl;
+      document.getElementById('um-video-preview').style.display = 'block';
+      const mb = (file.size / 1024 / 1024).toFixed(1);
+      document.getElementById('um-video-info').textContent = `${file.name} · ${mb} MB`;
+      umVideoData = {
+        base64: dataUrl.split(',')[1],
+        filename: file.name.replace(/[^a-zA-Z0-9._-]/g, '_'),
+        mimeType: file.type
+      };
+      if (!document.getElementById('um-title').value) {
+        document.getElementById('um-title').value = file.name.replace(/.[^.]+$/, '').replace(/[_-]/g, ' ');
+      }
+    };
+    reader.readAsDataURL(file);
   }
   function uploadCardDrop(e) {
     e.preventDefault();
@@ -1418,7 +1472,7 @@
     const prog = document.getElementById('um-progress');
     btn.disabled = true; prog.style.display = 'block';
     try {
-      let imgSrc = '';
+      let imgSrc = '', isVideo = false;
       if (umCurrentTab === 'file') {
         if (!umFileData) { showToast('请先选择图片'); btn.disabled=false; return; }
         prog.textContent = '上传图片中...';
@@ -1432,6 +1486,20 @@
         if (!putRes.ok) throw new Error('图片上传失败');
         const putData = await putRes.json();
         imgSrc = putData.content.download_url;
+      } else if (umCurrentTab === 'video') {
+        if (!umVideoData) { showToast('请先选择视频'); btn.disabled=false; return; }
+        prog.textContent = '上传视频中（可能需要几秒）...';
+        const ts = Date.now();
+        const fname = `${ts}_${umVideoData.filename}`;
+        const putRes = await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${UPLOAD_FOLDER}${fname}`, {
+          method: 'PUT',
+          headers: { 'Authorization': `token ${BLOCK_TOKEN}`, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: `upload: video ${fname} by ${currentUser}`, content: umVideoData.base64 })
+        });
+        if (!putRes.ok) throw new Error('视频上传失败');
+        const putData = await putRes.json();
+        imgSrc = putData.content.download_url;
+        isVideo = true;
       } else {
         imgSrc = document.getElementById('um-url-input').value.trim();
         if (!imgSrc.match(/^https?:\/\//)) { showToast('请输入有效的图片链接'); btn.disabled=false; prog.style.display='none'; return; }
@@ -1447,9 +1515,10 @@
       const newEntry = {
         id: newId, src: imgSrc,
         url: document.getElementById('um-source-url').value.trim() || imgSrc,
-        title: document.getElementById('um-title').value.trim() || '用户上传',
+        title: document.getElementById('um-title').value.trim() || (isVideo ? '用户上传视频' : '用户上传'),
         platform: 'upload', category: document.getElementById('um-category').value,
-        tags: [], uploadedBy: currentUser, uploadedAt: new Date().toISOString()
+        tags: [], uploadedBy: currentUser, uploadedAt: new Date().toISOString(),
+        ...(isVideo ? { isVideo: true } : {})
       };
       existingImages.unshift(newEntry);
       const newContent = btoa(unescape(encodeURIComponent(JSON.stringify(existingImages, null, 2))));
