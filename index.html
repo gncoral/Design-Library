@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="no-referrer-when-downgrade">
-  <title>Design Library 🪸</title>
+  <title>FAN Design Library</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
@@ -30,20 +30,9 @@
       padding: 0 24px; height: 58px;
       display: flex; align-items: center; gap: 20px;
     }
-    .logo { font-size: 17px; font-weight: 700; letter-spacing: -0.5px; white-space: nowrap; }
+    .logo { font-size: 20px; font-weight: 700; letter-spacing: -0.5px; white-space: nowrap; }
     .logo span { color: var(--accent); }
-    .filters { display: flex; align-items: center; gap: 6px; flex-wrap: nowrap; overflow-x: auto; flex: 1; }
-    .filters::-webkit-scrollbar { display: none; }
-    .filter-btn {
-      padding: 4px 13px; border-radius: 20px; border: 1px solid var(--border);
-      background: transparent; color: var(--muted); font-size: 12px; cursor: pointer; white-space: nowrap; transition: all 0.15s;
-    }
-    .filter-btn:hover { border-color: #555; color: var(--text); }
-    .filter-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); font-weight: 600; }
-    .filter-btn.pd.active { background: var(--platform-dribbble); border-color: var(--platform-dribbble); color: #fff; }
-    .filter-btn.pb.active { background: var(--platform-behance); border-color: var(--platform-behance); color: #fff; }
-    .filter-btn.pp.active { background: var(--platform-pinterest); border-color: var(--platform-pinterest); color: #fff; }
-    .divider-v { width: 1px; height: 18px; background: var(--border); flex-shrink: 0; margin: 0 4px; }
+    /* filters removed */
     .header-right { display: flex; align-items: center; gap: 10px; margin-left: auto; }
     .stats { font-size: 12px; color: var(--muted); white-space: nowrap; }
     .share-btn {
@@ -150,7 +139,7 @@
 
     .tabs { display: flex; padding: 0 24px; border-bottom: 1px solid var(--border); background: var(--bg); }
     .tab {
-      padding: 12px 18px; font-size: 13px; color: var(--muted); cursor: pointer;
+      padding: 14px 22px; font-size: 16px; color: var(--muted); cursor: pointer;
       border-bottom: 2px solid transparent; transition: all 0.15s; white-space: nowrap;
     }
     .tab:hover { color: var(--text); }
@@ -501,22 +490,7 @@
 <body>
 
 <header>
-  <div class="logo">Design<span>.</span>Library 🪸</div>
-  <div class="filters" id="filters">
-    <button class="filter-btn active" data-filter="all">全部 All</button>
-    <button class="filter-btn pd" data-filter="dribbble">Dribbble</button>
-    <button class="filter-btn pb" data-filter="behance">Behance</button>
-    <button class="filter-btn pp" data-filter="pinterest">Pinterest</button>
-    <div class="divider-v"></div>
-    <button class="filter-btn" data-filter="tag:branding">品牌 Branding</button>
-    <button class="filter-btn" data-filter="tag:logo">标志 Logo</button>
-    <button class="filter-btn" data-filter="tag:packaging">包装 Packaging</button>
-    <button class="filter-btn" data-filter="tag:typography">字体 Typography</button>
-    <button class="filter-btn" data-filter="tag:ui">界面 UI/UX</button>
-    <button class="filter-btn" data-filter="tag:illustration">插画 Illustration</button>
-    <button class="filter-btn" data-filter="tag:editorial">编排 Editorial</button>
-    <button class="filter-btn" data-filter="tag:luxury">奢品 Luxury</button>
-  </div>
+  <div class="logo">FAN<span>.</span>Design Library</div>
   <div class="header-right">
     <span class="stats" id="stats"></span>
     <button class="share-btn" onclick="copyShareLink()">🔗 分享</button>
@@ -621,13 +595,13 @@
 
 <div class="tabs">
   <div class="tab active" data-tab="gallery" onclick="switchTab('gallery')">
-    灵感库 <small style="opacity:0.5;font-size:10px;margin-left:3px">Gallery</small> <span class="badge" id="tab-all-count">0</span>
+    灵感库 <small style="opacity:0.5;font-size:11px;margin-left:4px">Gallery</small> <span class="badge" id="tab-all-count">0</span>
   </div>
   <div class="tab" data-tab="liked" onclick="switchTab('liked')">
-    ❤️ 收藏 <small style="opacity:0.5;font-size:10px;margin-left:3px">Saved</small> <span class="badge" id="tab-liked-count">0</span>
+    收藏 <small style="opacity:0.5;font-size:11px;margin-left:4px">Saved</small> <span class="badge" id="tab-liked-count">0</span>
   </div>
   <div class="tab" data-tab="trends" onclick="switchTab('trends')">
-    📚 品牌洞察 <small style="opacity:0.5;font-size:10px;margin-left:3px">Insights</small> <span class="badge" id="tab-trends-count">0</span>
+    品牌洞察 <small style="opacity:0.5;font-size:11px;margin-left:4px">Insights</small> <span class="badge" id="tab-trends-count">0</span>
   </div>
 </div>
 
@@ -727,7 +701,7 @@
       subtitle.textContent = '修改后你的新标注会用新名字';
       input.value = currentUser;
     } else {
-      title.textContent = '欢迎来到 Design Library';
+      title.textContent = '欢迎来到 FAN Design Library';
       subtitle.textContent = '输入你的名字，点赞和标注会显示你的署名';
       input.value = '';
     }
