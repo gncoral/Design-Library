@@ -1253,7 +1253,8 @@
       const img = allImages.find(i => i.id === targetId);
       return img ? (img.title || targetId) : targetId;
     } else {
-      const art = allTrends.find(a => a.id === targetId);
+      // article 在 allDigitaling 里（id 前缀 dg- / rb-），不在 allTrends
+      const art = allDigitaling.find(a => a.id === targetId);
       return art ? (art.title || targetId) : targetId;
     }
   }
@@ -1277,9 +1278,9 @@
         openNoteModal(targetId, 'image', label);
       }, 350);
     } else {
-      const art = allTrends.find(a => a.id === targetId);
+      const art = allDigitaling.find(a => a.id === targetId);
       const label = art ? (art.title || '文章') : '文章';
-      switchTab('digitaling');
+      switchTab('trends'); // tab 名是 trends，对应品牌洞察面板
       setTimeout(() => {
         const el = document.getElementById('th-' + targetId);
         const card = el ? (el.closest('.dg-card') || el) : null;
