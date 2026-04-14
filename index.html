@@ -1262,6 +1262,30 @@
     const sorted = [...allNotes].sort((a,b) => new Date(b.createdAt)-new Date(a.createdAt));
     if (sorted.length) localStorage.setItem(LS_ACTIVITY_READ_KEY, sorted[0].createdAt);
     renderActivityBar();
+
+    function highlightEl(el) {
+      if (!el) return;
+      // 清除之前可能存在的高亮
+      document.querySelectorAll('.activity-highlight').forEach(e => {
+        e.classList.remove('activity-highlight');
+        e.style.boxShadow = '';
+      });
+      el.classList.add('activity-highlight');
+      el.style.transition = 'box-shadow 0.3s';
+      el.style.boxShadow = '0 0 0 2px #ff6b6b, 0 0 16px #ff6b6b44';
+      // 下次滚动或点击时取消高亮
+      function clearHighlight() {
+        el.classList.remove('activity-highlight');
+        el.style.boxShadow = '';
+        window.removeEventListener('scroll', clearHighlight, true);
+        window.removeEventListener('click', clearHighlight, true);
+      }
+      setTimeout(() => {
+        window.addEventListener('scroll', clearHighlight, { capture: true, once: true });
+        window.addEventListener('click', clearHighlight, { capture: true, once: true });
+      }, 400); // 延迟400ms，避免跳转本身的点击事件触发清除
+    }
+
     if (targetType === 'image') {
       const img = allImages.find(i => i.id === targetId);
       const label = img ? (img.title || '图片') : '图片';
@@ -1270,14 +1294,9 @@
         const card = document.querySelector(`[data-id="${targetId}"]`);
         if (card) {
           card.scrollIntoView({ behavior:'smooth', block:'center' });
-          // 闪烁高亮卡片，让用户看出是哪一张
-          card.style.transition = 'box-shadow 0.3s';
-          card.style.boxShadow = '0 0 0 2px #ff6b6b, 0 0 20px #ff6b6b55';
-          setTimeout(() => { card.style.boxShadow = ''; }, 2000);
+          highlightEl(card);
         }
-        // 先弹出标题提示 Toast，再打开标注弹窗
-        showToast(`🖼️ ${label}`);
-        setTimeout(() => openNoteModal(targetId, 'image', label), 600);
+        showToast(`🖼️ 「${label}」`);
       }, 300);
     } else {
       const art = allTrends.find(a => a.id === targetId);
@@ -1285,16 +1304,12 @@
       switchTab('digitaling');
       setTimeout(() => {
         const el = document.getElementById('th-' + targetId);
-        if (el) {
-          el.scrollIntoView({ behavior:'smooth', block:'center' });
-          // 闪烁高亮文章封面
-          const card = el.closest('.dg-card') || el;
-          card.style.transition = 'box-shadow 0.3s, outline 0.3s';
-          card.style.boxShadow = '0 0 0 2px #ff6b6b, 0 0 20px #ff6b6b55';
-          setTimeout(() => { card.style.boxShadow = ''; }, 2000);
+        const card = el ? (el.closest('.dg-card') || el) : null;
+        if (card) {
+          card.scrollIntoView({ behavior:'smooth', block:'center' });
+          highlightEl(card);
         }
-        showToast(`📝 ${label}`);
-        setTimeout(() => openNoteModal(targetId, 'article', label), 600);
+        showToast(`📝 「${label}」`);
       }, 300);
     }
   }
