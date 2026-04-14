@@ -1258,33 +1258,13 @@
     }
   }
 
+  // 全局：记录待高亮的元素，供 closeNoteModal 调用
+  let _pendingHighlightEl = null;
+
   function activityJump(targetId, targetType) {
     const sorted = [...allNotes].sort((a,b) => new Date(b.createdAt)-new Date(a.createdAt));
     if (sorted.length) localStorage.setItem(LS_ACTIVITY_READ_KEY, sorted[0].createdAt);
     renderActivityBar();
-
-    function highlightEl(el) {
-      if (!el) return;
-      // 清除之前可能存在的高亮
-      document.querySelectorAll('.activity-highlight').forEach(e => {
-        e.classList.remove('activity-highlight');
-        e.style.boxShadow = '';
-      });
-      el.classList.add('activity-highlight');
-      el.style.transition = 'box-shadow 0.3s';
-      el.style.boxShadow = '0 0 0 2px #ff6b6b, 0 0 16px #ff6b6b44';
-      // 下次滚动或点击时取消高亮
-      function clearHighlight() {
-        el.classList.remove('activity-highlight');
-        el.style.boxShadow = '';
-        window.removeEventListener('scroll', clearHighlight, true);
-        window.removeEventListener('click', clearHighlight, true);
-      }
-      setTimeout(() => {
-        window.addEventListener('scroll', clearHighlight, { capture: true, once: true });
-        window.addEventListener('click', clearHighlight, { capture: true, once: true });
-      }, 400); // 延迟400ms，避免跳转本身的点击事件触发清除
-    }
 
     if (targetType === 'image') {
       const img = allImages.find(i => i.id === targetId);
@@ -1292,12 +1272,10 @@
       switchTab('gallery');
       setTimeout(() => {
         const card = document.querySelector(`[data-id="${targetId}"]`);
-        if (card) {
-          card.scrollIntoView({ behavior:'smooth', block:'center' });
-          highlightEl(card);
-        }
-        showToast(`🖼️ 「${label}」`);
-      }, 300);
+        if (card) card.scrollIntoView({ behavior:'smooth', block:'center' });
+        _pendingHighlightEl = card || null;
+        openNoteModal(targetId, 'image', label);
+      }, 350);
     } else {
       const art = allTrends.find(a => a.id === targetId);
       const label = art ? (art.title || '文章') : '文章';
@@ -1305,13 +1283,36 @@
       setTimeout(() => {
         const el = document.getElementById('th-' + targetId);
         const card = el ? (el.closest('.dg-card') || el) : null;
-        if (card) {
-          card.scrollIntoView({ behavior:'smooth', block:'center' });
-          highlightEl(card);
-        }
-        showToast(`📝 「${label}」`);
-      }, 300);
+        if (card) card.scrollIntoView({ behavior:'smooth', block:'center' });
+        _pendingHighlightEl = card || null;
+        openNoteModal(targetId, 'article', label);
+      }, 350);
     }
+  }
+
+  function applyPendingHighlight() {
+    const el = _pendingHighlightEl;
+    _pendingHighlightEl = null;
+    if (!el) return;
+    // 清除旧高亮
+    document.querySelectorAll('.activity-highlight').forEach(e => {
+      e.classList.remove('activity-highlight');
+      e.style.boxShadow = '';
+    });
+    el.classList.add('activity-highlight');
+    el.style.transition = 'box-shadow 0.3s';
+    el.style.boxShadow = '0 0 0 2px #ff6b6b, 0 0 16px #ff6b6b44';
+    // 下次滚动或点击时取消
+    function clear() {
+      el.classList.remove('activity-highlight');
+      el.style.boxShadow = '';
+      window.removeEventListener('scroll', clear, true);
+      window.removeEventListener('click', clear, true);
+    }
+    setTimeout(() => {
+      window.addEventListener('scroll', clear, { capture: true, once: true });
+      window.addEventListener('click', clear, { capture: true, once: true });
+    }, 300);
   }
 
   function closeActivityBar() {
@@ -1609,7 +1610,8 @@
   function closeNoteModal() {
     document.getElementById('note-modal').classList.remove('on');
     _noteTarget = null; _noteTag = null;
-  }
+  
+    applyPendingHighlight();}
 
   document.getElementById('note-modal').addEventListener('click', e => {
     if (e.target === document.getElementById('note-modal')) closeNoteModal();
