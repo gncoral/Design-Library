@@ -1181,22 +1181,17 @@
     document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
     document.getElementById('panel-' + (tab === 'liked' ? 'liked' : tab === 'trends' ? 'trends' : 'gallery')).classList.add('active');
     // hide filter bar on trends tab
-    document.getElementById('filters').style.opacity = tab === 'trends' ? '0.3' : '1';
-    document.getElementById('filters').style.pointerEvents = tab === 'trends' ? 'none' : '';
+    const filtersEl = document.getElementById('filters');
+    if (filtersEl) {
+      filtersEl.style.opacity = tab === 'trends' ? '0.3' : '1';
+      filtersEl.style.pointerEvents = tab === 'trends' ? 'none' : '';
+    }
     if (tab === 'liked') renderGallery('liked');
     if (tab === 'gallery') renderGallery('gallery');
     if (tab === 'trends') renderDigitaling();
   }
 
-  // ── Filters ───────────────────────────────────────────────
-  document.getElementById('filters').addEventListener('click', e => {
-    const btn = e.target.closest('.filter-btn');
-    if (!btn) return;
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    currentFilter = btn.dataset.filter;
-    renderGallery();
-  });
+  // ── Filters (removed) ─────────────────────────────────────
 
   // ── Share ───────────────────────────────────────��─────────
   function copyShareLink() {
