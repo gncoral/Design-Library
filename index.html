@@ -66,14 +66,14 @@
       padding: 6px 24px 0;
     }
     #activity-bar.visible { display: flex; align-items: flex-start; gap: 10px; }
-    .activity-dot { width: 6px; height: 6px; border-radius: 50%; background: #ff6b6b; flex-shrink: 0; margin-top: 11px; animation: pulse 1.5s infinite; }
+    .activity-dot { width: 6px; height: 6px; border-radius: 50%; background: #ff6b6b; flex-shrink: 0; margin-top: 15px; animation: pulse 1.5s infinite; }
     @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
     /* 滚动容器：显示约1.5条（每条34px），fade 底部暗示可滚动 */
     .activity-scroll {
-      flex: 1; overflow-y: scroll; height: 54px;
+      flex: 1; overflow-y: scroll; height: 88px;
       scrollbar-width: none; -ms-overflow-style: none;
-      -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-      mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
       scroll-snap-type: y mandatory;
     }
     .activity-scroll::-webkit-scrollbar { display: none; }
