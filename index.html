@@ -59,6 +59,73 @@
     .user-badge:hover { border-color: #ff6b6b; background: #ff6b6b22; color: #ffbbbb; }
 
     /* NAV TABS */
+    /* ── Activity Bar ── */
+    #activity-bar {
+      display: none; background: #1a1a1a; border-bottom: 1px solid #2a2a2a;
+      padding: 0 24px;
+    }
+    #activity-bar.visible { display: block; }
+    .activity-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 0 6px;
+    }
+    .activity-header-left { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: #ccc; }
+    .activity-dot { width: 7px; height: 7px; border-radius: 50%; background: #ff6b6b; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+    .activity-close { background: none; border: none; color: #555; font-size: 16px; cursor: pointer; padding: 2px 6px; border-radius: 4px; }
+    .activity-close:hover { color: #aaa; }
+    .activity-list { display: flex; flex-direction: column; gap: 4px; padding-bottom: 10px; }
+    .activity-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 7px 10px; border-radius: 8px; cursor: pointer;
+      background: #222; border: 1px solid #2a2a2a; transition: background 0.15s;
+    }
+    .activity-item:hover { background: #2a2a2a; border-color: #3a3a3a; }
+    .activity-avatar { width: 24px; height: 24px; border-radius: 50%; background: #ff6b6b33; color: #ff6b6b; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+    .activity-text { flex: 1; font-size: 12px; color: #ccc; }
+    .activity-text strong { color: #eee; }
+    .activity-text .activity-target { color: #ff6b6b; text-decoration: none; }
+    .activity-time { font-size: 11px; color: #555; white-space: nowrap; }
+    .activity-tag-badge { display: inline-block; padding: 1px 6px; border-radius: 10px; font-size: 10px; background: #2a2a2a; border: 1px solid #3a3a3a; color: #aaa; margin-left: 4px; }
+
+    /* ── Upload Modal ── */
+    #upload-btn {
+      padding: 5px 12px; border-radius: 20px; border: 1px solid var(--border);
+      background: transparent; color: var(--muted); font-size: 12px; cursor: pointer; transition: all 0.15s;
+    }
+    #upload-btn:hover { border-color: #ff6b6b; color: #ff6b6b; }
+    .upload-modal-overlay { display:none; position:fixed; inset:0; z-index:9000; background:rgba(0,0,0,0.75); backdrop-filter:blur(8px); align-items:center; justify-content:center; }
+    .upload-modal-overlay.open { display:flex; }
+    .upload-modal { background:#1a1a1a; border:1px solid #333; border-radius:16px; padding:28px; width:460px; max-width:94vw; }
+    .upload-modal h3 { font-size:16px; font-weight:700; margin-bottom:4px; }
+    .upload-modal .um-sub { font-size:12px; color:#666; margin-bottom:20px; }
+    .um-tabs { display:flex; gap:8px; margin-bottom:16px; }
+    .um-tab { padding:5px 14px; border-radius:20px; border:1px solid #333; background:transparent; color:#777; font-size:12px; cursor:pointer; }
+    .um-tab.active { background:#ff6b6b; border-color:#ff6b6b; color:#fff; font-weight:600; }
+    .um-panel { display:none; }
+    .um-panel.active { display:block; }
+    .um-drop-zone {
+      border: 2px dashed #333; border-radius: 10px; padding: 32px 20px;
+      text-align: center; cursor: pointer; transition: border-color 0.15s; color: #555; font-size: 13px;
+    }
+    .um-drop-zone:hover, .um-drop-zone.drag-over { border-color: #ff6b6b; color: #ff6b6b; }
+    .um-drop-zone input[type=file] { display:none; }
+    .um-preview { margin-top: 12px; display:none; }
+    .um-preview img { max-width:100%; max-height:160px; border-radius:8px; object-fit:contain; }
+    .um-field { margin-bottom: 12px; }
+    .um-field label { display:block; font-size:11px; color:#666; margin-bottom:5px; }
+    .um-field input, .um-field select {
+      width:100%; padding:8px 12px; background:#111; border:1px solid #333; border-radius:7px;
+      color:#eee; font-size:13px; outline:none; box-sizing:border-box;
+    }
+    .um-field input:focus, .um-field select:focus { border-color: #555; }
+    .um-actions { display:flex; gap:10px; margin-top:18px; }
+    .um-submit { flex:1; padding:10px; background:#ff6b6b; border:none; border-radius:8px; color:#fff; font-size:14px; font-weight:600; cursor:pointer; }
+    .um-submit:disabled { opacity:0.5; cursor:not-allowed; }
+    .um-cancel { padding:10px 18px; background:transparent; border:1px solid #333; border-radius:8px; color:#777; font-size:14px; cursor:pointer; }
+    .um-cancel:hover { border-color:#555; color:#aaa; }
+    .um-progress { font-size:12px; color:#777; margin-top:8px; text-align:center; display:none; }
+
     .tabs { display: flex; padding: 0 24px; border-bottom: 1px solid var(--border); background: var(--bg); }
     .tab {
       padding: 12px 18px; font-size: 13px; color: var(--muted); cursor: pointer;
@@ -114,6 +181,7 @@
     .platform-dot.dribbble { background: var(--platform-dribbble); }
     .platform-dot.behance { background: var(--platform-behance); }
     .platform-dot.pinterest { background: var(--platform-pinterest); }
+    .platform-dot.upload { background: #a78bfa; }
     .liked-badge { position: absolute; top: 8px; left: 8px; background: var(--like); color: white; border-radius: 50%; width: 20px; height: 20px; display: none; align-items: center; justify-content: center; font-size: 10px; z-index: 4; }
     .card.liked .liked-badge { display: flex; }
     /* 有标注时爱心右移28px，💬和❤️并排 */
@@ -426,10 +494,82 @@
   </div>
   <div class="header-right">
     <span class="stats" id="stats"></span>
+    <button id="upload-btn" onclick="openUploadModal()" title="上传图片或链接">↑ 上传</button>
     <button class="share-btn" onclick="copyShareLink()">🔗 分享</button>
     <button class="user-badge" id="user-badge" onclick="showIdentityModal()" title="点击修改昵称"></button>
   </div>
 </header>
+
+<!-- Activity Bar -->
+<div id="activity-bar">
+  <div class="activity-header">
+    <div class="activity-header-left">
+      <div class="activity-dot"></div>
+      <span id="activity-title">最新动态</span>
+    </div>
+    <button class="activity-close" onclick="closeActivityBar()" title="关闭">×</button>
+  </div>
+  <div class="activity-list" id="activity-list"></div>
+</div>
+
+<!-- Upload Modal -->
+<div class="upload-modal-overlay" id="upload-modal-overlay" onclick="if(event.target===this)closeUploadModal()">
+  <div class="upload-modal">
+    <h3>↑ 添加到图库</h3>
+    <div class="um-sub">上传你看到的好图，或直接粘贴图片链接</div>
+    <div class="um-tabs">
+      <button class="um-tab active" onclick="umSwitchTab('file')">🖼️ 上传图片</button>
+      <button class="um-tab" onclick="umSwitchTab('url')">🔗 图片链接</button>
+    </div>
+    <!-- File Panel -->
+    <div class="um-panel active" id="um-panel-file">
+      <div class="um-drop-zone" id="um-drop-zone" onclick="document.getElementById('um-file-input').click()" ondragover="event.preventDefault();this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="umHandleDrop(event)">
+        <input type="file" id="um-file-input" accept="image/*" onchange="umHandleFile(this.files[0])">
+        <div>🖼️ 点击或拖放图片到此</div>
+        <div style="font-size:11px;margin-top:6px;color:#444">支持 JPG / PNG / WebP，建议 < 2MB</div>
+      </div>
+      <div class="um-preview" id="um-preview"><img id="um-preview-img" src="" alt=""></div>
+    </div>
+    <!-- URL Panel -->
+    <div class="um-panel" id="um-panel-url">
+      <div class="um-field">
+        <label>图片 URL</label>
+        <input type="text" id="um-url-input" placeholder="https://example.com/image.jpg" oninput="umPreviewUrl(this.value)">
+      </div>
+      <div class="um-preview" id="um-url-preview"><img id="um-url-preview-img" src="" alt="" style="max-width:100%;max-height:120px;border-radius:8px;object-fit:contain"></div>
+    </div>
+    <!-- Common fields -->
+    <div style="margin-top:14px">
+      <div class="um-field">
+        <label>来源链接 <span style="color:#555">(可选)</span></label>
+        <input type="text" id="um-source-url" placeholder="https://www.behance.net/...">
+      </div>
+      <div class="um-field">
+        <label>标题 <span style="color:#555">(可选)</span></label>
+        <input type="text" id="um-title" placeholder="作品名称或描述">
+      </div>
+      <div class="um-field">
+        <label>分类</label>
+        <select id="um-category">
+          <option value="branding">🏷️ 品牌 Branding</option>
+          <option value="poster">📌 海报 Poster</option>
+          <option value="packaging">📦 包装 Packaging</option>
+          <option value="typography">屗体 Typography</option>
+          <option value="ui">界面 UI/UX</option>
+          <option value="illustration">插画 Illustration</option>
+          <option value="editorial">编排 Editorial</option>
+          <option value="luxury">奢品 Luxury</option>
+          <option value="other">其他</option>
+        </select>
+      </div>
+    </div>
+    <div class="um-actions">
+      <button class="um-cancel" onclick="closeUploadModal()">取消</button>
+      <button class="um-submit" id="um-submit" onclick="umSubmit()">添加到图库</button>
+    </div>
+    <div class="um-progress" id="um-progress"></div>
+  </div>
+</div>
 
 <!-- 昵称设置弹窗 -->
 <div id="identity-modal" style="display:none;position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);align-items:center;justify-content:center">
@@ -601,6 +741,7 @@
       refreshNoteBadges();
       renderGallery();
       renderDigitaling();
+      renderActivityBar(); // 加载完成后显示活动条
     });
   }
 
@@ -841,7 +982,7 @@
       if (res.ok) {
         const data = await res.json();
         sharedLikeSha = data.sha;
-        const parsed = JSON.parse(atob(data.content.replace(/\n/g, '')));
+        const parsed = JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, "")))));
         if (!parsed.byUser) parsed.byUser = {};
         if (!parsed.ids) parsed.ids = [];
         // 迁移：把旧 ids 数组归到 nataliegao 名下
@@ -942,7 +1083,7 @@
       if (res.ok) {
         const data = await res.json();
         sha = data.sha;
-        try { existing = JSON.parse(atob(data.content.replace(/\n/g, ''))); } catch(e) { existing = { ids: [], tagCounts: {}, categoryCounts: {} }; }
+        try { existing = JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, ""))))); } catch(e) { existing = { ids: [], tagCounts: {}, categoryCounts: {} }; }
         if (!existing.ids) existing = { ids: Array.isArray(existing) ? existing : [], tagCounts: {}, categoryCounts: {} };
       }
       // 2. 去重追加 id，累加 tag 计数（负向学习）
@@ -1031,6 +1172,212 @@
     t.textContent = msg; t.classList.add('show');
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  // ── Activity Bar ──────────────────────────────────────────
+  const LS_ACTIVITY_READ_KEY = 'dl_activity_read_v1';
+
+  function renderActivityBar() {
+    if (!allNotes.length) return;
+    const readUntil = localStorage.getItem(LS_ACTIVITY_READ_KEY) || '';
+    const cutoff = Date.now() - 48 * 3600 * 1000;
+    const recent = allNotes
+      .filter(n => n.createdAt && new Date(n.createdAt).getTime() > cutoff)
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+      .slice(0, 10);
+    if (!recent.length) return;
+    const bar = document.getElementById('activity-bar');
+    const list = document.getElementById('activity-list');
+    const title = document.getElementById('activity-title');
+    const unreadCount = recent.filter(n => n.createdAt > readUntil).length;
+    title.textContent = unreadCount > 0 ? `最新动态 • ${unreadCount} 条新标注` : '最新动态';
+    list.innerHTML = recent.map(n => {
+      const isUnread = n.createdAt > readUntil;
+      const timeStr = formatRelativeTime(n.createdAt);
+      const initials = (n.author || '?')[0].toUpperCase();
+      const tagHtml = n.tag ? `<span class="activity-tag-badge">${esc(n.tag)}</span>` : '';
+      const textPreview = n.text ? ('："' + esc(n.text.slice(0, 20)) + (n.text.length > 20 ? '…' : '') + '"') : '';
+      const targetLabel = getTargetLabel(n.targetId, n.targetType);
+      return `<div class="activity-item" onclick="activityJump('${esc(n.targetId)}','${esc(n.targetType)}')"
+        style="${isUnread ? 'border-color:#ff6b6b33;' : 'opacity:0.7;'}">
+        <div class="activity-avatar">${initials}</div>
+        <div class="activity-text">
+          <strong>${esc(n.author || '?')}</strong> 在 <span class="activity-target">${esc(targetLabel)}</span> 添加了标注${tagHtml}${textPreview}
+        </div>
+        <div class="activity-time">${timeStr}</div>
+      </div>`;
+    }).join('');
+    bar.classList.add('visible');
+  }
+
+  function getTargetLabel(targetId, targetType) {
+    if (targetType === 'image') {
+      const img = allImages.find(i => i.id === targetId);
+      return img ? (img.title || targetId) : targetId;
+    } else {
+      const art = allTrends.find(a => a.id === targetId);
+      return art ? (art.title || targetId) : targetId;
+    }
+  }
+
+  function activityJump(targetId, targetType) {
+    const sorted = [...allNotes].sort((a,b) => new Date(b.createdAt)-new Date(a.createdAt));
+    if (sorted.length) localStorage.setItem(LS_ACTIVITY_READ_KEY, sorted[0].createdAt);
+    renderActivityBar();
+    if (targetType === 'image') {
+      switchTab('gallery');
+      setTimeout(() => {
+        const card = document.querySelector(`[data-id="${targetId}"]`);
+        if (card) card.scrollIntoView({ behavior:'smooth', block:'center' });
+        const img = allImages.find(i => i.id === targetId);
+        openNoteModal(targetId, 'image', img ? img.title : targetId);
+      }, 300);
+    } else {
+      switchTab('digitaling');
+      setTimeout(() => {
+        const el = document.getElementById('th-' + targetId);
+        if (el) el.scrollIntoView({ behavior:'smooth', block:'center' });
+        const art = allTrends.find(a => a.id === targetId);
+        openNoteModal(targetId, 'article', art ? art.title : targetId);
+      }, 300);
+    }
+  }
+
+  function closeActivityBar() {
+    const sorted = [...allNotes].sort((a,b) => new Date(b.createdAt)-new Date(a.createdAt));
+    if (sorted.length) localStorage.setItem(LS_ACTIVITY_READ_KEY, sorted[0].createdAt);
+    document.getElementById('activity-bar').classList.remove('visible');
+  }
+
+  function formatRelativeTime(iso) {
+    const diff = Date.now() - new Date(iso).getTime();
+    const m = Math.floor(diff / 60000);
+    if (m < 1) return '刚刚';
+    if (m < 60) return `${m}分钟前`;
+    const h = Math.floor(m / 60);
+    if (h < 24) return `${h}小时前`;
+    return `${Math.floor(h/24)}天前`;
+  }
+
+  // ── Upload Modal ───────────────────────────────────────────
+  const IMAGES_FILE = 'data/images.json';
+  const UPLOAD_FOLDER = 'data/uploads/';
+  let umCurrentTab = 'file';
+  let umFileData = null;
+
+  function openUploadModal() {
+    if (!currentUser) { showIdentityModal(false); return; }
+    document.getElementById('upload-modal-overlay').classList.add('open');
+    umReset();
+  }
+  function closeUploadModal() {
+    document.getElementById('upload-modal-overlay').classList.remove('open');
+    umReset();
+  }
+  function umReset() {
+    umFileData = null;
+    const fi = document.getElementById('um-file-input'); if (fi) fi.value = '';
+    document.getElementById('um-preview').style.display = 'none';
+    document.getElementById('um-url-input').value = '';
+    document.getElementById('um-url-preview').style.display = 'none';
+    document.getElementById('um-source-url').value = '';
+    document.getElementById('um-title').value = '';
+    document.getElementById('um-progress').style.display = 'none';
+    document.getElementById('um-submit').disabled = false;
+  }
+  function umSwitchTab(tab) {
+    umCurrentTab = tab;
+    document.querySelectorAll('.um-tab').forEach((b,i) => b.classList.toggle('active', (i===0&&tab==='file')||(i===1&&tab==='url')));
+    document.getElementById('um-panel-file').classList.toggle('active', tab==='file');
+    document.getElementById('um-panel-url').classList.toggle('active', tab==='url');
+  }
+  function umHandleDrop(e) {
+    e.preventDefault();
+    document.getElementById('um-drop-zone').classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (file) umHandleFile(file);
+  }
+  function umHandleFile(file) {
+    if (!file || !file.type.startsWith('image/')) { showToast('请选择图片文件'); return; }
+    if (file.size > 3 * 1024 * 1024) { showToast('图片过大，建议 < 3MB'); return; }
+    const reader = new FileReader();
+    reader.onload = ev => {
+      const dataUrl = ev.target.result;
+      document.getElementById('um-preview-img').src = dataUrl;
+      document.getElementById('um-preview').style.display = 'block';
+      umFileData = {
+        base64: dataUrl.split(',')[1],
+        filename: file.name.replace(/[^a-zA-Z0-9._-]/g, '_'),
+        mimeType: file.type
+      };
+      if (!document.getElementById('um-title').value) {
+        document.getElementById('um-title').value = file.name.replace(/\.[^.]+$/, '').replace(/[_-]/g, ' ');
+      }
+    };
+    reader.readAsDataURL(file);
+  }
+  function umPreviewUrl(url) {
+    const prev = document.getElementById('um-url-preview');
+    const img = document.getElementById('um-url-preview-img');
+    if (url.match(/^https?:\/\//)) {
+      img.src = url;
+      img.onerror = () => { prev.style.display='none'; };
+      img.onload = () => { prev.style.display='block'; };
+    } else { prev.style.display='none'; }
+  }
+
+  async function umSubmit() {
+    const btn = document.getElementById('um-submit');
+    const prog = document.getElementById('um-progress');
+    btn.disabled = true; prog.style.display = 'block';
+    try {
+      let imgSrc = '';
+      if (umCurrentTab === 'file') {
+        if (!umFileData) { showToast('请先选择图片'); btn.disabled=false; return; }
+        prog.textContent = '上传图片中...';
+        const ts = Date.now();
+        const fname = `${ts}_${umFileData.filename}`;
+        const putRes = await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${UPLOAD_FOLDER}${fname}`, {
+          method: 'PUT',
+          headers: { 'Authorization': `token ${BLOCK_TOKEN}`, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: `upload: ${fname} by ${currentUser}`, content: umFileData.base64 })
+        });
+        if (!putRes.ok) throw new Error('图片上传失败');
+        const putData = await putRes.json();
+        imgSrc = putData.content.download_url;
+      } else {
+        imgSrc = document.getElementById('um-url-input').value.trim();
+        if (!imgSrc.match(/^https?:\/\//)) { showToast('请输入有效的图片链接'); btn.disabled=false; prog.style.display='none'; return; }
+      }
+      prog.textContent = '更新图库...';
+      const imgRes = await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${IMAGES_FILE}`, {
+        headers: { 'Authorization': `token ${BLOCK_TOKEN}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      const imgData = await imgRes.json();
+      const imgSha = imgData.sha;
+      const existingImages = JSON.parse(decodeURIComponent(escape(atob(imgData.content.replace(/\n/g,'')))));
+      const newId = `upload-${Date.now()}`;
+      const newEntry = {
+        id: newId, src: imgSrc,
+        url: document.getElementById('um-source-url').value.trim() || imgSrc,
+        title: document.getElementById('um-title').value.trim() || '用户上传',
+        platform: 'upload', category: document.getElementById('um-category').value,
+        tags: [], uploadedBy: currentUser, uploadedAt: new Date().toISOString()
+      };
+      existingImages.unshift(newEntry);
+      const newContent = btoa(unescape(encodeURIComponent(JSON.stringify(existingImages, null, 2))));
+      const putImgRes = await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${IMAGES_FILE}`, {
+        method: 'PUT',
+        headers: { 'Authorization': `token ${BLOCK_TOKEN}`, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: `upload: add image by ${currentUser}`, content: newContent, sha: imgSha })
+      });
+      if (!putImgRes.ok) throw new Error('更新图库失败');
+      allImages.unshift(newEntry);
+      closeUploadModal();
+      renderGallery(); updateCounts();
+      showToast('✅ 已添加到图库！');
+    } catch(err) { showToast('⚠️ ' + err.message); btn.disabled = false; }
+    prog.style.display = 'none';
   }
 
   function esc(s) {
@@ -1219,6 +1566,7 @@
     allNotes.push(note);
     saveNotesLocal(); // localStorage 持久化，刷新不丢
     refreshNoteBadges();
+    renderActivityBar(); // 新标注后立即更新提示条
     showToast('💬 标注已保存');
     closeNoteModal();
 
@@ -1231,7 +1579,7 @@
       if (res.ok) {
         const data = await res.json();
         sha = data.sha;
-        try { existing = JSON.parse(atob(data.content.replace(/\n/g,''))); } catch(e) {}
+        try { existing = JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, ""))))); } catch(e) {}
       }
       existing.push(note);
       const putRes = await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${NOTES_FILE}`, {
@@ -1315,7 +1663,7 @@
       if (res.ok) {
         const j = await res.json();
         sha = j.sha;
-        try { data = JSON.parse(atob(j.content.replace(/\n/g,''))); } catch(e) {}
+        try { data = JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g, ""))))); } catch(e) {}
       }
       data[id] = allDgLikes[id] || 0;
       const putRes = await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${DG_LIKES_FILE}`, {
