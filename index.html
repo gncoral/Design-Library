@@ -51,6 +51,12 @@
       background: transparent; color: var(--muted); font-size: 12px; cursor: pointer; transition: all 0.15s;
     }
     .share-btn:hover { border-color: #555; color: var(--text); }
+    .user-badge {
+      padding: 5px 12px; border-radius: 20px; border: 1px solid #ff6b6b44;
+      background: #ff6b6b11; color: #ff9999; font-size: 12px; cursor: pointer; transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .user-badge:hover { border-color: #ff6b6b; background: #ff6b6b22; color: #ffbbbb; }
 
     /* NAV TABS */
     .tabs { display: flex; padding: 0 24px; border-bottom: 1px solid var(--border); background: var(--bg); }
@@ -421,8 +427,23 @@
   <div class="header-right">
     <span class="stats" id="stats"></span>
     <button class="share-btn" onclick="copyShareLink()">🔗 分享</button>
+    <button class="user-badge" id="user-badge" onclick="showIdentityModal()" title="点击修改昵称"></button>
   </div>
 </header>
+
+<!-- 昵称设置弹窗 -->
+<div id="identity-modal" style="display:none;position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);align-items:center;justify-content:center">
+  <div style="background:#1a1a1a;border:1px solid #333;border-radius:16px;padding:32px;width:340px;max-width:90vw;text-align:center">
+    <div style="font-size:32px;margin-bottom:12px">👋</div>
+    <div style="font-size:17px;font-weight:700;margin-bottom:6px" id="identity-title">欢迎来到 Design Library</div>
+    <div style="font-size:13px;color:#777;margin-bottom:24px" id="identity-subtitle">输入你的名字，点赞和标注会显示你的署名</div>
+    <input id="identity-input" type="text" placeholder="你的名字，如：晓晴" maxlength="20"
+      style="width:100%;padding:10px 14px;background:#111;border:1px solid #444;border-radius:8px;color:#eee;font-size:15px;outline:none;box-sizing:border-box;text-align:center"
+      onkeydown="if(event.key==='Enter')confirmIdentity()">
+    <div style="margin-top:8px;font-size:11px;color:#555">名字会保存在浏览器里，下次进来自动带入</div>
+    <button onclick="confirmIdentity()" style="margin-top:20px;width:100%;padding:11px;background:#ff6b6b;border:none;border-radius:8px;color:white;font-size:15px;font-weight:600;cursor:pointer">进入 →</button>
+  </div>
+</div>
 
 <div class="tabs">
   <div class="tab active" data-tab="gallery" onclick="switchTab('gallery')">
@@ -509,12 +530,54 @@
   const isShareMode = new URLSearchParams(location.search).has('share');
   if (isShareMode) document.body.classList.add('share-mode');
 
+  // ── 用户身份 ──────────────────────────────────────────────
+  const LS_USER_KEY = 'dl_username_v1';
+  let currentUser = localStorage.getItem(LS_USER_KEY) || '';
+
+  function updateUserBadge() {
+    const badge = document.getElementById('user-badge');
+    if (badge) badge.textContent = currentUser ? '👤 ' + currentUser : '👤 设置昵称';
+  }
+
+  function showIdentityModal(isEdit) {
+    const modal = document.getElementById('identity-modal');
+    const title = document.getElementById('identity-title');
+    const subtitle = document.getElementById('identity-subtitle');
+    const input = document.getElementById('identity-input');
+    if (isEdit) {
+      title.textContent = '修改昵称';
+      subtitle.textContent = '修改后你的新标注会用新名字';
+      input.value = currentUser;
+    } else {
+      title.textContent = '欢迎来到 Design Library';
+      subtitle.textContent = '输入你的名字，点赞和标注会显示你的署名';
+      input.value = '';
+    }
+    modal.style.display = 'flex';
+    setTimeout(() => input.focus(), 100);
+  }
+
+  function confirmIdentity() {
+    const val = document.getElementById('identity-input').value.trim();
+    if (!val) { document.getElementById('identity-input').style.borderColor = '#ff6b6b'; return; }
+    currentUser = val;
+    localStorage.setItem(LS_USER_KEY, currentUser);
+    document.getElementById('identity-modal').style.display = 'none';
+    updateUserBadge();
+  }
+
+  // 首次进入（无昵称）时自动弹出
+  if (!currentUser && !isShareMode) {
+    window.addEventListener('DOMContentLoaded', () => showIdentityModal(false), { once: true });
+  }
+
   let allImages = [], allTrends = [], allDigitaling = [];
   let currentFilter = 'all', currentCategoryFilter = 'all', currentTab = 'gallery';
   const prefs = JSON.parse(localStorage.getItem('dl_prefs') || '{"liked":[],"disliked":[]}');
 
   // ── Load ─���────────────────────────────────────────────────
   async function init() {
+    updateUserBadge(); // 初始化右上角身份标识
     const [imgRes, trendRes, dgRes] = await Promise.all([
       fetch('data/images.json?t=' + Date.now()).then(r => r.json()).catch(() => []),
       fetch('data/trends.json?t=' + Date.now()).then(r => r.json()).catch(() => []),
@@ -534,7 +597,7 @@
     renderTrends();
     updateCounts();
     // notes/likes 异步加载，完成后刷新角标，失败不影响主流程
-    Promise.all([loadNotes(), loadDgLikes()]).catch(() => {}).then(() => {
+    Promise.all([loadNotes(), loadDgLikes(), loadSharedLikes()]).catch(() => {}).then(() => {
       refreshNoteBadges();
       renderGallery();
       renderDigitaling();
@@ -558,7 +621,7 @@
 
     let items = allImages.filter(img => {
       if (prefs.disliked.includes(img.id)) return false;
-      if (target === 'liked') return prefs.liked.includes(img.id);
+      if (target === 'liked') return iLiked(img.id);
       if (currentCategoryFilter !== 'all' && img.category !== currentCategoryFilter) return false;
       if (currentFilter === 'all') return true;
       if (currentFilter.startsWith('tag:')) return (img.tags || []).some(t => t.toLowerCase().includes(currentFilter.slice(4)));
@@ -577,7 +640,8 @@
   }
 
   function makeCard(img) {
-    const liked = prefs.liked.includes(img.id);
+    const liked = iLiked(img.id);
+    const likeCount = sharedLikeCount(img.id);
     const div = document.createElement('div');
     div.dataset.id = img.id;
     const nc = noteCount(img.id);
@@ -592,7 +656,7 @@
           <div class="card-actions">
             <button class="action-btn btn-zoom" title="放大查看" onclick="event.stopPropagation();var i=this.closest('[data-id]').querySelector('img');lbOpen(i.src,i.alt,'');">&#128269;</button>
             ${!isShareMode ? `
-            <button class="action-btn btn-like ${liked?'active':''}" onclick="toggleLike(event,'${img.id}')" title="Save">♥</button>
+            <button class="action-btn btn-like ${liked?'active':''}" onclick="toggleLike(event,'${img.id}')" title="Save">♥${likeCount > 0 ? ' <span style=\'font-size:10px\'>' + likeCount + '</span>' : ''}</button>
             <button class="action-btn btn-note ${noteCount(img.id)>0?'has-note':''}" onclick="event.stopPropagation();openNoteModal('${img.id}','image','${esc(img.title)}')" title="标注">💬</button>
             <button class="action-btn btn-dislike" onclick="doDislike(event,'${img.id}')" title="Not for me">✕</button>
             ` : ''}
@@ -749,44 +813,98 @@
   function renderTrends() { /* 已移除 2026设计趋势模块 */ }
 
   // ── Actions ───────────────────────────────────────────────
-  // ── Liked.json sync（正向学习）────────────────────────────
+  // ── 多人共享点赞（liked.json byUser 结构）────────────────────
   const LIKE_FILE = 'data/liked.json';
-  async function pushLikedItem(id, tags, category) {
+  let sharedLikedData = { ids: [], tagCounts: {}, categoryCounts: {}, byUser: {} };
+  let sharedLikeSha = null;
+  const LS_SHARED_LIKES_KEY = 'dl_shared_likes_v1';
+
+  function sharedLikeCount(id) {
+    let count = 0;
+    for (const user in sharedLikedData.byUser) {
+      if ((sharedLikedData.byUser[user] || []).includes(id)) count++;
+    }
+    return count;
+  }
+
+  function iLiked(id) {
+    const me = currentUser || '_local';
+    return (sharedLikedData.byUser[me] || []).includes(id);
+  }
+
+  async function loadSharedLikes() {
+    try { const c = localStorage.getItem(LS_SHARED_LIKES_KEY); if (c) sharedLikedData = JSON.parse(c); } catch(e) {}
     try {
       const res = await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${LIKE_FILE}`, {
         headers: { 'Authorization': `token ${BLOCK_TOKEN}`, 'Accept': 'application/vnd.github.v3+json' }
       });
-      let sha = null, existing = { ids: [], tagCounts: {}, categoryCounts: {} };
       if (res.ok) {
         const data = await res.json();
-        sha = data.sha;
-        try { existing = JSON.parse(atob(data.content.replace(/\n/g, ''))); } catch(e) {}
-        if (!existing.ids) existing = { ids: [], tagCounts: {}, categoryCounts: {} };
+        sharedLikeSha = data.sha;
+        const parsed = JSON.parse(atob(data.content.replace(/\n/g, '')));
+        if (!parsed.byUser) parsed.byUser = {};
+        if (!parsed.ids) parsed.ids = [];
+        // 迁移：把旧 ids 数组归到 nataliegao 名下
+        if (parsed.ids.length > 0 && Object.keys(parsed.byUser).length === 0) {
+          parsed.byUser['nataliegao'] = [...parsed.ids];
+        }
+        // 合并本地 prefs.liked（兼容旧数据）
+        const me = currentUser || '_local';
+        if (prefs.liked.length > 0) {
+          if (!parsed.byUser[me]) parsed.byUser[me] = [];
+          prefs.liked.forEach(id => { if (!parsed.byUser[me].includes(id)) parsed.byUser[me].push(id); });
+        }
+        sharedLikedData = parsed;
+        localStorage.setItem(LS_SHARED_LIKES_KEY, JSON.stringify(sharedLikedData));
       }
-      if (!existing.ids.includes(id)) existing.ids.push(id);
-      (tags || []).forEach(t => { existing.tagCounts[t] = (existing.tagCounts[t] || 0) + 1; });
-      if (category) existing.categoryCounts[category] = (existing.categoryCounts[category] || 0) + 1;
-      const body = {
-        message: `like: ${id}`,
-        content: btoa(unescape(encodeURIComponent(JSON.stringify(existing, null, 2)))),
-        ...(sha ? { sha } : {})
-      };
-      await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${LIKE_FILE}`, {
+    } catch(e) {}
+  }
+
+  async function pushSharedLikeUpdate(id, action, tags, category) {
+    const me = currentUser || '_local';
+    if (!sharedLikedData.byUser[me]) sharedLikedData.byUser[me] = [];
+    if (action === 'like') {
+      if (!sharedLikedData.byUser[me].includes(id)) sharedLikedData.byUser[me].push(id);
+      if (tags) tags.forEach(t => { sharedLikedData.tagCounts = sharedLikedData.tagCounts || {}; sharedLikedData.tagCounts[t] = (sharedLikedData.tagCounts[t] || 0) + 1; });
+      if (category) { sharedLikedData.categoryCounts = sharedLikedData.categoryCounts || {}; sharedLikedData.categoryCounts[category] = (sharedLikedData.categoryCounts[category] || 0) + 1; }
+    } else {
+      sharedLikedData.byUser[me] = sharedLikedData.byUser[me].filter(x => x !== id);
+    }
+    const allIds = new Set();
+    for (const u in sharedLikedData.byUser) sharedLikedData.byUser[u].forEach(x => allIds.add(x));
+    sharedLikedData.ids = [...allIds];
+    localStorage.setItem(LS_SHARED_LIKES_KEY, JSON.stringify(sharedLikedData));
+    try {
+      let sha = sharedLikeSha;
+      if (!sha) {
+        const r = await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${LIKE_FILE}`, {
+          headers: { 'Authorization': `token ${BLOCK_TOKEN}`, 'Accept': 'application/vnd.github.v3+json' }
+        });
+        if (r.ok) { const d = await r.json(); sha = d.sha; sharedLikeSha = sha; }
+      }
+      const body = { message: `${action}: ${id} by ${me}`, content: btoa(unescape(encodeURIComponent(JSON.stringify(sharedLikedData, null, 2)))), ...(sha ? { sha } : {}) };
+      const pr = await fetch(`https://api.github.com/repos/${BLOCK_REPO}/contents/${LIKE_FILE}`, {
         method: 'PUT',
         headers: { 'Authorization': `token ${BLOCK_TOKEN}`, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
       });
-    } catch (err) { console.warn('liked.json sync failed:', err); }
+      if (pr.ok) { const pd = await pr.json(); sharedLikeSha = pd.content?.sha || sha; }
+    } catch(e) { console.warn('shared like push failed', e); }
   }
 
   function toggleLike(e, id) {
     e.stopPropagation();
-    const i = prefs.liked.indexOf(id);
-    if (i >= 0) { prefs.liked.splice(i, 1); showToast('Removed from saved'); }
-    else {
-      prefs.liked.push(id); showToast('❤️ Saved!');
+    const liked = iLiked(id);
+    if (liked) {
+      showToast('Removed from saved');
+      // 同步更新 prefs（兼容旧逻辑）
+      prefs.liked = prefs.liked.filter(x => x !== id);
+      pushSharedLikeUpdate(id, 'unlike');
+    } else {
+      showToast('❤️ Saved!');
+      if (!prefs.liked.includes(id)) prefs.liked.push(id);
       const imgMeta = allImages.find(img => img.id === id);
-      pushLikedItem(id, imgMeta ? (imgMeta.tags || []) : [], imgMeta ? imgMeta.category : ''); // 正向学习
+      pushSharedLikeUpdate(id, 'like', imgMeta ? (imgMeta.tags || []) : [], imgMeta ? imgMeta.category : '');
     }
     savePrefs(); renderGallery(currentTab === 'liked' ? 'liked' : 'gallery'); updateCounts();
   }
@@ -867,7 +985,7 @@
     document.getElementById('tab-all-count').textContent = visible;
     // 收藏数量：只统计实际存在于 allImages 且未屏蔽的
     const likedVisible = allImages.filter(i =>
-      prefs.liked.includes(i.id) && !prefs.disliked.includes(i.id)
+      iLiked(i.id) && !prefs.disliked.includes(i.id)
     ).length;
     document.getElementById('tab-liked-count').textContent = likedVisible;
     const insightsCount = allDigitaling.filter(d => d.type === 'daily').length;
@@ -1087,7 +1205,7 @@
     const note = {
       targetId: _noteTarget.id,
       targetType: _noteTarget.type,
-      author: 'nataliegao',
+      author: currentUser || 'anonymous',
       tag: _noteTag || null,
       text: text,
       createdAt: new Date().toISOString()
