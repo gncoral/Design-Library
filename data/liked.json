@@ -1,10 +1,18 @@
 {
   "ids": [
     "d136",
-    "d132"
+    "d132",
+    "upload-1776167827787"
   ],
   "tagCounts": {},
   "categoryCounts": {
-    "branding": 2
+    "branding": 3
+  },
+  "byUser": {
+    "nataliegao": [
+      "d136",
+      "d132",
+      "upload-1776167827787"
+    ]
   }
 }
