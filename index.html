@@ -355,6 +355,8 @@
 
     /* share mode */
     body.share-mode .btn-like, body.share-mode .btn-dislike { display: none; }
+    /* 只有 owner 能看到叉图按钮 */
+    body.is-owner .card:hover [data-owner-only] { display: inline-flex !important; }
 
     /* ── NOTES / ANNOTATION ── */
     .btn-note { background: rgba(255,255,255,0.08); color: #ccc; border: 1px solid rgba(255,255,255,0.15); font-size: 13px; }
@@ -688,9 +690,13 @@
   const LS_USER_KEY = 'dl_username_v1';
   let currentUser = localStorage.getItem(LS_USER_KEY) || '';
 
+  const OWNER_USER = 'nataliegao';
+
   function updateUserBadge() {
     const badge = document.getElementById('user-badge');
     if (badge) badge.textContent = currentUser ? '👤 ' + currentUser : '👤 设置昵称';
+    // owner 权限：只有 nataliegao 能叉图
+    document.body.classList.toggle('is-owner', currentUser === OWNER_USER);
   }
 
   function showIdentityModal(isEdit) {
@@ -825,7 +831,7 @@
             ${!isShareMode ? `
             <button class="action-btn btn-like ${liked?'active':''}" onclick="toggleLike(event,'${img.id}')" title="Save">♥${likeCount > 0 ? ' <span style=\'font-size:10px\'>' + likeCount + '</span>' : ''}</button>
             <button class="action-btn btn-note ${noteCount(img.id)>0?'has-note':''}" onclick="event.stopPropagation();openNoteModal('${img.id}','image','${esc(img.title)}')" title="标注">💬</button>
-            ${currentUser === 'nataliegao' ? `<button class="action-btn btn-dislike" onclick="doDislike(event,'${img.id}')" title="Not for me">✕</button>` : ''}
+            <button class="action-btn btn-dislike" onclick="doDislike(event,'${img.id}')" title="Not for me" data-owner-only style="display:none">✕</button>
             ` : ''}
             <a class="action-btn btn-open" href="${getBestUrl(img)}" target="_blank" onclick="event.stopPropagation()" title="Open">↗</a>
           </div>
@@ -1588,9 +1594,8 @@
     const listEl = document.getElementById('note-existing-list');
     if (existing.length > 0) {
       existEl.style.display = 'block';
-      const ADMIN_USER = 'nataliegao';
       listEl.innerHTML = existing.map(n => {
-        const canDelete = (currentUser === n.author) || (currentUser === ADMIN_USER);
+        const canDelete = (currentUser === n.author) || (currentUser === OWNER_USER);
         return `<div class="note-existing-item">
           <div class="note-existing-text">
             ${n.tag ? `<span class="note-existing-tag">${n.tag}</span>` : ''}
@@ -1686,9 +1691,8 @@
   // 删除单条标注
   async function deleteNote(targetId, createdAt, btn) {
     // 权限再校验：只有作者本人或管理员才能删除
-    const ADMIN_USER = 'nataliegao';
     const note = allNotes.find(n => n.targetId === targetId && n.createdAt === createdAt);
-    if (note && note.author !== currentUser && currentUser !== ADMIN_USER) {
+    if (note && note.author !== currentUser && currentUser !== OWNER_USER) {
       showToast('⚠️ 只能删除自己的标注');
       return;
     }
