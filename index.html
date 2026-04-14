@@ -60,33 +60,55 @@
 
     /* NAV TABS */
     /* ── Activity Bar ── */
+    /* ── Activity Bar (compact) ── */
     #activity-bar {
-      display: none; background: #1a1a1a; border-bottom: 1px solid #2a2a2a;
-      padding: 0 24px;
+      display: none; background: #161616; border-bottom: 1px solid #252525;
+      padding: 0 24px; overflow: hidden;
     }
     #activity-bar.visible { display: block; }
-    .activity-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 10px 0 6px;
+    .activity-bar-inner {
+      display: flex; align-items: center; gap: 10px; height: 44px;
     }
-    .activity-header-left { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: #ccc; }
-    .activity-dot { width: 7px; height: 7px; border-radius: 50%; background: #ff6b6b; animation: pulse 1.5s infinite; }
+    .activity-dot { width: 6px; height: 6px; border-radius: 50%; background: #ff6b6b; flex-shrink: 0; animation: pulse 1.5s infinite; }
     @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
-    .activity-close { background: none; border: none; color: #555; font-size: 16px; cursor: pointer; padding: 2px 6px; border-radius: 4px; }
-    .activity-close:hover { color: #aaa; }
-    .activity-list { display: flex; flex-direction: column; gap: 4px; padding-bottom: 10px; }
+    /* 滚动区域：只显示约1.5条高度 */
+    .activity-scroll {
+      flex: 1; overflow: hidden; position: relative; height: 32px;
+    }
+    .activity-list {
+      display: flex; flex-direction: column; gap: 4px;
+      transition: transform 0.35s ease;
+    }
     .activity-item {
-      display: flex; align-items: center; gap: 10px;
-      padding: 7px 10px; border-radius: 8px; cursor: pointer;
+      display: flex; align-items: center; gap: 8px; height: 28px;
+      padding: 0 10px; border-radius: 6px; cursor: pointer; flex-shrink: 0;
       background: #222; border: 1px solid #2a2a2a; transition: background 0.15s;
     }
     .activity-item:hover { background: #2a2a2a; border-color: #3a3a3a; }
-    .activity-avatar { width: 24px; height: 24px; border-radius: 50%; background: #ff6b6b33; color: #ff6b6b; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
-    .activity-text { flex: 1; font-size: 12px; color: #ccc; }
+    .activity-avatar { width: 18px; height: 18px; border-radius: 50%; background: #ff6b6b33; color: #ff6b6b; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; }
+    .activity-text { flex: 1; font-size: 12px; color: #bbb; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .activity-text strong { color: #eee; }
-    .activity-text .activity-target { color: #ff6b6b; text-decoration: none; }
-    .activity-time { font-size: 11px; color: #555; white-space: nowrap; }
-    .activity-tag-badge { display: inline-block; padding: 1px 6px; border-radius: 10px; font-size: 10px; background: #2a2a2a; border: 1px solid #3a3a3a; color: #aaa; margin-left: 4px; }
+    .activity-text .activity-target { color: #ff9898; }
+    .activity-time { font-size: 11px; color: #555; white-space: nowrap; flex-shrink: 0; }
+    .activity-tag-badge { display: inline-block; padding: 1px 5px; border-radius: 8px; font-size: 10px; background: #2a2a2a; border: 1px solid #3a3a3a; color: #aaa; margin-left: 3px; }
+    .activity-nav { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+    .activity-nav-btn { background: none; border: 1px solid #2a2a2a; border-radius: 4px; color: #555; font-size: 11px; cursor: pointer; padding: 2px 6px; line-height: 1; }
+    .activity-nav-btn:hover { color: #aaa; border-color: #444; }
+    .activity-nav-count { font-size: 11px; color: #444; white-space: nowrap; }
+    .activity-close { background: none; border: none; color: #444; font-size: 14px; cursor: pointer; padding: 2px 4px; margin-left: 4px; }
+    .activity-close:hover { color: #aaa; }
+
+    /* ── Upload Card in gallery ── */
+    .upload-card {
+      aspect-ratio: 1; border-radius: 10px; border: 2px dashed #333;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 8px; cursor: pointer; transition: border-color 0.2s, background 0.2s;
+      background: #141414; color: #444; font-size: 12px; text-align: center;
+      padding: 12px;
+    }
+    .upload-card:hover { border-color: #ff6b6b; color: #ff6b6b; background: #1a1010; }
+    .upload-card .uc-icon { font-size: 28px; line-height: 1; }
+    .upload-card .uc-label { font-size: 11px; line-height: 1.4; }
 
     /* ── Upload Modal ── */
     #upload-btn {
@@ -494,22 +516,25 @@
   </div>
   <div class="header-right">
     <span class="stats" id="stats"></span>
-    <button id="upload-btn" onclick="openUploadModal()" title="上传图片或链接">↑ 上传</button>
     <button class="share-btn" onclick="copyShareLink()">🔗 分享</button>
     <button class="user-badge" id="user-badge" onclick="showIdentityModal()" title="点击修改昵称"></button>
   </div>
 </header>
 
-<!-- Activity Bar -->
+<!-- Activity Bar (compact) -->
 <div id="activity-bar">
-  <div class="activity-header">
-    <div class="activity-header-left">
-      <div class="activity-dot"></div>
-      <span id="activity-title">最新动态</span>
+  <div class="activity-bar-inner">
+    <div class="activity-dot"></div>
+    <div class="activity-scroll">
+      <div class="activity-list" id="activity-list"></div>
+    </div>
+    <div class="activity-nav">
+      <button class="activity-nav-btn" onclick="activityPrev()" title="上一条">↑</button>
+      <span class="activity-nav-count" id="activity-nav-count"></span>
+      <button class="activity-nav-btn" onclick="activityNext()" title="下一条">↓</button>
     </div>
     <button class="activity-close" onclick="closeActivityBar()" title="关闭">×</button>
   </div>
-  <div class="activity-list" id="activity-list"></div>
 </div>
 
 <!-- Upload Modal -->
@@ -769,10 +794,22 @@
       return img.platform === currentFilter;
     });
 
-    if (items.length === 0) {
+    if (items.length === 0 && target !== 'gallery') {
       empty.style.display = 'block';
     } else {
       empty.style.display = 'none';
+      // 图库首格：上传卡（仅 gallery tab，非分享模式）
+      if (target === 'gallery' && !isShareMode) {
+        const uc = document.createElement('div');
+        uc.className = 'upload-card';
+        uc.title = '上传图片到图库';
+        uc.innerHTML = '<div class="uc-icon">＋</div><div class="uc-label">上传图片<br><span style="color:#333;font-size:10px">或拖放至此</span></div>';
+        uc.onclick = () => openUploadModal();
+        uc.ondragover = e => { e.preventDefault(); uc.classList.add('drag-over'); };
+        uc.ondragleave = () => uc.classList.remove('drag-over');
+        uc.ondrop = e => uploadCardDrop(e);
+        grid.appendChild(uc);
+      }
       items.forEach(img => grid.appendChild(makeCard(img)));
     }
 
@@ -1177,6 +1214,9 @@
   // ── Activity Bar ──────────────────────────────────────────
   const LS_ACTIVITY_READ_KEY = 'dl_activity_read_v1';
 
+  let activityItems = []; // 全部条目缓存
+  let activityIdx = 0;   // 当前显示的条目索引
+
   function renderActivityBar() {
     if (!allNotes.length) return;
     const readUntil = localStorage.getItem(LS_ACTIVITY_READ_KEY) || '';
@@ -1184,22 +1224,28 @@
     const recent = allNotes
       .filter(n => n.createdAt && new Date(n.createdAt).getTime() > cutoff)
       .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-      .slice(0, 10);
+      .slice(0, 20);
     if (!recent.length) return;
+    activityItems = recent;
+    activityIdx = 0; // 从最新一条开始
     const bar = document.getElementById('activity-bar');
+    bar.classList.add('visible');
+    activityRender();
+  }
+
+  function activityRender() {
     const list = document.getElementById('activity-list');
-    const title = document.getElementById('activity-title');
-    const unreadCount = recent.filter(n => n.createdAt > readUntil).length;
-    title.textContent = unreadCount > 0 ? `最新动态 • ${unreadCount} 条新标注` : '最新动态';
-    list.innerHTML = recent.map(n => {
+    const countEl = document.getElementById('activity-nav-count');
+    const readUntil = localStorage.getItem(LS_ACTIVITY_READ_KEY) || '';
+    list.innerHTML = activityItems.map((n, i) => {
       const isUnread = n.createdAt > readUntil;
       const timeStr = formatRelativeTime(n.createdAt);
       const initials = (n.author || '?')[0].toUpperCase();
       const tagHtml = n.tag ? `<span class="activity-tag-badge">${esc(n.tag)}</span>` : '';
-      const textPreview = n.text ? ('："' + esc(n.text.slice(0, 20)) + (n.text.length > 20 ? '…' : '') + '"') : '';
+      const textPreview = n.text ? ('："' + esc(n.text.slice(0, 18)) + (n.text.length > 18 ? '…' : '') + '"') : '';
       const targetLabel = getTargetLabel(n.targetId, n.targetType);
       return `<div class="activity-item" onclick="activityJump('${esc(n.targetId)}','${esc(n.targetType)}')"
-        style="${isUnread ? 'border-color:#ff6b6b33;' : 'opacity:0.7;'}">
+        style="${isUnread ? 'border-color:#ff6b6b44;' : 'opacity:0.6;'}">
         <div class="activity-avatar">${initials}</div>
         <div class="activity-text">
           <strong>${esc(n.author || '?')}</strong> 在 <span class="activity-target">${esc(targetLabel)}</span> 添加了标注${tagHtml}${textPreview}
@@ -1207,7 +1253,17 @@
         <div class="activity-time">${timeStr}</div>
       </div>`;
     }).join('');
-    bar.classList.add('visible');
+    // 滑到当前条目
+    const itemH = 32; // item 28px + gap 4px
+    list.style.transform = `translateY(-${activityIdx * itemH}px)`;
+    countEl.textContent = activityItems.length > 1 ? `${activityIdx+1}/${activityItems.length}` : '';
+  }
+
+  function activityPrev() {
+    if (activityIdx > 0) { activityIdx--; activityRender(); }
+  }
+  function activityNext() {
+    if (activityIdx < activityItems.length - 1) { activityIdx++; activityRender(); }
   }
 
   function getTargetLabel(targetId, targetType) {
@@ -1296,6 +1352,14 @@
     document.getElementById('um-drop-zone').classList.remove('drag-over');
     const file = e.dataTransfer.files[0];
     if (file) umHandleFile(file);
+  }
+  function uploadCardDrop(e) {
+    e.preventDefault();
+    e.currentTarget.classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (!file) return;
+    openUploadModal();
+    setTimeout(() => umHandleFile(file), 100); // 弹窗打开后再处理文件
   }
   function umHandleFile(file) {
     if (!file || !file.type.startsWith('image/')) { showToast('请选择图片文件'); return; }
