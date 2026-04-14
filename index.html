@@ -165,8 +165,7 @@
     /* CARD */
     .card { break-inside: avoid; margin-bottom: 10px; border-radius: 10px; overflow: hidden; background: var(--surface); position: relative; cursor: pointer; transition: transform 0.2s; }
     .card:hover { transform: translateY(-2px); }
-    .card img { width: 100%; height: auto; display: block; transition: transform 0.3s; background: var(--border); min-height: 120px; }
-    .card img.error { min-height: 160px; opacity: 0.3; }
+    .card img { width: 100%; height: auto; display: block; transition: transform 0.3s; background: var(--border); min-height: 80px; }
     .card:hover img { transform: scale(1.03); }
     .card-overlay {
       position: absolute; inset: 0;
@@ -812,19 +811,17 @@
   // 外链图片加代理，解决防盗链
   function proxySrc(src) {
     if (!src) return src;
-    // 自己上传的图不加代理
     if (src.includes('raw.githubusercontent.com') || src.includes('github.io')) return src;
-    // 外链图片加代理
     return 'https://images.weserv.nl/?url=' + encodeURIComponent(src) + '&n=-1';
   }
 
   function makeCard(img) {
     const liked = iLiked(img.id);
     const likeCount = sharedLikeCount(img.id);
-    const displaySrc = proxySrc(img.src);
     const div = document.createElement('div');
     div.dataset.id = img.id;
     const nc = noteCount(img.id);
+    const displaySrc = proxySrc(img.src);
     div.className = 'card' + (liked ? ' liked' : '') + (nc > 0 ? ' has-note' : '');
     div.innerHTML = `
       <div class="liked-badge">♥</div>
@@ -832,7 +829,11 @@
       <div style="position:relative;overflow:hidden">
         ${img.isVideo
           ? '<video class="card-video" src="' + esc(img.src) + '" muted loop playsinline autoplay style="cursor:default" title="' + esc(img.title) + '"></video>'
-          : '<img src="' + esc(displaySrc) + '" alt="' + esc(img.title) + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="card-img" style="cursor:zoom-in" onerror="this.classList.add('error');this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 160%22><rect fill=%22%23181818%22 width=%22200%22 height=%22160%22/><text fill=%22%23333%22 x=%22100%22 y=%2280%22 text-anchor=%22middle%22 font-size=%2211%22>unavailable</text></svg>'">' + likeCount + '</span>' : ''}</button>
+          : '<img src="' + esc(displaySrc) + '" alt="' + esc(img.title) + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="card-img" style="cursor:zoom-in" onerror="this.src=\'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 120%22><rect fill=%22%23222%22 width=%22200%22 height=%22120%22/><text fill=%22%23444%22 x=%22100%22 y=%2265%22 text-anchor=%22middle%22 font-size=%2212%22>unavailable</text></svg>\'">'  }
+        <div class="card-overlay">
+          <div class="card-actions">
+            ${!isShareMode ? `
+            <button class="action-btn btn-like ${liked?'active':''}" onclick="toggleLike(event,'${img.id}')" title="Save">♥${likeCount > 0 ? ' <span style=\'font-size:10px\'>' + likeCount + '</span>' : ''}</button>
             <button class="action-btn btn-note ${noteCount(img.id)>0?'has-note':''}" onclick="event.stopPropagation();openNoteModal('${img.id}','image','${esc(img.title)}')" title="标注">💬</button>
             <button class="action-btn btn-dislike" onclick="doDislike(event,'${img.id}')" title="Not for me" data-owner-only style="display:none">✕</button>
             ` : ''}
