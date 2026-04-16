@@ -3,13 +3,14 @@
     "d381",
     "d306",
     "d305",
-    "d313"
+    "d313",
+    "d256"
   ],
   "tagCounts": {
-    "branding": 1,
-    "behance": 1
+    "branding": 2,
+    "behance": 2
   },
   "categoryCounts": {
-    "branding": 4
+    "branding": 5
   }
 }
