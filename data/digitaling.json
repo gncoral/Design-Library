@@ -1683,6 +1683,10 @@
       "Serif",
       "Sans Serif"
     ],
-    "weekIndex": 16
+    "weekIndex": 16,
+    "sogouInsight": [
+      "Eurovision以Pattern+Photography双轨视觉系统激活品牌感知。对搜狗的启发：可将AI品牌符号（流动光纹/算法网格）作为核心Pattern语言，搭配真实用户场景摄影，在皮肤/启动页等载体实现「AI感知+生活温度」双层表达，强化品牌现代感。",
+      "Eurovision内部团队用Serif+Sans Serif字体组合传递「传统底蕴+现代活力」，与搜狗处境高度契合。建议建立搜狗字体分级规范：标题用定制Display字形体现品牌个性，正文走系统Sans保障可读性，AI功能模块引入差异化排版节奏，形成清晰视觉层次。"
+    ]
   }
 ]
