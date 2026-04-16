@@ -1,1 +1,12 @@
-[]
+{
+  "ids": [
+    "d381"
+  ],
+  "tagCounts": {
+    "branding": 1,
+    "behance": 1
+  },
+  "categoryCounts": {
+    "branding": 1
+  }
+}
