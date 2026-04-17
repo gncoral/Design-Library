@@ -1,5 +1,22 @@
 # Changelog
 
+## [2026-04-17] — 内容过滤加强 + 自动审美学习
+
+### 🧹 内容质量
+- **清除跑偏图片**：移除汽车广告图（NIO ES9 Launch Campaign）和植物摄影图（shadow of a plant），共 2 张
+- **Behance / Dribbble 黑名单加强**：新增 `automotive`、`car launch`、`vehicle`、`motorcycle`、`photography`、`photo shoot` 等词，拦截非设计类内容
+- **Pinterest 新增白名单过滤**：抓图时 alt 文字必须包含设计类关键词（brand / ui / minimal / layout 等）才收录；同时新增黑名单拦截 photo / car / nature / food / fashion 等类目
+
+### 🧠 自动审美学习
+- **新增 `learn-from-blocked.js`**：每天 10:12 自动运行，分析你叉掉的图片标题，提取规律关键词，自动追加到三个抓图脚本的黑名单里
+- 首次运行已从历史叉图中学到：`logo animation`、`wip logo`、`neon brutalism`
+- 有新学到的内容才通知，无变化静默
+
+### 🐛 Bug 修复
+- **卡片显示 `undefined`**：修复图片来源标签渲染问题——旧数据用 `source` 字段，前端却读 `platform` 字段导致显示 undefined，已兼容两个字段，无来源则隐藏标签
+
+---
+
 ## [2026-04-14] — 品牌升级 + 稳定性修复
 
 ### 🎨 品牌与视觉
