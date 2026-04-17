@@ -1,59 +1,5 @@
 [
   {
-    "id": "d145",
-    "title": "E-commerce Custom Product Page",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d145.png",
-    "url": "https://dribbble.com/shots/27210031-E-commerce-Custom-Product-Page",
-    "category": "ui",
-    "tags": [],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d146",
-    "title": "Terso Hero — Brand Identity",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d146.png",
-    "url": "https://dribbble.com/shots/27230241-Terso-Hero",
-    "category": "branding",
-    "tags": [],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d147",
-    "title": "Design Publish",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d147.jpg",
-    "url": "https://framer.link/Xmuv8hZ",
-    "category": "ui",
-    "tags": [],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d148",
-    "title": "M&B Mark",
-    "src": "https://cdn.dribbble.com/userupload/47252918/file/55d30f843c5da7846a614c9377d8a35e.jpg",
-    "url": "https://dribbble.com/shots/27240112-M-B-Mark",
-    "category": "branding",
-    "tags": [],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d150",
-    "title": "Team Management Saas UIUX ai",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d150.png",
-    "url": "https://dribbble.com/shots/27239425-Team-Management-Saas-UIUX",
-    "category": "ui",
-    "tags": [],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d151",
-    "title": "About Us - Transportation & Logistics Website",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d151.png",
-    "url": "https://dribbble.com/shots/27230671-About-Us-Transportation-Logistics-Website",
-    "category": "ui",
-    "tags": [],
-    "added": "2026-04-02"
-  },
-  {
     "id": "d155",
     "title": "Build Inc",
     "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d155.png",
@@ -2030,5 +1976,41 @@
     "category": "ui",
     "tags": [],
     "added": "2026-04-16"
+  },
+  {
+    "id": "d424",
+    "title": "Hättke Brand design",
+    "src": "https://mir-s3-cdn-cf.behance.net/projects/404/4cbab0247643549.Y3JvcCwxNTAwLDExNzMsMCw3MjA.jpg",
+    "url": "https://www.behance.net/gallery/247643549/Haettke-Brand-design",
+    "category": "branding",
+    "tags": [
+      "branding",
+      "behance"
+    ],
+    "added": "2026-04-17"
+  },
+  {
+    "id": "d425",
+    "title": "Neon Brutalism ? Shanghai",
+    "src": "https://mir-s3-cdn-cf.behance.net/projects/404/90444f247432629.Y3JvcCwyMDQ2LDE2MDEsMCww.jpg",
+    "url": "https://www.behance.net/gallery/247432629/Neon-Brutalism-Shanghai",
+    "category": "branding",
+    "tags": [
+      "branding",
+      "behance"
+    ],
+    "added": "2026-04-17"
+  },
+  {
+    "id": "d426",
+    "title": "NIO ES9 Launch Campaign",
+    "src": "https://mir-s3-cdn-cf.behance.net/projects/404/ab4fb5247341147.Y3JvcCw0MDI1LDMxNDksMjg4LDA.png",
+    "url": "https://www.behance.net/gallery/247341147/NIO-ES9-Launch-Campaign",
+    "category": "branding",
+    "tags": [
+      "branding",
+      "behance"
+    ],
+    "added": "2026-04-17"
   }
 ]
