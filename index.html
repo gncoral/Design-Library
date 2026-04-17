@@ -842,9 +842,9 @@
           <div class="card-info">
             <div class="card-title">${esc(img.title)}</div>
             <div class="card-meta">
-              <span class="platform-dot ${img.platform}"></span>
-              <span>${img.platform}</span>
+              ${(img.source||img.platform) ? `<span class="platform-dot ${img.source||img.platform}"></span><span>${img.source||img.platform}</span>` : ''}
               ${img.author ? '<span>· ' + esc(img.author) + '</span>' : ''}
+            </div>
             </div>
           </div>
         </div>
