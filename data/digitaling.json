@@ -1790,5 +1790,44 @@
       "**「抄作业」心理是大众级产品的传播红利**：标题直接喊出「快来抄作业」，利用用户爱学干货的心理制造高点击。搜狗可用同类策略：发布「我是怎么把输入法玩成生产力工具」的实操内容，用真实使用场景（AI速记/方言输入/一键写文案）驱动搜索流量，比广告更具信任感。",
       "**专业内容降低「专业」门槛是品牌年轻化的切入口**：4A公司通过拆解自身工作流程建立亲近感。搜狗可以「AI输入法从入门到精通」系列内容，把复杂的AI功能用生活化场景具象化，在年轻用户中建立「搜狗是懂用法的输入法」这一认知，区别于百度/讯飞的功能堆砌叙事。"
     ]
+  },
+  {
+    "id": "rb-2026-04-18",
+    "date": "2026-04-18",
+    "type": "daily",
+    "source": "rebrand",
+    "sourceName": "Rebrand Gallery",
+    "sourceUrl": "https://www.rebrand.gallery/",
+    "title": "Webflow 品牌重塑",
+    "url": "https://www.rebrand.gallery/rebrand/webflow",
+    "caseStudyUrl": null,
+    "companyUrl": null,
+    "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/02caecc7299431bc265ccb85a08e033f8d12f48c-2400x1260.jpg",
+    "summary": "Webflow 完成了一次品牌视觉重塑，设计由 In-house 团队主导。品牌所在行业：Software。视觉风格以 Pattern 为主，整体呈现出清晰的现代品牌语言。",
+    "keyInsights": [
+      "行业：Software — 观察该行业品牌重塑的视觉趋势",
+      "设计主导：In-house — 内部团队主导，品牌基因延续性强",
+      "视觉语言：Pattern 的组合策略"
+    ],
+    "tags": [
+      "品牌重塑",
+      "VI设计",
+      "Software",
+      "Rebrand Video"
+    ],
+    "heat": {
+      "views": 9665
+    },
+    "industry": "Software",
+    "designBy": "In-house",
+    "visualStyles": [
+      "Pattern"
+    ],
+    "typography": [],
+    "weekIndex": 16,
+    "sogouInsight": [
+      "**模块化图形语言传递「能力感」**：Webflow 以网格/网状 Pattern 可视化「构建」核心能力，让产品功能一眼可感知。搜狗输入法可借鉴此思路，将 AI 联想、智能纠错等能力用模块化图形符号系统化呈现，形成独特视觉语法，区别于传统输入法的扁平 icon 路线。",
+      "**系统性视觉语言强化品牌认知一致性**：Webflow In-house 团队通过统一 Pattern 规范实现跨平台品牌识别延伸。搜狗品牌年轻化重塑中，可建立基于「连接/流动」隐喻的图形体系（如动态连线、文字流动），贯穿 App、启动页、营销素材，构建高辨识度的视觉品牌系统。"
+    ]
   }
 ]
