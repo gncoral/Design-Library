@@ -1,163 +1,5 @@
 [
   {
-    "id": "d179",
-    "title": "Sales Analytics Dashboard (Dark",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d179.jpg",
-    "url": "https://www.pinterest.com/pin/1970393583686253/",
-    "category": "ui",
-    "tags": [],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d189",
-    "title": "Logo Concept, Brand Storytelling, Visual Identity, Logo Breakdown, Symbolic",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d189.jpg",
-    "url": "https://www.pinterest.com/pin/176133035424290463/",
-    "category": "branding",
-    "tags": [],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d193",
-    "title": "Logo",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d193.jpg",
-    "url": "https://www.pinterest.com/pin/3096293491346932/",
-    "category": "branding",
-    "tags": [],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d195",
-    "title": "START UP LOGO DESIGN",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d195.jpg",
-    "url": "https://www.pinterest.com/pin/288582288644350923/",
-    "category": "branding",
-    "tags": [],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d196",
-    "title": "Crypto Live Updates Dashboard Dark",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d196.jpg",
-    "url": "https://www.pinterest.com/",
-    "category": "ui",
-    "tags": [
-      "pinterest"
-    ],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d197",
-    "title": "Financial Dashboard Dark UI",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d197.jpg",
-    "url": "https://www.pinterest.com/",
-    "category": "ui",
-    "tags": [
-      "pinterest"
-    ],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d198",
-    "title": "Dark Dashboard Webflow Template",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d198.jpg",
-    "url": "https://www.pinterest.com/",
-    "category": "ui",
-    "tags": [
-      "pinterest"
-    ],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d199",
-    "title": "Finerar Logo & Business Card",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d199.jpg",
-    "url": "https://www.pinterest.com/",
-    "category": "branding",
-    "tags": [
-      "pinterest"
-    ],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d200",
-    "title": "Lurax Logo Design Purple Blue",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d200.jpg",
-    "url": "https://www.pinterest.com/",
-    "category": "branding",
-    "tags": [
-      "pinterest"
-    ],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d201",
-    "title": "Brand Identity Billboard Purple",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d201.jpg",
-    "url": "https://www.pinterest.com/",
-    "category": "branding",
-    "tags": [
-      "pinterest"
-    ],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d202",
-    "title": "Spectrum Logo Minimal Dark",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d202.jpg",
-    "url": "https://www.pinterest.com/",
-    "category": "branding",
-    "tags": [
-      "pinterest"
-    ],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d206",
-    "title": "THree.js/WebGL Footer",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d206.png",
-    "url": "https://dribbble.com/shots/27240710-THree-js-WebGL-Footer-simulation",
-    "category": "visual",
-    "tags": [],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d207",
-    "title": "Arcania.ai - AI Interior Design Framer Landing Page Animation",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d207.png",
-    "url": "https://dribbble.com/shots/27238361-Arcania-ai-AI-Interior-Design-Framer-Landing-Page-Animation",
-    "category": "visual",
-    "tags": [],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d208",
-    "title": "Mobile Banking App UI Design",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d208.jpg",
-    "url": "https://dribbble.com/shots/27240038-Mobile-Banking-App-UI-Design",
-    "category": "ui",
-    "tags": [],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d209",
-    "title": "Prodify - AI Dashboard App UI Design ai app",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d209.png",
-    "url": "https://dribbble.com/shots/24761676-Prodify-AI-Dashboard-App-UI-Design",
-    "category": "ui",
-    "tags": [],
-    "added": "2026-04-02"
-  },
-  {
-    "id": "d210",
-    "title": "Prodify - AI Assistant Dashboard Tech UI Design",
-    "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d210.png",
-    "url": "https://dribbble.com/shots/25377626-Prodify-AI-Assistant-Dashboard-Tech-UI-Design",
-    "category": "ui",
-    "tags": [],
-    "added": "2026-04-02"
-  },
-  {
     "id": "d211",
     "title": "Digesto AI - Dashboard ai",
     "src": "https://raw.githubusercontent.com/gncoral/Design-Library/main/data/covers/mirror/d211.png",
@@ -2159,5 +2001,29 @@
     "category": "design",
     "tags": [],
     "added": "2026-04-18"
+  },
+  {
+    "id": "d458",
+    "title": "Think Agency Brand Identity",
+    "src": "https://mir-s3-cdn-cf.behance.net/projects/404/892980247713151.Y3JvcCw5OTcsNzgwLDE5Miww.png",
+    "url": "https://www.behance.net/gallery/247713151/Think-Agency-Brand-Identity",
+    "category": "branding",
+    "tags": [
+      "branding",
+      "behance"
+    ],
+    "added": "2026-04-19"
+  },
+  {
+    "id": "d459",
+    "title": "House of Chappaz Publications",
+    "src": "https://mir-s3-cdn-cf.behance.net/projects/404/558064246038843.Y3JvcCwxNjAwLDEyNTEsMCwxNQ.jpg",
+    "url": "https://www.behance.net/gallery/246038843/House-of-Chappaz-Publications",
+    "category": "branding",
+    "tags": [
+      "branding",
+      "behance"
+    ],
+    "added": "2026-04-19"
   }
 ]
