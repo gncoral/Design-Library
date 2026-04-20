@@ -1,5 +1,46 @@
 [
   {
+    "id": "rb-weekly-2026-04-20",
+    "date": "2026-04-20",
+    "type": "weekly",
+    "source": "rebrand",
+    "sourceName": "Rebrand Gallery",
+    "title": "品牌重塑周报 · 第 17 周：7 个视觉重塑案例",
+    "summary": "本周从 Rebrand Gallery 精选了 7 个品牌重塑案例，涵盖 Software、Entertainment、Tech/Photo、Fintech、Gaming、Food & Beverage 等行业。",
+    "articles": [
+      {
+        "title": "Webflow 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/webflow"
+      },
+      {
+        "title": "Eurovision 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/eurovision-2025"
+      },
+      {
+        "title": "VSCO 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/vsco"
+      },
+      {
+        "title": "Robinhood 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/robinhood"
+      },
+      {
+        "title": "Toca Boca 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/toca-boca"
+      },
+      {
+        "title": "Cloudflare 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/cloudflare"
+      },
+      {
+        "title": "Domino's 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/dominos"
+      }
+    ],
+    "weekNumber": 17,
+    "weekIndex": 16
+  },
+  {
     "id": "rb-weekly-2026-04-13",
     "date": "2026-04-13",
     "type": "weekly",
@@ -1917,5 +1958,40 @@
       "collect": 33,
       "comment": 0
     }
+  },
+  {
+    "id": "rb-2026-04-20",
+    "date": "2026-04-20",
+    "type": "daily",
+    "source": "rebrand",
+    "sourceName": "Rebrand Gallery",
+    "sourceUrl": "https://www.rebrand.gallery/",
+    "title": "Wise 品牌重塑",
+    "url": "https://www.rebrand.gallery/rebrand/wise",
+    "caseStudyUrl": null,
+    "companyUrl": null,
+    "coverImg": "https://cdn.sanity.io/images/vf63fv1z/production/22314f0fe1315be5a2d9626e113917fe5c2e43a6-1200x630.jpg",
+    "summary": "Wise 完成了一次品牌视觉重塑，设计由 In-house 团队主导。品牌所在行业：Fintech。视觉风格以 Illustration 为主，整体呈现出清晰的现代品牌语言。",
+    "keyInsights": [
+      "行业：Fintech — 观察该行业品牌重塑的视觉趋势",
+      "设计主导：In-house — 内部团队主导，品牌基因延续性强",
+      "视觉语言：Illustration 的组合策略"
+    ],
+    "tags": [
+      "品牌重塑",
+      "VI设计",
+      "Fintech",
+      "Rebrand Video"
+    ],
+    "heat": {
+      "views": 3574
+    },
+    "industry": "Fintech",
+    "designBy": "In-house",
+    "visualStyles": [
+      "Illustration"
+    ],
+    "typography": [],
+    "weekIndex": 17
   }
 ]
