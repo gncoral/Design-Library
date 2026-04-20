@@ -1892,5 +1892,30 @@
     "typography": [],
     "weekIndex": 17,
     "sogouInsight": "1. Perplexity 以「极简高对比」黑白色系强化 AI 工具的专业感与可信度——搜狗在 AI 输入升级期，可参考其「去装饰化」策略，用更克制的主色调配以高饱和 Accent 色，区隔 AI 功能与常规入口，传递「精准智能」而非「花哨活泼」的视觉信号。\n2. Perplexity 由 In-house 团队主导重塑，保证品牌基因连贯——搜狗作为国民级产品，用户心智中已有强烈的「橘色+可爱」记忆，品牌年轻化不必推倒重来，可借鉴其「同色系深化、图形语言几何化」路径，在保留识别锚点的前提下，将字体和图形逐步现代化，降低用户认知断层风险。"
+  },
+  {
+    "id": "dg-2026-04-20",
+    "date": "2026-04-20",
+    "type": "daily",
+    "source": "digitaling",
+    "sourceName": "数英",
+    "sourceUrl": "https://www.digitaling.com/",
+    "title": "100张法国音乐海报设计，最具张力的视觉表达",
+    "url": "https://www.digitaling.com/articles/1482634.html",
+    "coverImg": "https://gncoral.github.io/Design-Library/data/covers/dg/dg-2026-04-20.jpg",
+    "summary": "TOPAFF将作品的插画艺术价值放在第一位，而不是其传播价值。",
+    "keyInsights": [],
+    "tags": [
+      "品牌广告",
+      "数英精选",
+      "TOPAFF",
+      "法国音乐节",
+      "创意"
+    ],
+    "heat": {
+      "zan": 5,
+      "collect": 33,
+      "comment": 0
+    }
   }
 ]
