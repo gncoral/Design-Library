@@ -1,4 +1,33 @@
-[
+﻿[
+  {
+    "id": "rb-weekly-2026-05-04",
+    "date": "2026-05-04",
+    "type": "weekly",
+    "source": "rebrand",
+    "sourceName": "Rebrand Gallery",
+    "title": "品牌重塑周报 · 第 18 周：4 个视觉重塑案例",
+    "summary": "本周从 Rebrand Gallery 精选了 4 个品牌重塑案例，涵盖 Education/App、Software/MarTech、Food & Beverage、Software 等行业。",
+    "articles": [
+      {
+        "title": "Duolingo 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/duolingo"
+      },
+      {
+        "title": "Mailchimp 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/mailchimp"
+      },
+      {
+        "title": "Yes! Apples 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/yes-apples"
+      },
+      {
+        "title": "Figma 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/figma"
+      }
+    ],
+    "weekNumber": 18,
+    "weekIndex": 18
+  },
   {
     "id": "rb-2026-04-25",
     "date": "2026-04-25",
@@ -2415,6 +2444,50 @@
     "sogouInsight": [
       "**IP角色系统化驱动品牌人格**：Duolingo 将猫头鹰 Duo 打造成跨平台统一的品牌超级 IP，以夸张表情和高饱和色彩建立情感连接。搜狗输入法可参考此路径，将 AI 助手拟人化为专属视觉角色，在皮肤、引导页、功能插画中系统化露出，强化品牌人格，让用户对 AI 能力升级产生亲和感知，推动品牌年轻化落地。",
       "**高对比主色锚定品牌记忆**：Duolingo 用单一高饱和绿色建立压倒性辨识度，在应用商店中一眼可辨。搜狗输入法可审视现有主色体系，在品牌年轻化方向上提升主色饱和度或引入活力辅色，形成「搜狗色」专属标识，在广告物料、应用图标和皮肤默认色中统一锚定，强化用户对品牌视觉更新的感知。"
+    ]
+  },
+  {
+    "id": "rb-2026-05-04",
+    "date": "2026-05-04",
+    "type": "daily",
+    "source": "rebrand",
+    "sourceName": "Rebrand Gallery",
+    "sourceUrl": "https://www.rebrand.gallery/",
+    "title": "Linear 品牌重塑",
+    "url": "https://www.rebrand.gallery/rebrand/linear",
+    "caseStudyUrl": "https://linear.app",
+    "companyUrl": "https://linear.app",
+    "coverImg": null,
+    "summary": "Linear 完成了一次品牌视觉重塑，设计由 In-house 团队主导。品牌所在行业：Software/Productivity。视觉风格以 Gradient、Minimal、Geometric 为主，字体系统选用 Sans Serif，整体呈现出极简克制的现代品牌语言。Linear 以深色调背景搭配精密渐变高光和锋利几何图形，传递出工程师美学与高效生产力的双重价值，成为 B2B SaaS 领域最具辨识度的品牌之一。",
+    "keyInsights": [
+      "行业：Software/Productivity — B2B 工具产品的品牌精英化路径",
+      "设计主导：In-house — 内部团队主导，品牌基因延续性强",
+      "视觉语言：Gradient + Minimal + Geometric 的组合策略",
+      "字体系统：Sans Serif — 几何无衬线字体强化工具属性与科技感"
+    ],
+    "tags": [
+      "品牌重塑",
+      "VI设计",
+      "Software/Productivity",
+      "Rebrand Video"
+    ],
+    "heat": {
+      "views": 0
+    },
+    "industry": "Software/Productivity",
+    "designBy": "In-house",
+    "visualStyles": [
+      "Gradient",
+      "Minimal",
+      "Geometric"
+    ],
+    "typography": [
+      "Sans Serif"
+    ],
+    "weekIndex": 19,
+    "sogouInsight": [
+      "**渐变高光构建科技纵深感**：Linear 以近黑背景叠加精密光晕渐变，塑造出强烈的空间层次与高端科技感，区别于同类工具的平面化视觉。搜狗输入法在品牌年轻化方向可参考此手法：在 AI 功能入口（语音、联想、翻译键）引入克制渐变高光设计，以发光感图形语言传递 AI 能力升级，让用户对「智能升级」产生直观的视觉感知，而不只是功能文字标签。",
+      "**极简几何图形系统提升视觉一致性**：Linear 以锋利的几何形态构建统一图形语言，覆盖 Logo、插图、UI 图标，形成高度内聚的品牌视觉系统。搜狗输入法视觉体系可围绕核心几何单元（如「狗爪」弧线或键盘方块）提炼统一的图形基元，系统化应用于图标体系、引导插画和皮肤框架，以模块化图形语言替代零散风格，推动品牌视觉现代化落地。"
     ]
   }
 ]
