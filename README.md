@@ -12,6 +12,7 @@
 ## 目录
 
 - [整体架构](#整体架构)
+- [网站功能说明](#网站功能说明)
 - [数据结构](#数据结构)
 - [每日自动任务](#每日自动任务)
 - [脚本说明](#脚本说明)
@@ -51,6 +52,80 @@ OpenClaw 云桌面（脚本运行环境）
 - 所有数据存在 GitHub 仓库，脚本通过 GitHub API 或 git push 更新
 - 脚本运行在 OpenClaw 云桌面，通过 cron job 定时触发
 - AI 生成 sogouInsight 调用工蜂 AI API（`test-copilot.code.woa.com`）
+
+---
+
+## 网站功能说明
+
+### 用户系统
+- 首次打开网站会弹出「设置昵称」提示，昵称存在浏览器 `localStorage`（key: `dl_username_v1`）
+- **Owner 权限**：只有昵称为 `nataliegao` 的用户才能叉图（❌ 按钮），其他人只能点赞和备注
+- **分享模式**：URL 加 `?share` 参数后进入只读模式，叉图/点赞按钮隐藏，适合分享给外部人员浏览
+  - 分享链接格式：`https://gncoral.github.io/Design-Library/?share`
+  - 前端有「分享」按钮一键生成此链接
+
+### 灵感库（Gallery）功能
+
+| 功能 | 说明 |
+|------|------|
+| ❤️ 收藏 | 点击心形收藏图片，数据写入 `data/liked.json`，收藏的图显示红色角标 |
+| ❌ 叉图 | 仅 nataliegao 可用，叉掉的图写入 `data/blocked.json`，次日 cleanup 任务删除 |
+| 📝 备注 | 任何人可对图片写备注，支持打标签（✅可吸收 / 💡灵感 / ❓存疑），存入 `data/notes.json` |
+| 📤 上传 | 支持上传图片（JPG/PNG/GIF/WebP）和视频（MP4/WebM），存入 `data/uploads/`，写入 `images.json` |
+| 🔍 筛选 | 按来源（Dribbble / Pinterest / Behance）和分类（branding / ui / design）筛选 |
+| 🔎 搜索 | 标题关键词搜索 |
+| 🖼️ 放大查看 | 点击图片放大，支持键盘左右切换 |
+
+### 品牌洞察（Insights）功能
+
+品牌洞察 Tab 展示 `data/digitaling.json` 里的内容（数英文章 + Rebrand 案例）。
+
+| 功能 | 说明 |
+|------|------|
+| 👍 点赞 | 任何人可对文章/案例点赞，数据存入 `data/dglikes.json`，格式：`{"dg-2026-04-04": 1}` |
+| 📝 评论/备注 | 任何人可对文章写评论，支持打标签，存入 `data/notes.json` |
+| 🔍 搜狗启发展开 | 每篇文章下有可折叠的「搜狗启发」区块，展示 AI 生成的 sogouInsight |
+| 🏷️ 标签筛选 | 按 daily/weekly/rebrand/digitaling 类型筛选 |
+
+### `data/notes.json` 结构
+
+评论和备注共用同一个 `notes.json`，数组，追加写入：
+
+```json
+[
+  {
+    "targetId": "dg-2026-04-04",     // 图片 id 或文章 id
+    "targetType": "article",         // "article" | "image"
+    "author": "nataliegao",          // 用户昵称（来自 localStorage）
+    "tag": "✅可吸收",               // 可选标签，null 表示无标签
+    "text": "切入的女性视角非常细腻...",
+    "createdAt": "2026-04-08T03:00:05.328Z"
+  }
+]
+```
+
+**已有评论记录（截至 2026-05-11）：**
+- `nataliegao`：4 条（dg-2026-04-04 ×2、rb-2026-04-07、d136）
+- `Jaylan`：3 条（dg-2026-04-06 ×2、dg-2026-04-05）
+- `Caroline`：1 条（dg-2026-04-15）
+
+**标签体系：** `✅可吸收` / `💡灵感` / `❓存疑`（前端可扩展）
+
+### `data/dglikes.json` 结构
+
+```json
+{
+  "dg-2026-04-04": 1,
+  "dg-2026-04-06": 1,
+  "rb-2026-04-07": 1
+}
+```
+
+点赞数累加，key 为文章/案例 id。
+
+### 收藏（Saved）Tab
+
+展示 `liked.json` 里收藏的图片，过滤 `images.json` 中对应条目。**注意：被收藏的图片不会被 cleanup 删除（2026-05-11 加入保护）。**
 
 ---
 
