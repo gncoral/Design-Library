@@ -1,5 +1,46 @@
 [
   {
+    "id": "rb-weekly-2026-05-18",
+    "date": "2026-05-18",
+    "type": "weekly",
+    "source": "rebrand",
+    "sourceName": "Rebrand Gallery",
+    "title": "品牌重塑周报 · 第 21 周：7 个视觉重塑案例",
+    "summary": "本周从 Rebrand Gallery 精选了 7 个品牌重塑案例，涵盖 Fintech、SaaS、Social/Tech、Music/Tech、Software 等行业。",
+    "articles": [
+      {
+        "title": "Stripe 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/stripe"
+      },
+      {
+        "title": "Slack 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/slack"
+      },
+      {
+        "title": "Pinterest 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/pinterest"
+      },
+      {
+        "title": "Spotify 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/spotify"
+      },
+      {
+        "title": "Dropbox 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/dropbox"
+      },
+      {
+        "title": "Intercom 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/intercom"
+      },
+      {
+        "title": "Notion 品牌重塑",
+        "url": "https://www.rebrand.gallery/rebrand/notion"
+      }
+    ],
+    "weekNumber": 21,
+    "weekIndex": 20
+  },
+  {
     "id": "rb-weekly-2026-05-11",
     "date": "2026-05-11",
     "type": "weekly",
@@ -3348,5 +3389,37 @@
       "**「不完美」叙事激活大众情感连接** 母亲节优秀案例普遍放弃完美滤镜，呈现妈妈的疲惫、纠结与笑声并存。搜狗输入法品牌年轻化也可引入这一策略：展示用户用输入法「打错字再改」「方言拼音」等真实使用碎片，以不完美的输入记录生活的真实温度，差异化对抗竞品的「高大上」技术路线。",
       "**走心内容撬动社交二次传播** 本次母亲节高热案例均具备强烈的「转发给妈妈」动机，情感共鸣是传播引擎。搜狗输入法可策划「AI帮你找到那句说不出口的话」系列内容，借助AI造句/情感表达功能为用户生成专属文案，既展示AI能力升级，又触发「发给父母/爱人」的自传播行为，低成本撬动大众社交场景。"
     ]
+  },
+  {
+    "id": "rb-2026-05-18",
+    "date": "2026-05-18",
+    "type": "daily",
+    "source": "rebrand",
+    "sourceName": "Rebrand Gallery",
+    "sourceUrl": "https://www.rebrand.gallery/",
+    "title": "Zendesk 品牌重塑",
+    "url": "https://www.rebrand.gallery/rebrand/zendesk",
+    "caseStudyUrl": null,
+    "companyUrl": null,
+    "coverImg": "https://rebrand.gallery/rebrand-og.jpg",
+    "summary": "Zendesk 完成了一次品牌视觉重塑，设计由 In-house 团队主导。品牌所在行业：SaaS。整体呈现出清晰的现代品牌语言。",
+    "keyInsights": [
+      "行业：SaaS — 观察该行业品牌重塑的视觉趋势",
+      "设计主导：In-house — 内部团队主导，品牌基因延续性强"
+    ],
+    "tags": [
+      "品牌重塑",
+      "VI设计",
+      "SaaS",
+      "Rebrand Video"
+    ],
+    "heat": {
+      "views": 0
+    },
+    "industry": "SaaS",
+    "designBy": "In-house",
+    "visualStyles": [],
+    "typography": [],
+    "weekIndex": 21
   }
 ]
